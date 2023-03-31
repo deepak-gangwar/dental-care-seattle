@@ -1,10 +1,10 @@
 import '@/styles/globals.css'
-import Nav from '@/component/nav'
+import Navbar from '@/component/Navbar'
 
 export default function App({ Component, pageProps }) {
   return (
-    <div>
-      <Nav />
+    <div id='app'>
+      <Navbar />
       <Component {...pageProps} />
     </div>
   )
