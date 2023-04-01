@@ -10,8 +10,6 @@ export default function Home() {
       <Head>
         <title>Dental Care seattle</title>
         <meta name="description" content="A leading dental clinic in Seattle" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
