@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Head>
         <title>Dental Care seattle</title>
-        <meta name="description" content="A leading dental clinic in Seattle" />
+        <meta name="description" content="Meet your top-rated Seattle practice for cosmetic, restorative, and preventative dentistry on First Hill. You can expect the best care, gentle treatment, and beautiful results from your dentist in Seattle!" />
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
