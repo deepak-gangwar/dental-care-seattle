@@ -1,0 +1,16 @@
+#loader {
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+
+// This is what it should be after index.js running
+// #loader {
+//   background: #f2f2f2;
+//   height: 100%;
+//   left: 0;
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   z-index: 9996
+// }
