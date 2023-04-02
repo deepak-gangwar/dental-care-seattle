@@ -1,7 +1,11 @@
 import styles from '@/styles/components/Navbar.module.scss'
 import Link from "next/link"
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
+  // This is used to add --active className for the active page
+  const router = useRouter()
+
   return (
     <nav id="nav" className="nav" role="navigation" aria-label="main navigation">
       {/* TOP NAVBAR */}
@@ -24,13 +28,13 @@ export default function Navbar() {
         {/* Links to other pages */}
         <ul className="header__list">
           <li className="header__item underline__container">
-            <Link type="page" href="/services" className="header__link underline__link" role="link" aria-label="Go to the services page"><span className="underline__span">Services</span></Link>
+            <Link type="page" href="/services" className={`underline__link header__link${router.pathname == "/services" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the services page"><span className="underline__span">Services</span></Link>
           </li>
           <li className="header__item underline__container">
-            <Link type="page" href="/team" className="header__link underline__link" role="link" aria-label="Go to our team page"><span className="underline__span">Our Team</span></Link>
+            <Link type="page" href="/team" className={`underline__link header__link${router.pathname == "/team" ? ' header__link--active' : ''}`} role="link" aria-label="Go to our team page"><span className="underline__span">Our Team</span></Link>
           </li>
           <li className="header__item underline__container">
-            <Link type="page" href="/about" className="header__link underline__link" role="link" aria-label="Go to the about page"><span className="underline__span">About Us</span></Link>
+            <Link type="page" href="/about" className={`underline__link header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page"><span className="underline__span">About Us</span></Link>
           </li>
         </ul>
 
