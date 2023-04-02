@@ -24,13 +24,13 @@ export default function Navbar() {
         {/* Links to other pages */}
         <ul className="header__list">
           <li className="header__item underline__container">
-            <Link type="page" href="/" className="header__link {{ 'header__link--active' if '/' == page.url }} underline__link" role="link" aria-label="Go to homepage"><span className="underline__span">Home</span></Link>
+            <Link type="page" href="/services" className="header__link underline__link" role="link" aria-label="Go to the services page"><span className="underline__span">Services</span></Link>
           </li>
           <li className="header__item underline__container">
-            <Link type="page" href="/archives" className="header__link {{ 'header__link--active' if '/archives' in page.url }} underline__link" role="link" aria-label="Go to archives page"><span className="underline__span">Archives</span></Link>
+            <Link type="page" href="/team" className="header__link underline__link" role="link" aria-label="Go to our team page"><span className="underline__span">Our Team</span></Link>
           </li>
           <li className="header__item underline__container">
-            <Link type="page" href="/about" className="header__link {{ 'header__link--active' if '/about' in page.url }} underline__link" role="link" aria-label="Go to page about me"><span className="underline__span">About Me</span></Link>
+            <Link type="page" href="/about" className="header__link underline__link" role="link" aria-label="Go to the about page"><span className="underline__span">About Us</span></Link>
           </li>
         </ul>
 
@@ -39,6 +39,7 @@ export default function Navbar() {
           {/* I have removed the menu button, need to add it later on for mobile devices */}
           {/* Update this button styles */}
           <Link href="/contact">
+            {/* TODO: Make this into a separate button component because it will be used throughout the site. */}
             <button className="button__primary" focusable="false" tabIndex="-1" aria-label="Contact us">
               <span className="button__background"></span>
               {/* <div className="button__inner" style={{ transform: matrix(1, 0, 0, 1, 3.42087e-216, 6.60092e-217); }}> */}
