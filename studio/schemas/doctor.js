@@ -10,6 +10,15 @@ export default {
       description: 'This name is used as the page heading'
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: "name",
+        maxLength: 96,
+      },
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',

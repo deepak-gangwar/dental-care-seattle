@@ -24,6 +24,8 @@ export default function Team({ doctors }) {
               <br />
               <span>Description - </span><span>{result.description}</span>
               <br />
+              <span>Slug - </span><span>{result.slug.current}</span>
+              <br />
               <span>Specialty - </span><span>{result.specialty}</span>
               <br />
               <br />
@@ -46,6 +48,7 @@ const homeQuery = `*[_type == "doctor"] {
   name,
   title,
   description,
+  slug,
   bio,
   image,
   specialty,
