@@ -29,7 +29,7 @@ export default function Team({ doctors }) {
               <span>Specialty - </span><span>{result.specialty}</span>
               <br />
               <br />
-              <Link href="/"><button>Learn more</button></Link>
+              <Link href={`/team/${result.slug.current}`}><button>Learn more</button></Link>
               <hr />
               <br />
               <br />
