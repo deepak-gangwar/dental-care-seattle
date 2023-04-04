@@ -1,7 +1,7 @@
 export default function MetaTags() {
   return (
     <>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       {/* utf and viewport tags are automatically added by next.js */}
       {/* <meta name="viewport" content="width=device-width,initial-scale=1" /> */}
 
