@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { PortableText, sanityClient, urlFor } from "@/lib/sanity";
+import Image from "next/image";
 
 // Selecting doctor type document and matching the slug field with a variable 
 // named $doctor we got from dynamic route.The $doctor variable is passed into 
@@ -30,6 +31,7 @@ export default function DoctorPage({ data }) {
         <meta name="description" content={currentDoctor.description} />
       </Head>
       <article className="doctor">
+        <Image src={urlFor(currentDoctor?.image).url()} alt={currentDoctor.name} width={300} height={440} />
         <h1>{currentDoctor.name}</h1>
         <span>Speciality - </span><span>{currentDoctor.specialty}</span>
         <br />
