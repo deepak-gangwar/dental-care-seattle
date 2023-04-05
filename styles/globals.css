@@ -86,6 +86,7 @@ body {
 }
 
 body {
+  font-family: Aeonik TRIAL Regular;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,

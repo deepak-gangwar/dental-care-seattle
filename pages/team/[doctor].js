@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { PortableText, sanityClient, urlFor } from "@/lib/sanity";
 
 // Selecting doctor type document and matching the slug field with a variable 
@@ -12,7 +13,7 @@ const doctorQuery = `*[_type == "doctor" && slug.current == $doctor][0] {
   description,
   bio,
   image,
-  speciality
+  specialty
 }`
 
 
@@ -23,9 +24,19 @@ export default function DoctorPage({ data }) {
   const { currentDoctor } = data
 
   return (
-    <article className="doctor">
-      <h1>{currentDoctor.name}</h1>
-    </article>
+    <>
+      <Head>
+        <title>{currentDoctor.title}</title>
+        <meta name="description" content={currentDoctor.description} />
+      </Head>
+      <article className="doctor">
+        <h1>{currentDoctor.name}</h1>
+        <span>Speciality - </span><span>{currentDoctor.specialty}</span>
+        <br />
+        <PortableText value={currentDoctor?.bio} />
+      </article>
+    </>
+
   )
 }
 
