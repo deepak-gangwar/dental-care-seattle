@@ -1,6 +1,6 @@
 export default {
   name: 'service',
-  title: 'Service',
+  title: 'Services',
   type: 'document',
   fields: [
     {
@@ -18,28 +18,27 @@ export default {
       },
     },
     {
+      name: 'category',
+      type: 'string',
+      title: 'Category',
+      options: {
+        list: [
+          { title: 'Cosmetic Dentistry', value: 'cosmetic-dentistry' },
+          { title: 'Preventative Dentistry', value: 'preventative-dentistry' },
+          { title: 'Restorative Dentistry', value: 'restorative-dentistry' }
+        ]
+      }
+    },
+    {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'price',
-      title: 'Price',
-      type: 'number',
-    },
-    {
-      name: 'shortDescription',
-      title: 'Short Description',
-      type: 'text',
-      description: 'A brief overview of the service',
     },
   ],
 };
