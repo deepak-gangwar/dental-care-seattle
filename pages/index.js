@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
+import Homepage from '@/component/Home'
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -9,12 +11,7 @@ export default function Home() {
         <meta name="description" content="Meet your top-rated Seattle practice for cosmetic, restorative, and preventative dentistry on First Hill. You can expect the best care, gentle treatment, and beautiful results from your dentist in Seattle!" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-        </div>
+        <Homepage />
       </main>
     </>
   )
