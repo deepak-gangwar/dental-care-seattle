@@ -2,6 +2,9 @@ import styles from '@/styles/components/Navbar.module.scss'
 import Link from "next/link"
 import { useRouter } from 'next/router'
 
+// Components
+import ButtonPrimary from './buttonPrimary'
+
 export default function Navbar() {
   // This is used to add --active className for the active page
   const router = useRouter()
@@ -28,21 +31,21 @@ export default function Navbar() {
 
         {/* Links to other pages */}
         <ul className={styles.list}>
-          <li className={` ${styles.item} underline__container`}>
-            <Link type="page" href="/services" className={`${styles.underline} underline__link ${styles.link} header__link${router.pathname == "/services" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the services page"><span className="underline__span">Services</span></Link>
+          <li className={styles.item}>
+            <Link type="page" href="/services" className={`underline ${styles.link} header__link${router.pathname == "/services" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the services page">Services</Link>
             {/* <Link type="page" href="/services" className={`underline__link ${styles.link} ${router.pathname == "/services" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the services page"><span className="underline__span">Services</span></Link> */}
           </li>
-          <li className={` ${styles.item} underline__container`}>
-            <Link type="page" href="/team" className={`${styles.underline} underline__link ${styles.link} header__link${router.pathname == "/team" ? ' header__link--active' : ''}`} role="link" aria-label="Go to our team page"><span className="underline__span">Our Team</span></Link>
+          <li className={styles.item}>
+            <Link type="page" href="/team" className={`underline ${styles.link} header__link${router.pathname == "/team" ? ' header__link--active' : ''}`} role="link" aria-label="Go to our team page">Our Team</Link>
           </li>
-          <li className={` ${styles.item} underline__container`}>
-            <Link type="page" href="/about" className={`${styles.underline} underline__link ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page"><span className="underline__span">About Us</span></Link>
+          <li className={styles.item}>
+            <Link type="page" href="/about" className={`underline ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page">About Us</Link>
           </li>
-          <li className={` ${styles.item} underline__container`}>
-            <Link type="page" href="/" className={`${styles.underline} underline__link ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page"><span className="underline__span">Pay online</span></Link>
+          <li className={styles.item}>
+            <Link type="page" href="/" className={`underline ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page">Pay online</Link>
           </li>
-          <li className={` ${styles.item} underline__container`}>
-            <Link type="page" href="/" className={`${styles.underline} underline__link ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page"><span className="underline__span">Forms</span></Link>
+          <li className={styles.item}>
+            <Link type="page" href="/" className={`underline ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page">Forms</Link>
           </li>
         </ul>
 
@@ -50,21 +53,7 @@ export default function Navbar() {
         <div className={styles.btn}>
           {/* I have removed the menu button, need to add it later on for mobile devices */}
           {/* Update this button styles */}
-          <Link href="/contact">
-            {/* TODO: Make this into a separate button component because it will be used throughout the site. */}
-            <button className={styles.button__primary} focusable="false" tabIndex="-1" aria-label="Contact us">
-              <span className={styles.button__background}></span>
-              {/* <div className="button__inner" style={{ transform: matrix(1, 0, 0, 1, 3.42087e-216, 6.60092e-217); }}> */}
-              <div className={styles.button__inner}>
-                <span className={styles.button__label}>Contact</span>
-                {/* TODO: Remove this svg from here and add it to the spritesheet and use xlink */}
-                <svg className={styles.button__svg} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "translate(0px, 0px)" }}>
-                  <circle cx="14" cy="14" r="4" stroke="#f2f2f2"></circle>
-                  <path d="M17.896 16.028H16.776V12.012L10.424 18.38L9.64 17.58L15.992 11.228H11.976V10.108H17.896V16.028Z" fill="#F8F8F8" data-svg-origin="37.640000343322754 10.107999801635742" ></path>
-                </svg>
-              </div>
-            </button>
-          </Link>
+          <ButtonPrimary path={"/contact"} />
 
         </div>
       </header>
