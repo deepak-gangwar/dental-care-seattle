@@ -38,6 +38,12 @@ export default function Navbar() {
           <li className={` ${styles.item} underline__container`}>
             <Link type="page" href="/about" className={`${styles.underline} underline__link ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page"><span className="underline__span">About Us</span></Link>
           </li>
+          <li className={` ${styles.item} underline__container`}>
+            <Link type="page" href="/" className={`${styles.underline} underline__link ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page"><span className="underline__span">Pay online</span></Link>
+          </li>
+          <li className={` ${styles.item} underline__container`}>
+            <Link type="page" href="/" className={`${styles.underline} underline__link ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page"><span className="underline__span">Forms</span></Link>
+          </li>
         </ul>
 
         {/* Menu button and Contact button at the end */}
@@ -54,6 +60,7 @@ export default function Navbar() {
                 {/* TODO: Remove this svg from here and add it to the spritesheet and use xlink */}
                 <svg className={styles.button__svg} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "translate(0px, 0px)" }}>
                   <circle cx="14" cy="14" r="4" stroke="#f2f2f2"></circle>
+                  <path d="M17.896 16.028H16.776V12.012L10.424 18.38L9.64 17.58L15.992 11.228H11.976V10.108H17.896V16.028Z" fill="#F8F8F8" data-svg-origin="37.640000343322754 10.107999801635742" ></path>
                 </svg>
               </div>
             </button>
