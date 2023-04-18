@@ -17,6 +17,11 @@
 .logo {
   width: fit-content;
   pointer-events: all;
+
+  svg {
+    width:16.32px;
+    height: 20px; 
+  }
 }
 
 .list {
