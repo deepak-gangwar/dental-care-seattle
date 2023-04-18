@@ -86,14 +86,16 @@ body {
 }
 
 body {
-  font-family: Aeonik TRIAL Regular;
+  /* font-family: Aeonik TRIAL Regular; */
+  font-family: 'Neue Montreal';
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background: #f2f2f2;
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 a {
