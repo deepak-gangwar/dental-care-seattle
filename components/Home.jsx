@@ -1,8 +1,10 @@
 import styles from '@/styles/Home.module.css'
+import BlockHero from './pages/home/hero'
 
 export default function Homepage() {
   return (
     <>
+      <BlockHero />
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;

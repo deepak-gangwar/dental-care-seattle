@@ -109,6 +109,26 @@ a {
   }
 }
 
+#svg {
+  position: absolute;
+}
+
+#sail {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  top: 0;
+  width: 100%;
+}
+
+#sail {
+  background: #fff;
+  position: fixed;
+  transform: translate3d(0,101%,0);
+  will-change: transform;
+  z-index: 9995;
+}
+
 
 /* Underline on hover effect for links */
 .underline {

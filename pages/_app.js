@@ -10,7 +10,18 @@ export default function App({ Component, pageProps }) {
       <SVGSpritesheet />
       <Loader />
       <Navbar />
-      <Component {...pageProps} />
+
+      <div id='main-w'>
+        <main id='main'>
+          {/* <Component {...pageProps} /> */}
+          <Component
+            style={{ maxHeight: "100vh", overflow: "hidden" }}
+            {...pageProps}
+          />
+        </main>
+      </div>
+
+      <div id='sail'></div>
     </div>
   )
 }
