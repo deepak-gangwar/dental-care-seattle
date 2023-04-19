@@ -5,10 +5,42 @@ import { gsap } from 'gsap'
 import Navbar from '@/component/Navbar'
 import Loader from '@/component/Loader'
 import SVGSpritesheet from '@/component/svgSpritesheet'
+import Lenis from '@studio-freight/lenis'
+
 
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
+
+  // SMOOTH SCROLL
+  // =============
+  // Issues
+  // - Sometimes the scroll is automatically jumping
+  // - Lenis is not allowing to grab scroll thumb while scrolling
+  // - No keyboard or drag controls
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      // wrapper: document.getElementById('main-w'),
+      // content: document.getElementById('main'),
+      lerp: 0.09,
+      duration: 1.5,
+      wheelMultiplier: 0.6
+    })
+    // lenis.on('scroll', (e) => {
+    //   console.log(e)
+    // })
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
+
+
+  // PAGE TRANTISIONS
+  // ================
 
   useEffect(() => {
     const sail = document.getElementById('sail')
@@ -54,6 +86,10 @@ export default function App({ Component, pageProps }) {
       })
     }
   }, [router])
+
+
+  // RENDERING
+  // =========
 
   return (
     <div id='app'>
