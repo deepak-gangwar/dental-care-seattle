@@ -127,6 +127,7 @@ a {
   transform: translate3d(0,101%,0);
   will-change: transform;
   z-index: 9995;
+  /* transition-timing-function: cubic-bezier(.85,.4,.07,.7); */
 }
 
 

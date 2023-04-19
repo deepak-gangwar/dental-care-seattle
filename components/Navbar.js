@@ -33,12 +33,12 @@ export default function Navbar() {
           <li className={styles.item}>
             <Link type="page" href="/about" className={`underline ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page">About Us</Link>
           </li>
-          <li className={styles.item}>
+          {/* <li className={styles.item}>
             <Link type="page" href="/" className={`underline ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page">Pay online</Link>
           </li>
           <li className={styles.item}>
             <Link type="page" href="/" className={`underline ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page">Forms</Link>
-          </li>
+          </li> */}
         </ul>
 
         {/* Menu button and Contact button at the end */}

@@ -17,14 +17,25 @@
 
 .heading {
     grid-row: 2/span 1;
-    grid-column: 1/span 10;
-    // white-space: nowrap;
+    grid-column: 2/span 10;
     line-height: 1;
     letter-spacing: -0.01em;
     font-weight: normal;
     font-size: 8rem;
-    margin-left: -3.125rem;
-    // width: calc(100% - 6.25rem);
+}
+
+.line {
+    display: inline-block;
+    width: 100px;
+    height: 8px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    background: #060508;
+}
+
+.line:nth-of-type(2) {
+    margin-left: 25px;    
+    margin-right: 0;    
 }
 
 .arrow {
