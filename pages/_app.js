@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
       // wrapper: document.getElementById('main-w'),
       // content: document.getElementById('main'),
       lerp: 0.09,
-      duration: 1.5,
+      // duration: 1.5,
       wheelMultiplier: 0.6
     })
     // lenis.on('scroll', (e) => {

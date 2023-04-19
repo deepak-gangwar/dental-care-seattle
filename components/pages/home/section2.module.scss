@@ -1,0 +1,29 @@
+.subheadingWrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 8.3333vw;
+    padding-bottom: 8.3333vw;
+    text-align: center;
+}
+
+.subheadingIcon {
+    position: absolute;
+    width: 0.83333vw;
+    height: 0.83333vw;
+    will-change: transform;
+    // transform: translate(-1.49306vw,0.76389vw);
+    transform: translate(-1.8vw, 0.4vw);
+}
+
+.headingLarge h3 {
+    line-height: 1;
+    // letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    font-weight: normal;
+    font-size: 8rem;
+    max-width: 11ch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+}
