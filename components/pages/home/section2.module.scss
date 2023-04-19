@@ -1,4 +1,21 @@
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    padding: 0 3.125rem;
+    background: #f8f8f8;
+    color: #060508;
+    // padding-top: 10.1875rem;
+    // padding-bottom: 5rem;
+    padding-top: 0;
+    padding-bottom: 5rem;
+    width: 100%;
+}
+
 .subheadingWrapper {
+    grid-row: 1;
+    grid-column: span 10;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -26,4 +43,126 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 4rem;
+}
+
+.numbersWrapper {
+    // overflow: hidden;
+    // position: -webkit-sticky;
+    // position: sticky;
+    // top: 0;
+    height: 100vh;
+}
+
+.numbersWrapper{
+    position: relative;
+    grid-row: 2/span 1;
+    grid-column: 1/span 3;
+}
+
+.numbers {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.number {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.number svg {
+    width: 100%;
+    align-self: center;
+}
+
+.indicator {
+    // position: -webkit-sticky;
+    // position: sticky;
+    // top: 0;
+    grid-row: 2;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    grid-column: 5/span 1;
+    padding: 7.5rem 0;
+}
+
+.container {
+    position: relative;
+    width: 1.25rem;
+    height: 100%;
+    // max-height: 3.875rem;
+    max-height: 100%;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(6,5,8,.2);
+}
+
+.highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: #060508;
+    transform-origin: 0 0;
+    transform: scaleY(.2);
+}
+
+.label {
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: .75rem;
+    line-height: 1;
+    color: rgba(6,5,8,.2);
+}
+
+.content {
+    grid-row: 2/span 1;
+    grid-column: 7/span 3;
+}
+
+.list {
+    list-style: none;
+    width: 100%;
+}
+
+.item {
+    grid-column: 7/span 3;
+    min-height: 100vh;
+    padding: 3.75rem 0 0;
+}
+
+.heading {
+    // font-weight: 450;
+    // font-variation-settings: "wght" 450;
+    font-weight: normal;
+    // font-weight: 530;
+    margin: 0 0 3.125rem;
+    font-size: 1rem;
+    line-height: 1;
+    // letter-spacing: -.01em;
+}
+
+.icon {
+    margin: 3.125rem 0 6.25rem;
+}
+
+.paragraph {
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 1.4;
 }
