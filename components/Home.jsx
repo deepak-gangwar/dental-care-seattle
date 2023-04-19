@@ -1,10 +1,12 @@
 import styles from '@/styles/Home.module.css'
-import BlockHero from './pages/home/hero'
+import Hero from './pages/home/hero'
+import Section1 from './pages/home/section1'
 
 export default function Homepage() {
   return (
     <>
-      <BlockHero />
+      <Hero />
+      <Section1 />
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
