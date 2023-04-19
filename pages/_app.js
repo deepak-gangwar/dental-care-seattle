@@ -15,14 +15,23 @@ export default function App({ Component, pageProps }) {
     const tl = new gsap.timeline()
 
     const handleLinkClick = (event) => {
+      // play page exit and mutation animaitons
+      // change routes
+      // play mutation and page entry animaitons
       event.preventDefault();
       const href = event.currentTarget.getAttribute('href');
-      tl.to(sail, { duration: 1.25, transform: "translate3d(0px, 0px, 0px)", ease: "circ.inOut" });
+      tl.add("leave")
+      tl.to(sail, { duration: 1.5, transform: "translate3d(0px, 0px, 0px)", ease: "circ.inOut" }, "leave");
+      const page = document.querySelector('.page')
+      tl.to(page, { duration: 1.5, transform: "translateY(-70px)", ease: "power2.inOut" }, "leave")
       tl.call(() => router.push(href))
     };
 
     const sailExitAnim = () => {
-      tl.to(sail, { duration: 1.25, transform: "translate3d(0px, -100%, 0px)", ease: "circ.inOut" });
+      tl.add("label1")
+      tl.to(sail, { duration: 1.5, transform: "translate3d(0px, -100%, 0px)", ease: "circ.inOut" }, "label1");
+      const page = document.querySelector('.page')
+      tl.from(page, { duration: 1.5, transform: "translateY(70px)", ease: "power2.inOut" }, "label1")
       tl.to(sail, { duration: 0, transform: "translate3d(0px, 101%, 0px)" });
     };
     router.events.on('routeChangeComplete', sailExitAnim);
