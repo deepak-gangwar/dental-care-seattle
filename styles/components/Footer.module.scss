@@ -1,0 +1,265 @@
+.footer_w {
+    // background: #b9c3d7;
+    padding-bottom: 52px;
+    padding-top: 6rem;
+    // width: 100%;
+    // height: 100vh;
+}
+
+.top_w {
+    position: relative;
+    display: flex;
+}
+
+.title {
+    padding-left: 143px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    font-weight: normal;
+    font-size: 8rem;
+    margin-right: 3rem;
+}
+
+.subtitle {
+    padding-left: 150px;
+    margin-bottom: 3rem;
+}
+
+.smile {
+    
+    transform: scale(0.9);
+    // position: absolute;
+}
+
+.separation {
+    height: 40px;
+    position: relative;
+    width: 1090px;
+    margin-left: 50px;
+}
+
+.circle {
+    border-radius: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.circle-l {
+    font-family: 'Neue Monteral';
+    font-size: 30px;
+    height: 35px;
+    line-height: 38px;
+    position: relative;
+    width: 35px;
+}
+
+.circle_s {
+    border: 1.34px solid #1a1a1a;
+    font-size: 14px;
+    height: 20px;
+    line-height: 18px;
+    width: 20px;
+}
+
+.separation .circle {
+    left: 0;
+    position: absolute;
+    top: 3px;
+}
+
+.separation_line {
+    border-bottom: 1.34px solid #dcdcdc;
+    height: 1px;
+    left: 60px;
+    position: absolute;
+    right: 0;
+    top: 19px;
+}
+
+.separation_arrow {
+    height: 25px;
+    position: absolute;
+    right: -30px;
+    top: 1px;
+    width: 22px;
+}
+
+.footer {
+    padding-left: 150px;
+    padding-top: 106px;
+}
+
+.footer_t, .footer_b {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_t_spi {
+    width: 220px;
+    font-weight: 550;
+}
+
+.footer_t_contact {
+    color: #5a5a5a;
+    position: relative;
+    width: 280px;
+}
+
+.footer_t_contact .circle {
+    position: absolute;
+    left: 0;
+    top: -58px;
+}
+
+.footer_t_contact a {
+    display: table;
+}
+
+.footer_t_contact_phone {
+    padding-top: 20px;
+}
+
+.footer_t_link {
+    padding-left: 40px;
+}
+
+.footer_b {
+    height: 46px;
+    position: relative;
+    margin-top: 100px;
+}
+
+.footer_b_copyright {
+    color: #afafaf;
+    font-size: 14px;
+    padding-top: 16px;
+    width: 804px;
+}
+
+.footer_b_social {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        height: 100%;
+    }
+
+    a:first-child {
+        width: 50px;
+    }
+
+    a:nth-child(2) {
+        width: 39px;
+    }
+
+    a:nth-child(3) {
+        width: 47px;
+    }
+
+    a:nth-child(4) {
+        width: 46px;
+    }
+
+    svg {
+        fill: #1a1a1a;
+        pointer-events: none;
+        transition: opacity .25s;
+    }
+}
+
+.footer_b_top {
+    display: none;
+}
+
+
+
+.left,.line_w {
+    position: relative;
+    display: block;
+}
+
+.line_w.on {
+    pointer-events: none
+}
+
+.line {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1
+}
+
+.line:after,.line:before {
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.line_b0:after,.line_b0:before {
+    border-bottom: 1.34px solid #cbcbcb;
+    bottom: .5px
+}
+
+.line_b1:after,.line_b1:before {
+    border-bottom: 2px solid #000;
+    bottom: 0
+}
+
+.line_b2:after,.line_b2:before {
+    border-bottom: 1.34px solid #9f9f9f;
+    bottom: 0
+}
+
+.line_b3:after,.line_b3:before {
+    border-bottom: 1.34px solid #cbcbcb;
+    bottom: 4px
+}
+
+.line_0:before {
+    opacity: 0;
+    transform: translateX(-102%)
+}
+
+.line_0:after {
+    opacity: 1;
+    transform: translateX(102%);
+    transition: transform .8s cubic-bezier(.23,1,.32,1)
+}
+
+.line_w.on .line_0:before,.line_w:hover .line_0:before {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform .8s cubic-bezier(.23,1,.32,1)
+}
+
+.line_w.on .line_0:after,.line_w:hover .line_0:after {
+    opacity: 0;
+    transform: translateX(0);
+    transition: none
+}
+
+.line_1:before {
+    transition: transform .8s cubic-bezier(.23,1,.32,1) .2s
+}
+
+.line_1:after {
+    transform: translateX(-102%)
+}
+
+.line_1:after,.line_w:hover .line_1:before {
+    transition: transform .8s cubic-bezier(.23,1,.32,1)
+}
+
+.line_w:hover .line_1:before {
+    transform: translateX(102%)
+}
+
+.line_w:hover .line_1:after {
+    transform: translateX(0);
+    transition: transform .8s cubic-bezier(.23,1,.32,1) .2s
+}

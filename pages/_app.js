@@ -6,6 +6,7 @@ import Navbar from '@/component/Navbar'
 import Loader from '@/component/Loader'
 import SVGSpritesheet from '@/component/svgSpritesheet'
 import Lenis from '@studio-freight/lenis'
+import Footer from '@/component/footer'
 
 
 
@@ -103,7 +104,7 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </main>
       </div>
-
+      <Footer />
       <div id='sail'></div>
     </div>
   )
