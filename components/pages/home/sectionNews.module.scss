@@ -1,4 +1,6 @@
 .news {
+    position: relative;
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
     -moz-column-gap: 1.25rem;
@@ -11,6 +13,20 @@
     padding-top: 0;
     // padding-bottom: 5rem;
     width: 100%;
+}
+
+.svg1 {
+    position: absolute;
+    top: -24%;
+    left: -22%;
+    transform: scale(0.5);
+}
+
+.svg2 {
+    position: absolute;
+    top: -15%;
+    left: 54%;
+    transform: scale(0.5);
 }
 
 .subheadingWrapper {

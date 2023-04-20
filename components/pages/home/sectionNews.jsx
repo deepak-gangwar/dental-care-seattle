@@ -2,19 +2,31 @@ import styles from './sectionNews.module.scss'
 import ButtonPrimary from '@/component/buttonPrimary'
 
 export default function SectionNews() {
-    return (
-        <section className={styles.news}>
-            <div className={styles.subheadingWrapper}>
-                <div className={styles.subheading}>
-                    <svg viewBox="0 0 12 12" fill="none" className={styles.subheadingIcon}><path d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z" fill="currentColor"></path></svg>
-                    <span className={styles.subheadingLabel}>In the media</span>
-                </div>
-                <div className={styles.heading}>
-                    <h3>Spread the News</h3>
-                </div>
-                <p className={styles.description}>Find out more about our work on these leading design and technology platforms.</p>
-                <ButtonPrimary path={"/about"} label={"Browse all news"} theme={"light"} />
-            </div>
-        </section>
-    )
+  return (
+    <section className={styles.news}>
+
+      {/* =============== DECORATIVE ELEMENTS =============== */}
+
+      <svg className={styles.svg1} xmlns="http://www.w3.org/2000/svg" width="920.21" height="694.48" viewBox="0 0 920.21 694.48">
+        <path fill="#bfcbea" d="M13,694.39a928.14,928.14,0,0,0,243.76-29.3,940.47,940.47,0,0,0,227.69-91.63A912.57,912.57,0,0,0,673.85,431.15,941.43,941.43,0,0,0,816.44,252.48,929.19,929.19,0,0,0,911.79,43.83q4.19-13.3,8-26.76a13.5,13.5,0,0,0-26-7.17,890.46,890.46,0,0,1-86.29,205,907.41,907.41,0,0,1-133.56,178A880.37,880.37,0,0,1,495.92,535.47a907.32,907.32,0,0,1-218.28,95.92,898.06,898.06,0,0,1-234.7,36q-15,.27-29.9,0c-17.38-.24-17.39,26.76,0,27Z" />
+      </svg>
+      <svg className={styles.svg2} xmlns="http://www.w3.org/2000/svg" width="813.22" height="1387.84" viewBox="0 0 813.22 1387.84">
+        <path fill="#bfcbea" d="M107.51,1367.63c-36.72-79.16-70.16-162.47-78.44-250.11-7.45-78.88,5.2-160.51,50.77-226.75,37.57-54.61,94.47-96.12,157.13-117.25,62.83-21.18,139.17-24.95,199.37,6.63,29.68,15.57,53,40.39,58.87,74.17,5.17,29.81-6.11,61.44-34.51,74.83-33.95,16-73.4,1.69-100.62-20.77-27.8-22.93-49.1-53.55-62.88-86.74-29.05-69.95-27.18-148.57-5.79-220.26C315,522.15,360.17,451.05,409,385.12A1381.87,1381.87,0,0,1,756.29,57q24.9-16.4,50.48-31.68C821.66,16.41,808.1-6.95,793.14,2A1411.65,1411.65,0,0,0,587,152.5,1392.42,1392.42,0,0,0,411.47,337.79C357.32,406.68,306.92,480.4,275.94,562.88c-28.95,77-37.87,162.84-13.24,242.35,11.69,37.75,30.82,73.12,57.52,102.37,28,30.69,66.51,55.67,109.39,55.2,40.35-.45,76.57-23.55,89-62.63,10.8-33.85,2.73-73.62-18.64-101.65-48.09-63.08-139.44-75-213-64.64C215.26,744,147,779.11,95.7,830.09c-25.59,25.45-47.32,55.29-62.74,88-19,40.29-29,84.08-32,128.42-6.33,93.58,19.67,185.71,55.24,271.34,8.87,21.35,18.27,42.48,28,63.45,3.07,6.62,12.61,8.28,18.47,4.84,6.79-4,7.93-11.83,4.85-18.47Z" />
+      </svg>
+
+      {/* =============== CONTENT =============== */}
+
+      <div className={styles.subheadingWrapper}>
+        <div className={styles.subheading}>
+          <svg viewBox="0 0 12 12" fill="none" className={styles.subheadingIcon}><path d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z" fill="currentColor"></path></svg>
+          <span className={styles.subheadingLabel}>In the media</span>
+        </div>
+        <div className={styles.heading}>
+          <h3>Spread the News</h3>
+        </div>
+        <p className={styles.description}>Find out more about our work on these leading design and technology platforms.</p>
+        <ButtonPrimary path={"/about"} label={"Browse all news"} theme={"light"} />
+      </div>
+    </section>
+  )
 }
