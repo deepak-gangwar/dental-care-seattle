@@ -96,7 +96,7 @@
 
 .footer_t_spi {
     width: 220px;
-    font-weight: 550;
+    // font-weight: 550;
 }
 
 .footer_t_contact {
@@ -176,6 +176,8 @@
 .left,.line_w {
     position: relative;
     display: block;
+    width: fit-content;
+    margin-bottom: 4px;
 }
 
 .line_w.on {

@@ -36,15 +36,38 @@ export default function Footer() {
 
             <div className={styles.footer}>
                 <div className={styles.footer_t}>
+
+                    {/* --------- COLUMN 1 LINKS --------- */}
+
                     <div className={styles.footer_t_spi}>
-                        <span>Forms.</span>
+                        {/* <span>Forms.</span>
                         <br />
                         <span>Pay Online.</span>
                         <br />
                         <span>Dental Emergencies.</span>
                         <br />
-                        <span>FAQ.</span>
+                        <span>FAQ.</span> */}
+                        <a className={styles.line_w} href='/forms'>
+                            Forms.
+                            <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
+                        </a>
+                        <a className={styles.line_w} href='/payment'>
+                            Pay Online.
+                            <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
+                        </a>
+                        <a className={styles.line_w} href='/emergencies'>
+                            Dental Emergencies.
+                            <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
+                        </a>
+                        <a className={styles.line_w} href='/faq'>
+                            FAQ.
+                            <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
+                        </a>
                     </div>
+
+
+                    {/* --------- COLUMN 2 ADDRESSES --------- */}
+
                     <div className={styles.footer_t_contact}>
                         <div className={`${styles.circle} ${styles.circle_s}`}>1</div>
                         <a className={styles._tb} href='https://google.com' target="_blank">
@@ -56,6 +79,10 @@ export default function Footer() {
                         </a>
                         <div className={styles.footer_t_contact_phone}>United States</div>
                     </div>
+
+
+                    {/* --------- COLUMN 3 ADDRESSES --------- */}
+
                     <div className={styles.footer_t_contact}>
                         {/* add class circle-s to it */}
                         <div className={`${styles.circle} ${styles.circle_s}`}>2</div>
@@ -66,6 +93,10 @@ export default function Footer() {
                         </a>
                         <div className={styles.footer_t_contact_phone}>smiles@dentalcareseattle.com</div>
                     </div>
+
+
+                    {/* --------- COLUMN 4 LINKS --------- */}
+
                     <div className={styles.footer_t_link}>
                         <a className={styles.line_w} href='/contact'>
                             Contact
@@ -82,20 +113,27 @@ export default function Footer() {
                 {/* ============= FOOTER BOTTOM ============= */}
                 <div className={styles.footer_b}>
                     <div className={styles.footer_b_copyright}>©2023 DCS. All rights reserved.</div>
+
+                    {/* --------- SOCIAL LINKS --------- */}
+
                     <div className={styles.footer_b_social}>
-                        <a href='https://twitter.com' aria-label='Twitter' target='_blank'>
+                        <a href='https://twitter.com/mulickdds?lang=en' aria-label='Dental Care Seattle&apos; Twitter' target='_blank'>
                             <svg viewBox="0 0 50 46"><path d="M35,16.9c-0.7,0.3-1.5,0.5-2.4,0.6c0.8-0.5,1.5-1.3,1.8-2.2c-0.8,0.5-1.7,0.8-2.6,1c-0.7-0.8-1.8-1.3-3-1.3c-2.3,0-4.1,1.8-4.1,4c0,0.3,0,0.6,0.1,0.9c-3.4-0.2-6.4-1.8-8.5-4.2c-0.4,0.6-0.6,1.3-0.6,2c0,1.4,0.7,2.6,1.8,3.4c-0.7,0-1.3-0.2-1.9-0.5c0,0,0,0,0,0.1c0,2,1.4,3.6,3.3,4c-0.3,0.1-0.7,0.1-1.1,0.1c-0.3,0-0.5,0-0.8-0.1c0.5,1.6,2,2.8,3.8,2.8c-1.4,1.1-3.2,1.7-5.1,1.7c-0.3,0-0.7,0-1-0.1c1.8,1.1,4,1.8,6.3,1.8C28.8,31,33,24.8,33,19.5c0-0.2,0-0.3,0-0.5C33.8,18.4,34.5,17.7,35,16.9z"></path></svg>
                         </a>
-                        <a href='https://facebook.com' aria-label='Facebook' target='_blank'>
+                        <a href='https://www.facebook.com/DentalCareSeattle/' aria-label='Dental Care Seattle&apos; Facebook' target='_blank'>
                             <svg viewBox="0 0 39 46"><path d="M22,17.7h2V15h-2.8c-2,0-3.6,1.5-3.6,3.3v2.5H15v3h2.7V31h3.2v-7.3h2.6l0.4-3h-3.1v-2.1C20.9,18.1,21.4,17.7,22,17.7z"></path></svg>
                         </a>
-                        <a href='https://linkedin.com' aria-label='LinkedIn' target='_blank'>
+                        <a href='https://www.linkedin.com/company/dental-care-seattle/' aria-label='Dental Care Seattle&apos; LinkedIn' target='_blank'>
                             <svg viewBox="0 0 47 46"><rect x="15.1" y="19.8" width="3.6" height="11.2"></rect><path d="M27.8,19.6c-2,0-3.1,1.1-3.6,1.8h-0.1L24,19.8h-3.2c0,1,0.1,2.2,0.1,3.6V31h3.6v-6.4c0-0.3,0-0.6,0.1-0.9c0.3-0.6,0.9-1.3,1.9-1.3c1.3,0,1.8,1,1.8,2.4V31H32v-6.6C32,21.1,30.2,19.6,27.8,19.6z"></path><path d="M16.9,15c-1.2,0-1.9,0.8-1.9,1.7c0,1,0.7,1.7,1.9,1.7c1.2,0,2-0.8,2-1.7C18.8,15.8,18.1,15,16.9,15z"></path></svg>
                         </a>
-                        <a href='https://instagram.com' aria-label='Instagram' target='_blank'>
+                        <a href='https://instagram.com' aria-label='Dental Care Seattle&apos; Instagram' target='_blank'>
                             <svg viewBox="0 0 46 46"><path d="M23,18.7c-1.1,0-2.2,0.4-3,1.2c-0.9,0.8-1.3,1.9-1.3,3.1c0,2.3,2,4.3,4.4,4.3c1.2,0,2.3-0.4,3.1-1.2c0.8-0.8,1.3-1.9,1.3-3c0-1.2-0.3-2.2-1.1-3C25.5,19.2,24.4,18.8,23,18.7z M23,25.8c-1.6,0-2.9-1.3-2.9-2.8c0-0.8,0.3-1.5,0.9-2.1c0.5-0.5,1.2-0.8,1.9-0.8c0,0,0.1,0,0.1,0c1,0,1.7,0.3,2.2,0.8c0.5,0.5,0.7,1.2,0.7,2C25.9,24.6,24.6,25.8,23,25.8z"></path><path d="M27.5,17.6c-0.6,0-1,0.4-1,1c0,0.5,0.5,1,1,1s1-0.4,1-1C28.5,18.1,28,17.6,27.5,17.6z"></path><path d="M26.3,15h-6.6c-2.6,0-4.7,2-4.7,4.6v6.9c0,2.5,2.1,4.6,4.7,4.6h6.6c2.6,0,4.7-2,4.7-4.6v-6.9C31,17,28.9,15,26.3,15z M29.8,26.4c0,1.9-1.6,3.4-3.5,3.4h-6.6c-1.9,0-3.5-1.5-3.5-3.4v-6.9c0-1.9,1.6-3.4,3.5-3.4h6.6c1.9,0,3.5,1.5,3.5,3.4V26.4z"></path></svg>
                         </a>
                     </div>
+
+
+                    {/* --------- BACK TO TOP (IN DESKTOP VIEW) --------- */}
+
                     <div className={styles.footer_b_top}>
                         <div>Top</div>
                         <div>

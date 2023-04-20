@@ -3,6 +3,7 @@ import Hero from './pages/home/hero'
 import Section1 from './pages/home/section1'
 import Section2 from './pages/home/section2'
 import SectionNews from './pages/home/sectionNews'
+import Section4 from './pages/home/section4'
 
 export default function Homepage() {
   return (
@@ -10,7 +11,8 @@ export default function Homepage() {
       <Hero />
       <Section1 />
       <Section2 />
-      <SectionNews />
+      {/* <SectionNews /> */}
+      <Section4 />
     </>
   )
 }
