@@ -64,7 +64,7 @@ export async function getStaticPaths() {
   )
   return {
     paths,
-    fallback: true
+    fallback: false
     // fallback true means if by chance the path is not contained in the 
     // list of dynamic paths, tell next.js to generate the page on fly.
     // If set to false, will give 404 for undefined dynamic routes
