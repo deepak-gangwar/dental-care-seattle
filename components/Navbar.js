@@ -44,7 +44,7 @@ export default function Navbar() {
         {/* Menu button and Contact button at the end */}
         <div className={styles.btn}>
           {/* I have removed the menu button, need to add it later on for mobile devices */}
-          <ButtonPrimary path={"/contact"} />
+          <ButtonPrimary path={"/contact"} label={"Contact"} theme={"dark"} />
         </div>
       </header>
     </nav>

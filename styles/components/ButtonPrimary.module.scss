@@ -14,9 +14,26 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: #060508;
+  // background: #060508;
   border-radius: 9999px;
   transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.button__light {
+  color: #060508;
+
+  .button__background {
+    background: #b9c3d7;
+  }
+} 
+
+
+.button__dark {
+  color: #ffffff;
+
+  .button__background {
+    background: #060508;
+  }
 }
 
 .button__inner {
@@ -34,16 +51,28 @@
 
 .button__svg {
   circle {
+    stroke: #f2f2f2;
     transform-origin: center center;
     transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
 
   path {
+    fill: #F8F8F8;
     transform-origin: 0px 0px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transform: matrix(1,0,0,1,0,10);
+  }
+}
+
+.button__light {
+  circle {
+    stroke: #060508;
+  }
+
+  path {
+    fill: #060508;
   }
 }
 
