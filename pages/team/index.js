@@ -1,8 +1,7 @@
 import Head from "next/head"
-import Link from "next/link"
-import { sanityClient, urlFor } from "lib/sanity"
-import Image from "next/image"
+import { sanityClient } from "lib/sanity"
 import Hero from "@/component/pages/team/hero"
+import Item from "@/component/pages/team/item"
 
 export default function Team({ doctors }) {
   return (
@@ -13,33 +12,18 @@ export default function Team({ doctors }) {
       </Head>
       <div id='team' className='page'>
         <Hero />
-        <h1>Team</h1>
-        <ul>
+        <ul style={{ width: "85%", listStyle: "none", margin: "0 auto" }}>
           {doctors?.length > 0 && doctors.map(result => (
-            <li key={result._id}>
-              {/* Note: To render bio correctly, you would need to use portable text, for that you have to watch kapehe's rest of the video */}
-              <Image src={urlFor(result.image).url()} alt={result.name} width={300} height={440} />
-              <br />
-              <span>Name - </span><span>{result.name}</span>
-              <br />
-              <span>Title - </span><span>{result.title}</span>
-              <br />
-              <span>Description - </span><span>{result.description}</span>
-              <br />
-              <span>Slug - </span><span>{result.slug.current}</span>
-              <br />
-              <span>Specialty - </span><span>{result.specialty}</span>
-              <br />
-              <br />
-              <Link href={`/team/${result.slug.current}`}><button>Learn more</button></Link>
-              <hr />
-              <br />
-              <br />
-              <br />
-              <br />
-            </li>
+            <Item key={result._id} result={result} />
           ))}
         </ul>
+        {/* Properties available to access */}
+        {/* result.name */}
+        {/* result.title */}
+        {/* result.description*/}
+        {/* result.slug.current */}
+        {/* result.specialty */}
+
       </div>
     </>
   )
@@ -60,3 +44,19 @@ export async function getStaticProps() {
   const doctors = await sanityClient.fetch(homeQuery)
   return { props: { doctors } }
 }
+
+{/* <li key={result._id}>
+  <div className={styles.wrap}>
+    <div className={styles.photo}>
+      <Image src={urlFor(result.image).url()} alt={result.name} width={300} height={440} />
+    </div>
+    <div className={styles.content}>
+      <h2 className={styles.title}>{result.name}</h2>
+      <p className={styles.description}>{result.description}</p>
+      <div className={styles.btn}>
+        <Link href={`/team/${result.slug.current}`}><button>Learn more</button></Link>
+      </div>
+    </div>
+    <div className={styles.specialty}>{result.specialty}</div>
+  </div>
+</li> */}

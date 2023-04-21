@@ -1,0 +1,51 @@
+.item {
+    border-bottom: 1px solid #cccccc;
+    margin-top: 7rem;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.photo {
+    margin: 0 auto;
+    position: relative;
+    width: 28%;
+    background-color: #dcdcdc;
+    aspect-ratio: 0.71;
+    
+    img {
+        object-fit: cover;
+    }
+}
+
+.content {
+    position: relative;
+    width: 28%;
+    margin: 3.5rem auto 0;
+}
+
+.title {
+    font-weight: normal;
+    font-size: 2.4rem;
+    white-space: nowrap;
+}
+
+.description {
+    margin-top: 1.2rem;
+    margin-bottom: 2rem;
+    width: 110%;
+    font-size: 1.2vw;
+    line-height: 2;
+    opacity: 60%;
+}
+
+.specialty {
+    opacity: 60%;
+    font-size: 1.2vw;
+    position: absolute;
+    top: 80vh
+}
