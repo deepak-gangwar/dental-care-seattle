@@ -25,6 +25,14 @@ export default function Join() {
               your dentist!
             </p> */}
 
+            {/* ================ PHOTOS ================ */}
+            {/* <div className={styles.bubble_wrap}>
+              <Image className={styles.profile} src="/people1.jpg" fill={true} alt='photo of a person' />
+            </div>
+            <div className={styles.bubble_wrap_sm}>
+              <Image className={styles.profile} src="/people2.jpg" fill={true} alt='photo of a person' />
+            </div> */}
+
             <ButtonPrimary path={"/careers"} label={"See open roles"} theme={"light"} />
           </div>
         </div>

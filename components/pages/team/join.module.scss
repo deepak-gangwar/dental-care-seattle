@@ -92,3 +92,30 @@
     margin-bottom: 3rem;
     font-size: 1.1vw;
 }
+
+
+.bubble_wrap {
+    width: 11rem;
+    height: 11rem;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #b9c3d7;
+}
+
+.bubble_wrap_sm {
+    width: 5.125rem;
+    height: 5.125rem;
+    position: absolute;
+    top: 64%;
+    right: 29%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #b9c3d7;
+}
+
+.profile {
+    object-fit: cover;
+}
