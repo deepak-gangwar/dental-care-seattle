@@ -1,0 +1,42 @@
+.big_name {
+  --gap-padding: clamp(1.5em 4vw 2.5em);
+  position: absolute;
+  /* bottom: -25vh; */
+  bottom: 10vh;
+  left: 0;
+  width: 100%;
+  padding-bottom: calc(var(--gap-padding) * 1.25);
+}
+
+.big_name .name_h1 {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.big_name .name_wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.big_name h1 {
+  font-weight: normal;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #e4e0db;
+  line-height: 1;
+  font-size: 8rem;
+  letter-spacing: -0.01em;
+  /* font-size: 17.5vw; */
+  /* font-size: max(9em, 15vw); */
+  white-space: nowrap;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
+.big_name .name_wrap .spacer {
+  padding: 0 2vw;
+}

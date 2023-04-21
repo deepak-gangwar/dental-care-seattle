@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './section1.module.scss'
+import MarqueeTape from '@/component/MarqueeTape'
 
 export default function Section1() {
     return (
@@ -29,9 +30,10 @@ export default function Section1() {
                             your dentist!
                         </p>
                     </div>
-                    <h3 className={styles.large__heading}>Forever Upwards — Forever Upwards</h3>
+                    {/* <h3 className={styles.large__heading}>Forever Upwards — Forever Upwards</h3> */}
                 </div>
             </div>
+            <MarqueeTape />
         </section>
     )
 }
