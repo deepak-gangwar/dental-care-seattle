@@ -4,6 +4,8 @@
     // background-color: rgb(0, 0, 0);
     background-color: #15161c;
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 .container {

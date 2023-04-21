@@ -1,0 +1,45 @@
+.footer_rounded_div {
+    width: 100%;
+    // position: relative;
+    // height: 0;
+    display: block;
+    // z-index: 2;
+}
+
+.rounded_div_wrap {
+    width: 100%;
+    top: 0;
+    position: relative;
+    height: 10vh;
+    overflow: hidden;
+}
+
+.footer_rounded_div .rounded_div_wrap {
+    transform: translateY(-1px);
+    will-change: height;
+}
+
+.rounded_div {
+    width: 150%;
+    content: "";
+    display: block;
+    position: absolute;
+    background: #15161c;
+    height: 750%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -86.666%);
+    z-index: 1;
+}
+
+
+
+.separator {
+	display: block;
+	position: absolute;
+	z-index: 1000;
+	pointer-events: none;
+	width: 100%;
+	height: 150px;
+	fill: #16151c;
+}

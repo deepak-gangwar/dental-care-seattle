@@ -1,4 +1,5 @@
 import styles from '@/styles/components/Footer.module.scss'
+import Link from 'next/link'
 
 export default function Footer() {
     return (
@@ -98,10 +99,10 @@ export default function Footer() {
                     {/* --------- COLUMN 4 LINKS --------- */}
 
                     <div className={styles.footer_t_link}>
-                        <a className={styles.line_w} href='/contact'>
+                        <Link className={styles.line_w} href='/contact'>
                             Contact
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
-                        </a>
+                        </Link>
                         <a className={styles.line_w} href='/careers'>
                             Careers
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
@@ -148,6 +149,7 @@ export default function Footer() {
                 </div>
             </div >
 
+            <div className={`${styles.overlay} ${styles.overlay__gradient}`}></div>
         </footer >
     )
 }

@@ -2,12 +2,13 @@ import '@/styles/globals.css'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Navbar from '@/component/Navbar'
 import Loader from '@/component/Loader'
 import SVGSpritesheet from '@/component/svgSpritesheet'
 import Lenis from '@studio-freight/lenis'
 import Footer from '@/component/footer'
-
+gsap.registerPlugin(ScrollTrigger)
 
 
 export default function App({ Component, pageProps }) {
@@ -37,6 +38,31 @@ export default function App({ Component, pageProps }) {
     }
 
     requestAnimationFrame(raf)
+  }, [])
+
+
+  // SCROLL TRIGGER FOR FOOTER CURVE
+  // ================  
+
+  useEffect(() => {
+    const paths = [...document.querySelectorAll('path.path-anim')];
+    paths.forEach(el => {
+      const svgEl = el.closest('svg');
+      const pathTo = el.dataset.pathTo;
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: svgEl,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      })
+        .to(el, {
+          ease: 'none',
+          attr: { d: pathTo }
+        });
+    });
   }, [])
 
 

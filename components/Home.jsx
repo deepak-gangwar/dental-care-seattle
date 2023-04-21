@@ -4,6 +4,7 @@ import Section1 from './pages/home/section1'
 import Section2 from './pages/home/section2'
 import SectionNews from './pages/home/sectionNews'
 import Section4 from './pages/home/section4'
+import FooterCurve from './footerCurve'
 
 export default function Homepage() {
   return (
@@ -13,6 +14,7 @@ export default function Homepage() {
       <Section2 />
       {/* <SectionNews /> */}
       <Section4 />
+      <FooterCurve />
     </>
   )
 }

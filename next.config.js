@@ -6,6 +6,8 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io'],
   },
+  // To allow for proper importing of things and libraries
+  transpilePackages: ['gsap'],
 }
 
 module.exports = nextConfig
