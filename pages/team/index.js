@@ -2,6 +2,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { sanityClient, urlFor } from "lib/sanity"
 import Image from "next/image"
+import Hero from "@/component/pages/team/hero"
 
 export default function Team({ doctors }) {
   return (
@@ -10,7 +11,8 @@ export default function Team({ doctors }) {
         <title>Meet Your Dentists — Dental Care Seattle</title>
         <meta name="description" content="Our team of friendly, gentle dentists at Dental Care Seattle." />
       </Head>
-      <main>
+      <div id='team' className='page'>
+        <Hero />
         <h1>Team</h1>
         <ul>
           {doctors?.length > 0 && doctors.map(result => (
@@ -38,7 +40,7 @@ export default function Team({ doctors }) {
             </li>
           ))}
         </ul>
-      </main>
+      </div>
     </>
   )
 }
