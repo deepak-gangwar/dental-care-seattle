@@ -3,6 +3,8 @@ import { sanityClient } from "lib/sanity"
 import Hero from "@/component/pages/team/hero"
 import Item from "@/component/pages/team/item"
 import Footer from "@/component/footer"
+import Join from "@/component/pages/team/join"
+import FooterCurve from "@/component/footerCurve"
 
 export default function Team({ doctors }) {
   return (
@@ -24,6 +26,9 @@ export default function Team({ doctors }) {
         {/* result.description*/}
         {/* result.slug.current */}
         {/* result.specialty */}
+
+        <Join />
+        <FooterCurve color={"#e7e6e9"} />
         <Footer />
       </div>
     </>

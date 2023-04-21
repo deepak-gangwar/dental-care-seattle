@@ -80,21 +80,21 @@ export default function App({ Component, pageProps }) {
     let triggerElement = document.querySelector('footer');
     let targetElementRound = document.querySelector('footer')
 
-    // Added this if block later to remove scrub on other pages for now.
-    if (router.pathname === "/") {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: triggerElement,
-          start: "0% 100%",
-          end: "100% 100%",
-          scrub: 0
-        }
-      });
-      tl.from(targetElementRound, {
-        transform: `translate3d(0, -30%, 0)`,
-        ease: "none"
-      }, 0)
-    }
+    // if (router.pathname === "/") {
+    // }
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerElement,
+        start: "0% 100%",
+        end: "100% 100%",
+        scrub: 0
+      }
+    });
+    tl.from(targetElementRound, {
+      transform: `translate3d(0, -30%, 0)`,
+      ease: "none"
+    }, 0)
   })
 
 

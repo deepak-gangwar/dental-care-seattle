@@ -3,6 +3,10 @@
     margin-top: 7rem;
 }
 
+.item:last-child {
+    border: none;
+}
+
 .wrap {
     display: flex;
     flex-direction: column;
@@ -47,7 +51,8 @@
     opacity: 60%;
     font-size: 1.2vw;
     position: absolute;
-    top: 80vh
+    top: 80vh;
+    left: 20px
 }
 
 // Button styles from exo ape

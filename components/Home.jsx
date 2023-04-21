@@ -15,7 +15,7 @@ export default function Homepage() {
       <Section2 />
       {/* <SectionNews /> */}
       <Section4 />
-      <FooterCurve />
+      <FooterCurve color={"#15161c"} />
       <Footer />
     </>
   )
