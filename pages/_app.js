@@ -32,6 +32,13 @@ export default function App({ Component, pageProps }) {
     // lenis.on('scroll', (e) => {
     //   console.log(e)
     // })
+
+    // this works for slideout footer but is making normal scroll janky
+    // lenis.on('scroll', ({ progress }) => {
+    // const footerWrapper = document.querySelector('footer')
+    // footerWrapper.style.transform = `translate3d(0, -${(1 - progress) * 3600}px, 0)`
+    // })
+
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)
@@ -64,6 +71,28 @@ export default function App({ Component, pageProps }) {
         });
     });
   }, [])
+
+
+  // FOOTER SCRUB SLIDE-OUT ANIMATION
+  // ================================
+
+  useEffect(() => {
+    let triggerElement = document.querySelector('footer');
+    let targetElementRound = document.querySelector('footer')
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerElement,
+        start: "0% 100%",
+        end: "100% 100%",
+        scrub: 0
+      }
+    });
+    tl.from(targetElementRound, {
+      transform: `translate3d(0, -30%, 0)`,
+      ease: "none"
+    }, 0)
+  })
 
 
   // PAGE TRANTISIONS
@@ -130,7 +159,7 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </main>
       </div>
-      <Footer />
+      {/* <Footer /> */}
       <div id='sail'></div>
     </div>
   )

@@ -149,7 +149,6 @@ export default function Footer() {
                 </div>
             </div >
 
-            <div className={`${styles.overlay} ${styles.overlay__gradient}`}></div>
         </footer >
     )
 }

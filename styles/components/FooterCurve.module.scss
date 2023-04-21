@@ -1,6 +1,6 @@
 .footer_rounded_div {
     width: 100%;
-    // position: relative;
+    position: relative;
     // height: 0;
     display: block;
     // z-index: 2;
@@ -42,4 +42,26 @@
 	width: 100%;
 	height: 150px;
 	fill: #16151c;
+}
+
+
+
+// The shadow overlay on the curved slide-out footer
+
+.overlay {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.overlay__gradient {
+    --section-padding: clamp(5em, 21vh, 12em)
+    pointer-events: none;
+    height: calc(var(--section-padding) * .75);
+    height: calc(12em * .75);
+    background: linear-gradient(to bottom,hsla(225, 7%, 12%) 0%, hsla(225, 7%, 12%, 0.493) 8.1%, hsla(225, 7%, 12%, 0.475) 15.5%, hsla(225, 7%, 12%, 0.448) 22.5%, hsla(225, 7%, 12%, 0.412) 29%, hsla(225, 7%, 12%, 0.370) 35.3%, hsla(225, 7%, 12%, 0.324) 41.2%, hsla(225, 7%, 12%, 0.28) 47.1%, hsla(225, 7%, 12%, 0.22) 52.9%, hsla(225, 7%, 12%, 0.176) 58.8%, hsla(225, 7%, 12%, 0.130) 64.7%, hsla(225, 7%, 12%, 0.090) 71%, hsla(225, 7%, 12%, 0.052) 77.5%, hsla(225, 7%, 12%, 0.025) 84.5%, hsla(225, 7%, 12%, 0.006) 91.9%, hsla(225, 7%, 12%, 0) 100%);
+    // background: linear-gradient(to bottom,hsla(225, 7%, 12%) 0%, hsla(225, 7%, 12%, 0.987) 8.1%, hsla(225, 7%, 12%, 0.951) 15.5%, hsla(225, 7%, 12%, 0.896) 22.5%, hsla(225, 7%, 12%, 0.825) 29%, hsla(225, 7%, 12%, 0.741) 35.3%, hsla(225, 7%, 12%, 0.648) 41.2%, hsla(225, 7%, 12%, 0.55) 47.1%, hsla(225, 7%, 12%, 0.45) 52.9%, hsla(225, 7%, 12%, 0.352) 58.8%, hsla(225, 7%, 12%, 0.259) 64.7%, hsla(225, 7%, 12%, 0.175) 71%, hsla(225, 7%, 12%, 0.104) 77.5%, hsla(225, 7%, 12%, 0.049) 84.5%, hsla(225, 7%, 12%, 0.013) 91.9%, hsla(225, 7%, 12%, 0) 100%);
+    opacity: .75;
 }
