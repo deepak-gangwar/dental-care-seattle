@@ -13,9 +13,6 @@ export default function Services() {
       <div id='home' className="page">
         <header className={styles.hero}>
 
-
-
-
           {/* ===============  Content  =============== */}
 
           <h1 className={styles.h1}>Services</h1>
