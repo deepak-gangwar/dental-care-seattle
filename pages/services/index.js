@@ -20,11 +20,6 @@ export default function Services() {
     let slidesNum = 4
     let index = current + e
 
-    const headings = document.querySelectorAll('.carousel_item')
-    // this.slider.headings[this.current].classList.remove('current')
-    // this.slider.texts[this.current].classList.remove('current')
-    // headings[current].classList.remove('current')
-
     if (index >= 0 && index < slidesNum) {
       setCurrent(index)
     } else if (index < 0) {
@@ -32,10 +27,6 @@ export default function Services() {
     } else if (index >= slidesNum) {
       setCurrent(0)
     }
-
-    // headings[current].classList.add('current')
-    // this.slider.headings[this.current].classList.add('current')
-    // this.slider.texts[this.current].classList.add('current')
   }
 
   return (
@@ -62,23 +53,16 @@ export default function Services() {
 
 
           {/* Maybe change this to a list ul */}
-          <ul>
-            {[0, 1, 2, 3].map((item, index) => (
-              <li
-                key={index}
-                className={current === index ? 'current' : ''}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-
-
-
           <div className={styles.items}>
             {/* Items are the number of instagram stories you want to add */}
-            <Service />
-            <Service />
+            {[0, 1, 2, 3].map((item, index) => (
+              <Service
+                key={index}
+                isActive={current === index ? true : false}
+              />
+            ))}
+            {/* <Service />
+            <Service /> */}
           </div>
 
           {/* ===============  Story Navigation  =============== */}

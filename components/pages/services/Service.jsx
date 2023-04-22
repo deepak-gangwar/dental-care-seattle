@@ -1,9 +1,9 @@
 import styles from './Service.module.scss'
 import Link from 'next/link'
 
-export default function Service() {
+export default function Service({ isActive }) {
   return (
-    <div className={styles.item}>
+    <div className={`${styles.item} ${isActive ? styles.current?.trim() : ''}`}>
       {/* ============= PUBLISHER PROFILE ============= */}
 
       <div className={styles.publisher}>
@@ -54,6 +54,6 @@ export default function Service() {
 
       {/* ============= MEDIA ============= */}
       <div className={styles.media}></div>
-    </div>
+    </div >
   )
 }
