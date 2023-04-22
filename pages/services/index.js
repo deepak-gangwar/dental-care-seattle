@@ -2,8 +2,41 @@ import styles from "@/styles/components/Service.module.scss"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 export default function Services() {
+  const [current, setCurrent] = useState(1)
+
+  function goToPrev() {
+    onCurrentItemChange(-1)
+  }
+
+  function goToNext() {
+    onCurrentItemChange(1)
+  }
+
+  function onCurrentItemChange(e) {
+    let slidesNum = 4
+    let index = current + e
+
+    const headings = document.querySelectorAll('.carousel_item')
+    // this.slider.headings[this.current].classList.remove('current')
+    // this.slider.texts[this.current].classList.remove('current')
+    // headings[current].classList.remove('current')
+
+    if (index >= 0 && index < slidesNum) {
+      setCurrent(index)
+    } else if (index < 0) {
+      setCurrent(slidesNum - 1)
+    } else if (index >= slidesNum) {
+      setCurrent(0)
+    }
+
+    // headings[current].classList.add('current')
+    // this.slider.headings[this.current].classList.add('current')
+    // this.slider.texts[this.current].classList.add('current')
+  }
+
   return (
     <>
       <Head>
@@ -16,15 +49,36 @@ export default function Services() {
           {/* ===============  Content  =============== */}
 
           <h1 className={styles.h1}>Services</h1>
-          <button className={`${styles.controls} ${styles.prev}`}>
+          <button className={`${styles.controls} ${styles.prev}`} onClick={goToPrev}>
             <svg viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.control_arrow}><path d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z" fill="currentColor"></path></svg>
             <svg viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.control_arrow_clone}><path d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z" fill="currentColor"></path></svg>
           </button>
-          <button className={`${styles.controls} ${styles.next}`}>
+          <button className={`${styles.controls} ${styles.next}`} onClick={goToNext}>
             <svg viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.control_arrow}><path d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z" fill="currentColor"></path></svg>
             <svg viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.control_arrow_clone}><path d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z" fill="currentColor"></path></svg>
           </button>
+
+
+
           {/* Maybe change this to a list ul */}
+          <ul>
+            {[0, 1, 2, 3].map((item, index) => (
+              <li
+                key={index}
+                className={current === index ? 'current' : ''}
+              // onClick={() => handleItemClick(index)}
+              >
+                {item}
+              </li>
+            ))}
+            {/* <li className="carousel_item"></li>
+            <li className="carousel_item"></li>
+            <li className="carousel_item"></li>
+            <li className="carousel_item"></li> */}
+          </ul>
+
+
+
           <div className={styles.items}>
             {/* Items are the number of instagram stories you want to add */}
             <div className={styles.item}>
