@@ -1,9 +1,33 @@
-import styles from "@/styles/components/Service.module.scss"
+import styles from "@/styles/components/Services.module.scss"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Service from "@/component/pages/services/Service"
+
+const jsonData = [
+  {
+    publisher: "Cosmetic Dentistry",
+    line1: "At Dental Care Seattle, cosmetic",
+    line2: "dentistry by our doctors can offer",
+    line3: "you a head turning smile, because",
+    line4: "that is a true asset.",
+  },
+  {
+    publisher: "Restorative Dentistry",
+    line1: "Restorative dentistry can replace",
+    line2: "and repair teeth, restore your ideal",
+    line3: "bite, and strengthen the integrity",
+    line4: "of your smile",
+  },
+  {
+    publisher: "Preventative Dentistry",
+    line1: "Our preventive dentistry services",
+    line2: "include regular dental cleanings,",
+    line3: "sealants, and any prodecures to",
+    line4: "slow and stop decay and diseases.",
+  }
+]
 
 export default function Services() {
   const [current, setCurrent] = useState(0)
@@ -17,7 +41,7 @@ export default function Services() {
   }
 
   function onCurrentItemChange(e) {
-    let slidesNum = 4
+    let slidesNum = 3
     let index = current + e
 
     if (index >= 0 && index < slidesNum) {
@@ -51,26 +75,23 @@ export default function Services() {
           </button>
 
 
+          {/* ===============  Stories list  =============== */}
 
-          {/* Maybe change this to a list ul */}
           <div className={styles.items}>
             {/* Items are the number of instagram stories you want to add */}
-            {[0, 1, 2, 3].map((item, index) => (
+            {jsonData.map((item, index) => (
               <Service
+                data={item}
                 key={index}
                 isActive={current === index ? true : false}
               />
             ))}
-            {/* <Service />
-            <Service /> */}
           </div>
+
 
           {/* ===============  Story Navigation  =============== */}
           <div className={styles.nav}>
             {/* Add as many buttons as there are posts */}
-            <button aria-label="Cosmetic Dentistry" className={styles.button}>
-              <div className={styles.indicator}></div>
-            </button>
             <button aria-label="Restorative Dentistry" className={styles.button}>
               <div className={styles.indicator}></div>
             </button>
@@ -82,43 +103,7 @@ export default function Services() {
             </button>
           </div>
         </header>
-
-
-        {/* <h1>Services</h1>
-        <section>
-          <h2>Cosmetic Dentistry</h2>
-          <p>
-            Feeling good when you smile is a true asset. At Dental Care Seattle,
-            cosmetic dentistry by our doctors can offer you a head-turning smile.
-            Sometimes just a few minor changes make all the difference. In other
-            cases, you may want to address many teeth. Bring us your concerns,
-            and our doctors can plot the course for your ideal smile.
-          </p>
-        </section>
-        <section>
-          <h2>Restorative Dentistry</h2>
-          <p>
-            Our doctors have the right expertise and equipment to bring out the
-            best in your smile! Restorative dentistry in our Seattle practice can
-            replace and repair teeth, restore your ideal bite, and strengthen the
-            integrity of your smile. Eating is one of life&apos;s greatest pleasures,
-            but only when you have a healthy mouth — we&apos;re here to help you
-            make a plan to restore your smile.
-          </p>
-        </section>
-        <section>
-          <h2>Preventative Dentistry</h2>
-          <p>
-            We&apos;re here to help you ensure your oral health for years to come.
-            Our preventive dentistry services include regular dental cleanings,
-            sealants, and any procedures used to slow and stop tooth decay or other
-            oral diseases in their earliest stages. Our goal is to keep you and your
-            mouth as healthy and clean as possible so you can maintain your natural
-            teeth for life.
-          </p>
-        </section> */}
       </div>
-
     </>
   )
 }

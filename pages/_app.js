@@ -117,18 +117,21 @@ export default function App({ Component, pageProps }) {
     // if (router.pathname === "/") {
     // }
 
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerElement,
-        start: "0% 100%",
-        end: "100% 100%",
-        scrub: 0
-      }
-    });
-    tl.from(targetElementRound, {
-      transform: `translate3d(0, -30%, 0)`,
-      ease: "none"
-    }, 0)
+    // `if` to remove GSAP console issues when footer is not found
+    if (targetElementRound) {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          start: "0% 100%",
+          end: "100% 100%",
+          scrub: 0
+        }
+      });
+      tl.from(targetElementRound, {
+        transform: `translate3d(0, -30%, 0)`,
+        ease: "none"
+      }, 0)
+    }
   })
 
 

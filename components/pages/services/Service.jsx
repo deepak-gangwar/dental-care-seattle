@@ -1,7 +1,7 @@
 import styles from './Service.module.scss'
 import Link from 'next/link'
 
-export default function Service({ isActive }) {
+export default function Service({ data, isActive }) {
   return (
     <div className={`${styles.item} ${isActive ? styles.current?.trim() : ''}`}>
       {/* ============= PUBLISHER PROFILE ============= */}
@@ -11,7 +11,8 @@ export default function Service({ isActive }) {
           {/* <Image src="" alt="avatar for cosmetic dentistry" /> */}
         </picture>
         <div className={styles.author}>
-          <span className={styles.author_line}>Cosmetic Dentistry</span>
+          <span className={styles.author_line}>{data.publisher}</span>
+          {/* <span className={styles.author_line}>Cosmetic Dentistry</span> */}
         </div>
       </div>
 
@@ -22,13 +23,16 @@ export default function Service({ isActive }) {
           <h2 className={styles.title}>
             {/* These are split text divs */}
             <div className={styles.title_mask}>
-              <div className={styles.title_line}>At Dental Care Seattle, cosmetic</div>
+              <div className={styles.title_line}>{data.line1}</div>
             </div>
             <div className={styles.title_mask}>
-              <div className={styles.title_line}>dentistry by our doctors can offer</div>
+              <div className={styles.title_line}>{data.line2}</div>
             </div>
             <div className={styles.title_mask}>
-              <div className={styles.title_line}>you a head turning smile.</div>
+              <div className={styles.title_line}>{data.line3}</div>
+            </div>
+            <div className={styles.title_mask}>
+              <div className={styles.title_line}>{data.line4}</div>
             </div>
           </h2>
         </a>
@@ -44,7 +48,7 @@ export default function Service({ isActive }) {
               </div>
             </div>
             <div className={styles.label}>
-              See all treatments
+              Explore {data.publisher}
               <div className={styles.border}></div>
             </div>
           </div>
