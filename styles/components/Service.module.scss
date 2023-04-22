@@ -91,22 +91,68 @@
     position: absolute;
 }
 
-.next, .prev {
+// .next, .prev {
+.controls {
+    overflow: hidden;
+    outline: none;
+    border: 0;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    // z-index: 2;
+    // top: 0;
+    // bottom: 0;
+    // width: 50%;
+    z-index: 2;
     pointer-events: all;
     cursor: pointer;
+    bottom: 1.2rem;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    // border-radius: 50%;
+    border-radius: 5px;
+    background: #d5dae8;
+    // background: #0d0e13;
 }
 
 .prev {
-    left: 0;
+    right: calc(5.5rem + 5px);
 }
 
 .next {
-    right: 0;
+    right: 2.5rem;
+}
+
+.control_arrow, .control_arrow_clone {
+    fill: #0d0e13;
+    transform: translateY(3px) scale(0.25);
+    transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
+}
+
+.prev .control_arrow {
+    transform: translateY(3px) rotate(180deg) scale(0.25);
+}
+
+.prev .control_arrow_clone {
+    transform: translate(100%, -2.75rem) rotate(180deg) scale(0.25);
+}
+
+.next .control_arrow_clone {
+    transform: translate(-100%, -2.75rem) scale(0.25);
+}
+
+.next:hover .control_arrow {
+    transform: translate(100%, 3px) scale(0.25);
+}
+
+.next:hover .control_arrow_clone {
+    transform: translate(0, -2.75rem) scale(0.25);
+}
+
+.prev:hover .control_arrow {
+    transform: translate(-100%, 3px) rotate(180deg) scale(0.25);
+}
+
+.prev:hover .control_arrow_clone {
+    transform: translate(0, -2.75rem) rotate(180deg) scale(0.25);
 }
 
 .items {
@@ -128,6 +174,10 @@
     // background: #0d0e13;
     // z-index: 1;
     overflow: hidden;
+
+    // I added this later
+    // width: fit-content;
+    // margin: 0 auto;
 }
 
 .item:first-child {
@@ -146,8 +196,9 @@
     .publisher {
         width: 26.38889vw;
         // margin: 8.68056vw auto auto;
-        margin: 14vw auto auto;
-        margin: 3vw auto auto;
+        // margin: 14vw auto auto;
+        // margin: 3vw auto auto;
+        margin: auto auto 14vw;
     }
 }
 
