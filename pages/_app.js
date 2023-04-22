@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { useRouter } from 'next/router'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -51,26 +51,60 @@ export default function App({ Component, pageProps }) {
   // SCROLL TRIGGER FOR FOOTER CURVE
   // ================  
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const paths = [...document.querySelectorAll('path.path-anim')];
-    paths.forEach(el => {
-      const svgEl = el.closest('svg');
-      const pathTo = el.dataset.pathTo;
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: svgEl,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
-      })
-        .to(el, {
-          ease: 'none',
-          attr: { d: pathTo }
-        });
-    });
-  }, [])
+    gsap.context(() => {
+      paths.forEach(el => {
+        const svgEl = el.closest('svg');
+        const pathTo = el.dataset.pathTo;
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: svgEl,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        })
+          .to(el, {
+            ease: 'none',
+            attr: { d: pathTo }
+          });
+      });
+    })
+  }, [router.asPath])
+
+  // =================================================================
+  // 
+  // NOTE: ScrollTrigger animations were not working when page is 
+  // first loaded, it starts working when I refresh the page.
+  // To solve this issue, I have used the useLayoutEffect and 
+  // gsap.context() Hope this solves the issue. See below
+  // https://greensock.com/forums/topic/30872-gsap-nextjs-react-scrolltrigger-dissappears-stops-working/
+  // 
+  // =================================================================
+
+  // useEffect(() => {
+  //   const paths = [...document.querySelectorAll('path.path-anim')];
+  //   paths.forEach(el => {
+  //     const svgEl = el.closest('svg');
+  //     const pathTo = el.dataset.pathTo;
+
+  //     gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: svgEl,
+  //         start: "top bottom",
+  //         end: "bottom top",
+  //         scrub: true
+  //       }
+  //     })
+  //       .to(el, {
+  //         ease: 'none',
+  //         attr: { d: pathTo }
+  //       });
+  //   });
+  // }, [])
 
 
   // FOOTER SCRUB SLIDE-OUT ANIMATION
