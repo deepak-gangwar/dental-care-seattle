@@ -1,6 +1,7 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import styles from "@/styles/components/Service.module.scss"
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Services() {
   return (
@@ -9,61 +10,64 @@ export default function Services() {
         <title>Services — Dental Care Seattle</title>
         <meta name="description" content="Our dentists offer full-service cosmetic dentistry including teeth whitening, Invisalign, porcelain veneers, smile design, and more at Dental Care Seattle on First Hill in Seattle, Washington.&nbsp;" />
       </Head>
-      <div id='home' className='page'>
-        <header className="hero">
-          <h1 className="h1">Services</h1>
-          <div className="prev"></div>
-          <div className="next"></div>
+      <div id='home' className="page">
+        <header className={styles.hero}>
+
+
+
+
+          {/* ===============  Content  =============== */}
+
+          <h1 className={styles.h1}>Services</h1>
+          <div className={styles.prev}></div>
+          <div className={styles.next}></div>
           {/* Maybe change this to a list ul */}
-          <div className="items">
+          <div className={styles.items}>
             {/* Items are the number of instagram stories you want to add */}
-            <div className="item">
+            <div className={styles.item}>
 
               {/* ============= PUBLISHER PROFILE ============= */}
 
-              <div className="publisher">
-                <picture type="image" className="avatar">
+              <div className={styles.publisher}>
+                <picture type="image" className={styles.avatar}>
                   {/* <Image src="" alt="avatar for cosmetic dentistry" /> */}
                 </picture>
-                <div className="author">
-                  <span className="author_line">Cosmetic Dentistry</span>
+                <div className={styles.author}>
+                  <span className={styles.author_line}>Cosmetic Dentistry</span>
                 </div>
               </div>
 
 
               {/* ============= POST ============= */}
-              <div className="post">
+              <div className={styles.post}>
                 <a href="">
-                  <h2 className="title">
+                  <h2 className={styles.title}>
                     {/* These are split text divs */}
-                    <div className="title_mask">
-                      <div className="title_line">2 nominations for</div>
+                    <div className={styles.title_mask}>
+                      <div className={styles.title_line}>At Dental Care Seattle, cosmetic</div>
                     </div>
-                    <div className="title_mask">
-                      <div className="title_line">Exo Ape at Awwwards</div>
+                    <div className={styles.title_mask}>
+                      <div className={styles.title_line}>dentistry by our doctors can offer</div>
                     </div>
-                    <div className="title_mask">
-                      <div className="title_line">Annual Awards - The best</div>
-                    </div>
-                    <div className="title_mask">
-                      <div className="title_line">of the web 2022</div>
+                    <div className={styles.title_mask}>
+                      <div className={styles.title_line}>you a head turning smile.</div>
                     </div>
                   </h2>
                 </a>
 
                 {/* Add the button component here */}
-                <Link className="link" href="">
-                  <div className="wrap">
-                    <div className="circle">
-                      <div className="circle_fill"></div>
-                      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" className="circle_outline"><circle cx="25" cy="25" r="23"></circle></svg>
-                      <div className="circle_icon">
-                        <svg viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon_arrow"><path d="M0 5.65612V4.30388L8.41874 4.31842L5.05997 0.95965L5.99054 0L10.9923 4.97273L6.00508 9.96L5.07451 9.00035L8.43328 5.64158L0 5.65612Z" fill="currentColor"></path></svg>
+                <Link className={styles.link} href="">
+                  <div className={styles.wrap}>
+                    <div className={styles.circle}>
+                      <div className={styles.circle_fill}></div>
+                      <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" className={styles.circle_outline}><circle cx="25" cy="25" r="23"></circle></svg>
+                      <div className={styles.circle_icon}>
+                        <svg viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon_arrow}><path d="M7.8816 0L7.8958 6.67451H6.5893V2.24377L0.937271 7.91L0 6.97273L5.66623 1.3065H1.23549V0H7.8816Z" fill="currentColor"></path></svg>
                       </div>
                     </div>
-                    <div className="label">
+                    <div className={styles.label}>
                       See all treatments
-                      <div className="border"></div>
+                      <div className={styles.border}></div>
                     </div>
                   </div>
                 </Link>
@@ -71,8 +75,25 @@ export default function Services() {
 
 
               {/* ============= MEDIA ============= */}
-              <div className="media"></div>
+              <div className={styles.media}></div>
             </div>
+          </div>
+
+          {/* ===============  Story Navigation  =============== */}
+          <div className={styles.nav}>
+            {/* Add as many buttons as there are posts */}
+            <button aria-label="Cosmetic Dentistry" className={styles.button}>
+              <div className={styles.indicator}></div>
+            </button>
+            <button aria-label="Restorative Dentistry" className={styles.button}>
+              <div className={styles.indicator}></div>
+            </button>
+            <button aria-label="Preventative Dentistry" className={styles.button}>
+              <div className={styles.indicator}></div>
+            </button>
+            <button aria-label="Invisalign" className={styles.button}>
+              <div className={styles.indicator}></div>
+            </button>
           </div>
         </header>
 
