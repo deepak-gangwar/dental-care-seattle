@@ -1,0 +1,59 @@
+.separator {
+    width: 85%;
+    height: 1px;
+    background: #1c1c1c;
+    margin: 6rem auto;
+    opacity: 0.24;
+}
+
+.a_s4 {
+    margin-top: 70px;
+    // padding-bottom: 130px;
+
+    h2 {
+        font-weight: normal;
+        font-size: 16px;
+    }
+}
+
+.left {
+    position: relative;
+    margin-left: 150px;
+}
+
+.a_s4 .left {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+.a_s4 .left>div:first-child {
+    width: 690px;
+}
+
+.a_s4_l_cta {
+    font-size: 30px;
+    line-height: 30px;
+    display: table;
+    margin-top: 100px;
+}
+
+.a_s4_l_desc {
+    font-size: 30px;
+    line-height: 30px;
+    margin-top: 32px;
+    width: 500px;
+}
+
+.a_s4_r_email {
+    margin-top: 109px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.a_s4_r_detail {
+    font-size: 14px;
+    letter-spacing: 0;
+    color: #999;
+    margin-top: 41px;
+}
