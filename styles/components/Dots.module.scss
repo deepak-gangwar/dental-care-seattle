@@ -1,0 +1,31 @@
+.dots_w {
+    height: 100%;
+    left: 0;
+    mix-blend-mode: multiply;
+    top: 0;
+    width: 100%;
+}
+
+.dots, .dots_w {
+    position: absolute;
+}
+
+.dots {
+    // You have to set height for this to be visible
+    height: 100%;
+    background-image: url("/0.png");
+    background-size: 10px 10px;
+    top: 160px;
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .dots {
+        width: 1161px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .dots {
+        left: 19px;
+    }
+}

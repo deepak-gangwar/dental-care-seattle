@@ -1,7 +1,7 @@
-import styles from '@/styles/components/Doctor.module.scss'
-import Head from "next/head";
-import { PortableText, sanityClient, urlFor } from "@/lib/sanity";
-import Image from "next/image";
+import Head from "next/head"
+import { PortableText, sanityClient, urlFor } from "@/lib/sanity"
+import Image from "next/image"
+import Dots from '@/component/Dots'
 
 // Selecting doctor type document and matching the slug field with a variable 
 // named $doctor we got from dynamic route.The $doctor variable is passed into 
@@ -32,9 +32,7 @@ export default function DoctorPage({ data }) {
         <meta name="description" content={currentDoctor.description} />
       </Head>
       <article className="doctor">
-        <div className={styles.dots_w}>
-          <div className={styles.dots}></div>
-        </div>
+        <Dots />
         <Image src={urlFor(currentDoctor?.image).url()} alt={currentDoctor.name} width={300} height={440} />
         <h1>{currentDoctor.name}</h1>
         <span>Speciality - </span><span>{currentDoctor.specialty}</span>

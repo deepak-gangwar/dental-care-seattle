@@ -1,7 +1,5 @@
 import styles from "@/styles/components/Services.module.scss"
 import Head from "next/head"
-import Image from "next/image"
-import Link from "next/link"
 import { useState } from "react"
 import Service from "@/component/pages/services/Service"
 
@@ -59,7 +57,7 @@ export default function Services() {
         <title>Services — Dental Care Seattle</title>
         <meta name="description" content="Our dentists offer full-service cosmetic dentistry including teeth whitening, Invisalign, porcelain veneers, smile design, and more at Dental Care Seattle on First Hill in Seattle, Washington.&nbsp;" />
       </Head>
-      <div id='home' className="page">
+      <div id='services' className="page">
         <header className={styles.hero}>
 
           {/* ===============  Content  =============== */}
