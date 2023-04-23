@@ -2,6 +2,7 @@ import Head from "next/head"
 import Hero from "@/component/pages/about/Hero"
 import Section1 from "@/component/pages/about/Section1"
 import Dots from "@/component/Dots"
+import Section2 from "@/component/pages/about/Section2"
 
 export default function About() {
   return (
@@ -15,6 +16,7 @@ export default function About() {
         <Dots />
         <Hero />
         <Section1 />
+        <Section2 />
       </div>
     </>
 
