@@ -4,6 +4,9 @@ import styles from './Section1.module.scss'
 export default function Section1() {
   return (
     <>
+      <div className={styles.flush_image}>
+        <Image src="/about1.jpg" alt='' fill={true} />
+      </div>
       <section className={styles.services}>
         <div className={styles.container}>
 
@@ -39,19 +42,24 @@ export default function Section1() {
           <div className={styles.text}>
             <h2 className={styles.label}>
               <svg viewBox="0 0 12 12" fill="none" className={styles.icon}><path d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z" fill="currentColor"></path></svg>
-              <span className={styles.subheading}>Partners</span>
+              <span className={styles.subheading}>About us</span>
             </h2>
             <h2 className={styles.title}>
-              We partner with brands and businesses that create exceptional experiences where people live, work and unwind.
+              Dental Care Seattle is a top-rated local practice for cosmetic, preventative, and restorative dentistry on First Hill.
             </h2>
             <div className={styles.body}>
               {/* this is changed here */}
               <p className={styles.paragraph}>
-                Interior Design and Furniture
+                Visit us at our convenient office on
                 <br />
-                Architecture and Real Estate
+                Broadway and expect the best care,
                 <br />
-                Hospitality, Travel & tourism.
+                gentle treatment, and beautiful
+                <br />
+                results from your dentist!
+                {/* Interior Design and Furniture */}
+                {/* Architecture and Real Estate */}
+                {/* Hospitality, Travel & tourism. */}
               </p>
             </div>
           </div>
