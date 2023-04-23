@@ -8,6 +8,8 @@
 
 .dots, .dots_w {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .dots {
@@ -16,16 +18,17 @@
     background-image: url("/0.png");
     background-size: 10px 10px;
     top: 160px;
+    width: 83%;
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
     .dots {
-        width: 1161px;
+        // width: 1161px;
     }
 }
 
 @media (max-width: 1600px) {
     .dots {
-        left: 19px;
+        // left: 19px;
     }
 }
