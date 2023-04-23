@@ -32,14 +32,14 @@ export default function MetaTags() {
       <meta property="og:url" content="https://www.dentalcareseattle.com" />
       <meta property="og:type" content="website" />
       <meta property="og:description" content="Meet your top-rated Seattle practice for cosmetic, restorative, and preventative dentistry on First Hill. You can expect the best care, gentle treatment, and beautiful results from your dentist in Seattle!" />
-      <meta property="og:image" content="http://static1.squarespace.com/static/590a3943c534a54d6465b3df/t/59c352bf1f318d489cddc03b/1505972927512/DCS_Logo_SocialSharing.jpg?format=1500w" />
+      <meta property="og:image" content="/sharing.jpg" />
       <meta property="og:image:alt" content="Dental Care Seattle's website" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
       {/* Twitter tags */}
       <meta name="twitter:title" content="Dental Care Seattle" />
-      <meta name="twitter:image" content="http://static1.squarespace.com/static/590a3943c534a54d6465b3df/t/59c352bf1f318d489cddc03b/1505972927512/DCS_Logo_SocialSharing.jpg?format=1500w" />
+      <meta name="twitter:image" content="/sharing.jpg" />
       <meta name="twitter:image:alt" content="Dental Care Seattle's website" />
       <meta name="twitter:url" content="https://www.dentalcareseattle.com" />
       {/* <meta name="twitter:card" content="summary" /> */}
@@ -61,7 +61,7 @@ export default function MetaTags() {
       {/* <link rel="stylesheet" type="text/css" href="https://squarespace.com/site.css" /> */}
 
       {/* Icon */}
-      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="shortcut icon" type="image/x-icon" href="/icons/favicon.svg" />
 
       {/* Noscript */}
       {/* Commented this out because next.js is adding this by its own */}
