@@ -15,7 +15,6 @@ export default function Section1() {
           <ul className={styles.images}>
             <li className={styles.image}>
               <picture type="image">
-                {/* <Image src='' alt='' /> */}
                 <source type="image/webp" srcset="https://img2.storyblok.com/350x495/filters:format(webp):quality(70)/f/133769/1500x2123/637f850b2b/exo-ape-studio-collage-1.jpg 350w, https://img2.storyblok.com/450x637/filters:format(webp):quality(70)/f/133769/1500x2123/637f850b2b/exo-ape-studio-collage-1.jpg 450w, https://img2.storyblok.com/650x920/filters:format(webp):quality(70)/f/133769/1500x2123/637f850b2b/exo-ape-studio-collage-1.jpg 650w" sizes="(max-width: 1024px) 350px, (max-width: 1280px) 450px, 650px"></source>
                 <img src="https://img2.storyblok.com/650x920/filters:format(jpeg):quality(70)/f/133769/1500x2123/637f850b2b/exo-ape-studio-collage-1.jpg" srcset="https://img2.storyblok.com/350x495/filters:format(jpeg):quality(70)/f/133769/1500x2123/637f850b2b/exo-ape-studio-collage-1.jpg 350w, https://img2.storyblok.com/450x637/filters:format(jpeg):quality(70)/f/133769/1500x2123/637f850b2b/exo-ape-studio-collage-1.jpg 450w, https://img2.storyblok.com/650x920/filters:format(jpeg):quality(70)/f/133769/1500x2123/637f850b2b/exo-ape-studio-collage-1.jpg 650w" sizes="(max-width: 1024px) 350px, (max-width: 1280px) 450px, 650px" width="1500" height="2123" alt="exo ape" loading="lazy"></img>
               </picture>
@@ -24,14 +23,12 @@ export default function Section1() {
               <picture type="image">
                 <source type="image/webp" srcset="https://img2.storyblok.com/350x234/filters:format(webp):quality(70)/f/133769/1500x1003/2581b1d31d/exo-ape-studio-collage-2.jpg 350w, https://img2.storyblok.com/450x301/filters:format(webp):quality(70)/f/133769/1500x1003/2581b1d31d/exo-ape-studio-collage-2.jpg 450w, https://img2.storyblok.com/650x435/filters:format(webp):quality(70)/f/133769/1500x1003/2581b1d31d/exo-ape-studio-collage-2.jpg 650w" sizes="(max-width: 1024px) 350px, (max-width: 1280px) 450px, 650px"></source>
                 <img src="https://img2.storyblok.com/650x435/filters:format(jpeg):quality(70)/f/133769/1500x1003/2581b1d31d/exo-ape-studio-collage-2.jpg" srcset="https://img2.storyblok.com/350x234/filters:format(jpeg):quality(70)/f/133769/1500x1003/2581b1d31d/exo-ape-studio-collage-2.jpg 350w, https://img2.storyblok.com/450x301/filters:format(jpeg):quality(70)/f/133769/1500x1003/2581b1d31d/exo-ape-studio-collage-2.jpg 450w, https://img2.storyblok.com/650x435/filters:format(jpeg):quality(70)/f/133769/1500x1003/2581b1d31d/exo-ape-studio-collage-2.jpg 650w" sizes="(max-width: 1024px) 350px, (max-width: 1280px) 450px, 650px" width="1500" height="1003" alt="exo ape" loading="lazy"></img>
-                {/* <Image src='' alt='' /> */}
               </picture>
             </li>
             <li className={styles.image}>
               <picture type="image">
                 <source type="image/webp" srcset="https://img2.storyblok.com/350x498/filters:format(webp):quality(70)/f/133769/569x809/dd3f38466e/exo-ape-studio-collage-3.jpg 350w, https://img2.storyblok.com/450x640/filters:format(webp):quality(70)/f/133769/569x809/dd3f38466e/exo-ape-studio-collage-3.jpg 450w, https://img2.storyblok.com/650x924/filters:format(webp):quality(70)/f/133769/569x809/dd3f38466e/exo-ape-studio-collage-3.jpg 650w" sizes="(max-width: 1024px) 350px, (max-width: 1280px) 450px, 650px"></source>
                 <img src="https://img2.storyblok.com/650x924/filters:format(jpeg):quality(70)/f/133769/569x809/dd3f38466e/exo-ape-studio-collage-3.jpg" srcset="https://img2.storyblok.com/350x498/filters:format(jpeg):quality(70)/f/133769/569x809/dd3f38466e/exo-ape-studio-collage-3.jpg 350w, https://img2.storyblok.com/450x640/filters:format(jpeg):quality(70)/f/133769/569x809/dd3f38466e/exo-ape-studio-collage-3.jpg 450w, https://img2.storyblok.com/650x924/filters:format(jpeg):quality(70)/f/133769/569x809/dd3f38466e/exo-ape-studio-collage-3.jpg 650w" sizes="(max-width: 1024px) 350px, (max-width: 1280px) 450px, 650px" width="569" height="809" alt="exo ape" loading="lazy"></img>
-                {/* <Image src='' alt='' /> */}
               </picture>
             </li>
           </ul>
