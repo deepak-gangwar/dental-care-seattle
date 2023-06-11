@@ -41,9 +41,11 @@ export default function App({ Component, pageProps }) {
 
     function raf(time) {
       lenis.raf(time)
+      ScrollTrigger.update()
       requestAnimationFrame(raf)
     }
 
+    // lenis.on('scroll', ScrollTrigger.update)
     requestAnimationFrame(raf)
   }, [])
 
@@ -118,20 +120,20 @@ export default function App({ Component, pageProps }) {
     // }
 
     // `if` to remove GSAP console issues when footer is not found
-    if (targetElementRound) {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: triggerElement,
-          start: "0% 100%",
-          end: "100% 100%",
-          scrub: 0
-        }
-      });
-      tl.from(targetElementRound, {
-        transform: `translate3d(0, -30%, 0)`,
-        ease: "none"
-      }, 0)
-    }
+    // if (targetElementRound) {
+    //   let tl = gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: triggerElement,
+    //       start: "0% 100%",
+    //       end: "100% 100%",
+    //       scrub: 0
+    //     }
+    //   });
+    //   tl.from(targetElementRound, {
+    //     transform: `translate3d(0, -30%, 0)`,
+    //     ease: "none"
+    //   }, 0)
+    // }
   })
 
 
