@@ -48,22 +48,22 @@ export default function Footer() {
                         <span>Dental Emergencies.</span>
                         <br />
                         <span>FAQ.</span> */}
-                        <a className={styles.line_w} href='/forms'>
+                        <Link className={styles.line_w} href='/forms'>
                             Forms.
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
-                        </a>
-                        <a className={styles.line_w} href='/payment'>
+                        </Link>
+                        <Link className={styles.line_w} href='/payment'>
                             Pay Online.
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
-                        </a>
-                        <a className={styles.line_w} href='/emergencies'>
+                        </Link>
+                        <Link className={styles.line_w} href='/emergencies'>
                             Dental Emergencies.
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
-                        </a>
-                        <a className={styles.line_w} href='/faq'>
+                        </Link>
+                        <Link className={styles.line_w} href='/faq'>
                             FAQ.
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
-                        </a>
+                        </Link>
                     </div>
 
 
@@ -103,10 +103,10 @@ export default function Footer() {
                             Contact
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
                         </Link>
-                        <a className={styles.line_w} href='/careers'>
+                        <Link className={styles.line_w} href='/careers'>
                             Careers
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

@@ -1,6 +1,8 @@
-import Footer from "@/component/footer"
 import Head from "next/head"
 import Link from "next/link"
+import Footer from "@/component/footer"
+import Hero from "@/component/pages/payment/Hero"
+import styles from "@/component/pages/payment/payment.module.scss"
 
 export default function Payment() {
   return (
@@ -11,12 +13,12 @@ export default function Payment() {
       </Head>
       <div id='payment' className='page'>
         {/* <Dots /> */}
+        <Hero />
 
-        <div className="main__wrapper">
-          <h1>Make a Payment</h1>
-          <p>Use the button below to pay your bill online. Reference the “Chart No.” in the top-right corner of your most recent statement, and the current balance due.</p>
-          <h2>SECURE PAYMENTS</h2>
-          <p>Payments and patient information are processed securely through Authorize.net. We accept Visa, Mastercard, American Express, and Discover cards. </p>
+        <div className={styles.main__wrapper}>
+          <p className={styles.cta}>Use the button below to pay your bill online. Reference the “Chart No.” in the top-right corner of your most recent statement, and the current balance due.</p>
+          <h2 className={styles.subheading}>Secure Payments</h2>
+          <p className={styles.disclaimer}>Payments and patient information are processed securely through Authorize.net. We accept Visa, Mastercard, American Express, and Discover cards. </p>
 
           {/* The payment button */}
           <form data-preserve-html-node="true" name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" id="yui_3_17_2_1_1686491703206_705">
@@ -24,13 +26,15 @@ export default function Payment() {
           </form>
         </div>
 
-        <div className="sidebar">
+        <div className={styles.sidebar}>
           <h3>Payment options</h3>
           <p>
             We also accept payments by phone, mail, or in the office at the time of service.
             Please <span><Link href="/contact">Contact Us</Link></span> to discuss payment options, and read our <span><a href="https://www.dentalcareseattle.com/s/DentalCareSeattle_FinancialPolicy.pdf">Financial Policy</a></span> for more information.
           </p>
         </div>
+        <div className={styles.separator}></div>
+
         <Footer />
       </div>
     </>
