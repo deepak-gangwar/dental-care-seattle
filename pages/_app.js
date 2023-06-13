@@ -152,12 +152,15 @@ export default function App({ Component, pageProps }) {
     // mutA for when link is clicked, also add pageA for items like nav links
     const pageOut = (event) => {
       event.preventDefault()
-      const href = event.currentTarget.getAttribute('href')
-      const page = document.querySelector('.page')
 
-      tl.to(sail, { duration: 1.5, transform: "translate3d(0px, 0px, 0px)", ease: "circ.inOut" }, 0)
-      tl.to(page, { duration: 1.5, transform: "translateY(-70px)", ease: "power2.inOut" }, 0)
-      tl.call(() => router.push(href))
+      const href = event.currentTarget.getAttribute('href')
+      // Dont' run the transition animation if we are on the same page
+      if (router.pathname !== href) {
+        const page = document.querySelector('.page')
+        tl.to(sail, { duration: 1.5, transform: "translate3d(0px, 0px, 0px)", ease: "circ.inOut" }, 0)
+        tl.to(page, { duration: 1.5, transform: "translateY(-70px)", ease: "power2.inOut" }, 0)
+        tl.call(() => router.push(href))
+      }
     };
 
     // Callback for when navigating to different route is done
@@ -170,10 +173,7 @@ export default function App({ Component, pageProps }) {
     };
     router.events.on('routeChangeComplete', pageIn);
 
-    // modify this to be links with class page_tr
     const links = document.querySelectorAll('.js-pt')
-    // const nav = document.getElementById('nav')
-    // const links = nav.querySelectorAll('a')
     links.forEach((link) => {
       link.addEventListener('click', pageOut)
     });

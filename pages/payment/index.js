@@ -22,7 +22,7 @@ export default function Payment() {
 
           {/* The payment button */}
           <form data-preserve-html-node="true" name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx" id="yui_3_17_2_1_1686491703206_705">
-            <input data-preserve-html-node="true" type="hidden" name="LinkId" value="aafd7d94-bd8b-4863-976e-700af11d0807" /> <input data-preserve-html-node="true" type="submit" value="Pay Online " id="yui_3_17_2_1_1686491703206_704" class="" />
+            <input data-preserve-html-node="true" type="hidden" name="LinkId" value="aafd7d94-bd8b-4863-976e-700af11d0807" /> <input data-preserve-html-node="true" type="submit" value="Pay Online " id="yui_3_17_2_1_1686491703206_704" />
           </form>
         </div>
 
