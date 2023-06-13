@@ -1,10 +1,10 @@
 import styles from '@/styles/components/ButtonPrimary.module.scss'
 import Link from "next/link"
 
-export default function ButtonPrimary({ path, label, theme }) {
+export default function ButtonPrimary({ path, label, theme, pt }) {
   return (
     <>
-      <Link href={path}>
+      <Link href={path} className={pt ? 'js-pt' : undefined}>
         <button className={`${styles.button__primary} ${theme === "dark" ? styles.button__dark : styles.button__light}`} focusable="false" tabIndex="-1" aria-label="Contact us">
           <span className={styles.button__background}></span>
           <div className={styles.button__inner}>

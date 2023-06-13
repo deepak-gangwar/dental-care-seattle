@@ -171,8 +171,9 @@ export default function App({ Component, pageProps }) {
     router.events.on('routeChangeComplete', pageIn);
 
     // modify this to be links with class page_tr
-    const nav = document.getElementById('nav')
-    const links = nav.querySelectorAll('a')
+    const links = document.querySelectorAll('.js-pt')
+    // const nav = document.getElementById('nav')
+    // const links = nav.querySelectorAll('a')
     links.forEach((link) => {
       link.addEventListener('click', pageOut)
     });

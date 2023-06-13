@@ -15,7 +15,7 @@ export default function Forms() {
 
         <div className="intro">
           <h1>Let&apos;s get ready for your first appointment.</h1>
-          <Image src="" alt="add a doctors image here" width={10} height={10} />
+          {/* <Image src="" alt="add a doctors image here" width={10} height={10} /> */}
 
           <p>Welcome to our practice! Click the button below to get started by securely filling our our new-patient forms. We&apos;ll ask you for current contact and insurance information, and go over a few questions about your health history.</p>
 

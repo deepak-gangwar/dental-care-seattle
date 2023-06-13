@@ -48,19 +48,19 @@ export default function Footer() {
                         <span>Dental Emergencies.</span>
                         <br />
                         <span>FAQ.</span> */}
-                        <Link className={styles.line_w} href='/forms'>
+                        <Link className={`js-pt ${styles.line_w}`} href='/forms'>
                             Forms.
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
                         </Link>
-                        <Link className={styles.line_w} href='/payment'>
+                        <Link className={`js-pt ${styles.line_w}`} href='/payment'>
                             Pay Online.
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
                         </Link>
-                        <Link className={styles.line_w} href='/emergencies'>
+                        <Link className={`js-pt ${styles.line_w}`} href='/emergencies'>
                             Dental Emergencies.
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
                         </Link>
-                        <Link className={styles.line_w} href='/faq'>
+                        <Link className={`js-pt ${styles.line_w}`} href='/faq'>
                             FAQ.
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
                         </Link>
@@ -99,11 +99,11 @@ export default function Footer() {
                     {/* --------- COLUMN 4 LINKS --------- */}
 
                     <div className={styles.footer_t_link}>
-                        <Link className={styles.line_w} href='/contact'>
+                        <Link className={`js-pt ${styles.line_w}`} href='/contact'>
                             Contact
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
                         </Link>
-                        <Link className={styles.line_w} href='/careers'>
+                        <Link className={`js-pt ${styles.line_w}`} href='/careers'>
                             Careers
                             <span className={`${styles.line} ${styles.line_1} ${styles.line_b0}`}></span>
                         </Link>
