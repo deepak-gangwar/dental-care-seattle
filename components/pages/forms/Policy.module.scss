@@ -1,0 +1,36 @@
+.wrapper {
+    margin: 0 8.3333333vw;
+    // height: 100vh;
+    // display: flex;
+    // gap: 2rem;
+    // justify-content: center;
+    // align-items: center;
+    padding: 20vh 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 2em;
+}
+
+.policy {
+    border-radius: 4px;
+    background: #ffffff;
+    padding: 3rem 2.9rem;
+}
+
+.title {
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+.description {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.links {
+    color: #000000;
+    text-decoration: underline;
+}
