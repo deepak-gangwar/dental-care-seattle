@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Link from "next/link"
 import Footer from "@/component/footer"
+import Hero from "@/component/pages/emergencies/Hero"
 
 export default function Emergencies() {
   return (
@@ -10,6 +11,7 @@ export default function Emergencies() {
         <meta name="description" content="Meet your top-rated Seattle practice for cosmetic, restorative, and preventative dentistry on First Hill. You can expect the best care, gentle treatment, and beautiful results from your dentist in Seattle!" />
       </Head>
       <div id='emergencies' className='page'>
+        <Hero />
         <div className="main_wrapper">
           <h1>Dental Emergency? We can help.</h1>
           <span>(206) 325-0166</span>
