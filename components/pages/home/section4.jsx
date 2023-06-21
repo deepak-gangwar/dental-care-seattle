@@ -3,7 +3,7 @@ import styles from './section4.module.scss'
 
 export default function Section4() {
   return (
-    <section className={styles.section}>
+    <section id="s4" className={styles.section}>
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.content}>

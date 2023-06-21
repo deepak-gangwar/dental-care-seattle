@@ -1,8 +1,28 @@
-import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
+import { useEffect } from 'react'
+import Head from 'next/head'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Homepage from '@/component/Home'
 
+// gsap.registerPlugin(ScrollTrigger)
+
 export default function Home() {
+
+  // SECTION 2 INDICATOR PIN ANIMATION
+  // =================================
+
+  useEffect(() => {
+    // setTimeout(() => {
+    //   ScrollTrigger.create({
+    //     trigger: "#homecarousel",
+    //     start: "top top",
+    //     end: "bottom 150px",
+    //     pin: "#indicator",
+    //   });
+    // }, 200);
+
+  })
 
   return (
     <>
