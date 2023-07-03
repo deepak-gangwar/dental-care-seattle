@@ -25,7 +25,7 @@ export default function Section2() {
             <h2 className={styles.title2}>
               Or leave your details to request for an appointment
             </h2>
-            <div className={styles.accent}></div>
+            {/* <div className={styles.accent}></div> */}
 
             {/* ========== Exo ape button component ========== */}
 
