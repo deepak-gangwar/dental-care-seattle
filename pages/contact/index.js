@@ -1,8 +1,8 @@
 import Footer from "@/component/footer";
+import Hero from "@/component/pages/contact/Hero";
 import Section2 from "@/component/pages/contact/Section2";
 import Section3 from "@/component/pages/contact/Section3";
 import Section4 from "@/component/pages/contact/Section4";
-import Hero from "@/component/pages/contact/hero";
 import Head from "next/head";
 
 export default function Contact() {
