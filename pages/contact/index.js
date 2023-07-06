@@ -1,9 +1,9 @@
-import Footer from "@/component/footer";
-import Hero from "@/component/pages/contact/Hero";
-import Section2 from "@/component/pages/contact/Section2";
-import Section3 from "@/component/pages/contact/Section3";
-import Section4 from "@/component/pages/contact/Section4";
-import Head from "next/head";
+import Head from "next/head"
+import Hero from "@/component/pages/contact/Hero"
+import Section2 from "@/component/pages/contact/Section2"
+import Section3 from "@/component/pages/contact/Section3"
+import Section4 from "@/component/pages/contact/Section4"
+import Footer from "@/component/footer"
 
 export default function Contact() {
     return (

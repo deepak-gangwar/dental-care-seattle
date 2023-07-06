@@ -1,6 +1,7 @@
 import Footer from "@/component/footer"
+import Hero from "@/component/pages/careers/Hero"
+import Section2 from "@/component/pages/careers/Section2"
 import Head from "next/head"
-import Link from "next/link"
 
 export default function Careers() {
   return (
@@ -11,22 +12,9 @@ export default function Careers() {
       </Head>
       <div id='careers' className='page'>
         {/* <Dots /> */}
+        <Hero />
+        <Section2 />
 
-        <div className="main__wrapper">
-          <h1>We&apos;re hiring! Join our talented team of patient-first caregivers.</h1>
-
-          <pre>Note: these items should come from sanity cms as well as when  you click on learn more it should open the dynamic job description page. Still need to work on that part by creating dynamic routes</pre>
-          <section className="opening">
-            <h2>Dental Hygenist</h2>
-            <span>Clinical Team</span>
-            <a>Learn more</a>
-          </section>
-        </div>
-
-        <div className="sidebar">
-          <h3>Apply now</h3>
-          <p>To apply, <a href="mailto:careers@dentalcareseattle.com">email us</a> and include the position you&apos;re interested in and a copy of your resume. Thanks!</p>
-        </div>
         <Footer />
       </div>
     </>
