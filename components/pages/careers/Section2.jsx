@@ -8,10 +8,10 @@ export default function Section2() {
       <div className={styles.flush_image}>
         <Image src="/people1.jpg" alt='' fill={true} />
       </div>
-      <section className={styles.services}>
-        <div className={styles.container}>
 
-          {/* =========== CONTENT =========== */}
+      {/* I felt like removing this, see if you want to add it back */}
+      {/* <section className={styles.services}>
+        <div className={styles.container}>
 
           <div className={styles.text}>
             <h2 className={styles.label}>
@@ -22,7 +22,6 @@ export default function Section2() {
               We&apos;re hiring! Apply now
             </h2>
             <div className={styles.body}>
-              {/* this is changed here */}
               <p className={styles.paragraph}>
                 Dental Care Seattle is always looking for talented
                 <br />
@@ -30,10 +29,8 @@ export default function Section2() {
               </p>
             </div>
 
-            {/* ========== Exo ape button component ========== */}
 
             <div className={styles.btn}>
-              {/* <Link href={`/team/${result.slug.current}`}><button>Learn more</button></Link> */}
               <Link className={styles.link} href='/careers' >
                 <div className={styles.wrap}>
                   <div className={styles.circle}>
@@ -62,7 +59,7 @@ export default function Section2() {
           </div>
         </div>
       </section>
-      <div className={styles.separator}></div>
+      <div className={styles.separator}></div> */}
     </>
   )
 }

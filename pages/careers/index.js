@@ -1,6 +1,8 @@
 import Footer from "@/component/footer"
 import Hero from "@/component/pages/careers/Hero"
 import Section2 from "@/component/pages/careers/Section2"
+import Section3 from "@/component/pages/careers/Section3"
+import SectionNews from "@/component/pages/careers/sectionNews"
 import Head from "next/head"
 
 export default function Careers() {
@@ -14,7 +16,8 @@ export default function Careers() {
         {/* <Dots /> */}
         <Hero />
         <Section2 />
-
+        <SectionNews />
+        <Section3 />
         <Footer />
       </div>
     </>

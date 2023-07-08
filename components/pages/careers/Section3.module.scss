@@ -1,0 +1,149 @@
+.container {
+    margin-left: 8.33333vw;
+    margin-right: 8.33333vw;
+    margin-bottom: 8.33333vw;
+}
+
+.grid__wrap {
+    margin-top: 22.66667vw;
+}
+
+@media (min-width: 601px) {
+    .grid__wrap {
+        display: grid;
+        grid-template-columns: repeat(10,1fr);
+        // margin-top: 6.94444vw;
+        margin-top: 4.94444vw;
+    }
+}
+
+@media (min-width: 601px) and (min-width: 601px) {
+    .grid__wrap {
+        grid-column-gap: 2.22222vw;
+        grid-template-columns: repeat(12,1fr);
+    }
+}
+
+.careers {
+    position: relative;
+    list-style: none;
+    grid-column: 1/13;    
+}
+
+.careers__item {
+    border-bottom: 1.34px solid #c7c7c7;
+    box-sizing: border-box;
+    padding-bottom: 34px;
+    position: relative;
+}
+
+.cta {
+    grid-row: 1;
+    grid-column: 1/13;
+    cursor: pointer;
+}
+
+.job__title {
+    font-weight: normal;
+    font-size: 4rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.job__team {
+    font-weight: normal;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.7;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 3px;
+}
+
+.content {
+    grid-row: 2;
+    grid-column: 1/13;
+    display: flex;
+    flex-wrap: wrap;
+    // height: 0;
+    overflow: hidden;
+}
+
+.left__content {
+    width: 33%;
+}
+
+.btn {
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    overflow: visible;
+    text-align: left;
+    text-transform: none;
+    cursor: pointer;
+    -webkit-appearance: none
+}
+
+.cross {
+    --hover_duration: 0.5s;
+    cursor: pointer;
+    text-decoration: none;
+    // position: relative;
+    position: absolute;
+    // top: 15%;
+    top: 2vw;
+    right: 0;
+    display: inline-block;
+    color: inherit;
+    width: 32px;
+    height: 32px;
+    -webkit-transition-property: color,opacity,transform;
+    transition-property: color,opacity,transform;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition: -webkit-transform;
+    transition: transform, -webkit-transform;
+    -webkit-transition-timing-function: cubic-bezier(0.47, 1.87, 0.68, 0.99);
+    transition-timing-function: cubic-bezier(0.47, 1.87, 0.68, 0.99);
+}
+
+.cross::after {
+    pointer-events: none;
+}
+
+.cross::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #1f1f1f;
+    display: block;
+    width: 32px;
+    height: 2px;
+    border-radius: 999px;
+}
+
+.cross::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background-color: #1f1f1f;
+    display: block;
+    width: 32px;
+    height: 2px;
+    border-radius: 999px;
+}
