@@ -265,7 +265,21 @@ const AccordionItem = ({ title, team, subtitle, content, currentOpening, jobBene
                         )}
 
                     </div>
-                    <div className={styles.right__content}>right content</div>
+
+                    <div className={styles.right__content}>
+                        <p>
+                            If you don&apos;t feel like you align exactly with these qualifications but think you&apos;d be a great fit for our team, please tell us why!
+                        </p>
+                        <p className={styles.right__email}>
+                            <span className={styles.right__cta}>To apply, email us at:</span>
+                            <a href="mailto:careers@dentalcareseattle.com" className='underline'>careers@dentalcareseattle.com</a>
+                            {/* Include the position you&apos;re interested in and a copy of your resume. */}
+                        </p>
+                        <p className={styles.right__equal}>
+                            <span className={styles.equal__span}>Dental Care Seattle is an equal opportunity employer.</span>.
+                            We celebrate diversity and are committed to creating an inclusive environment for all employees.
+                        </p>
+                    </div>
                 </div>
             )}
         </li>
