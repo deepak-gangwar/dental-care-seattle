@@ -1,4 +1,5 @@
 import Footer from "@/component/footer"
+import Hero from "@/component/pages/faq/Hero"
 import Head from "next/head"
 import Link from "next/link"
 
@@ -11,6 +12,7 @@ export default function FAQ() {
       </Head>
       <div id='faq' className='page'>
         {/* <Dots /> */}
+        <Hero />
 
         <div className="main__wrapper">
           <h1>FAQ</h1>
