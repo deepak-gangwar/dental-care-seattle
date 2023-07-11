@@ -1,6 +1,39 @@
-.main__wrapper, 
-.sidebar {
+.main__wrapper {
     padding: 0 8.3333vw;
+}
+
+.page__content {
+    position: relative;
+    padding: 6vw 0;
+}
+
+.sidebar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8.3333vw;
+    width: 340px;
+    background: #e7e6e9;
+    border-radius: 6px;
+    padding: 50px 38px;
+    padding-bottom: 100px;
+}
+
+.sidebar__heading {
+    margin-bottom: 15px;
+}
+
+.sidebar__description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    // opacity: 0.7;
+}
+
+.payment__methods {
+    position: absolute;
+    top: 38%;
+    left: calc(-100% + 22px);
+    transform: scale(0.27);
 }
 
 .cta {
@@ -25,6 +58,7 @@
     letter-spacing: -.01em;
     line-height: 1.2;
     margin: 3rem 0;
+    margin-left: -4px;
 }
 
 .lg-text {
@@ -40,4 +74,153 @@
     font-size: 1.25rem;
     line-height: 1.4;
     margin-bottom: 1.2rem;
+}
+
+
+
+
+
+
+
+
+
+.btn {
+    // grid-column: 1/4;
+    // grid-row: 3;
+    margin-top: 3rem;
+}
+
+.btn__payment {
+    cursor: pointer;
+    margin-right: -2px;
+    margin-bottom: 1px;
+}
+
+.btn__submit {
+    background: none;
+    border: none;
+    // font-size: 1.2vw;
+    font-family: inherit;
+    font-size: 1.1111vw;
+    line-height: 1.1111vw;
+    padding: 0;
+    margin: 0;
+
+}
+
+// Button styles from exo ape
+
+.link {
+    font-size: 1.1111vw;
+    line-height: 1.1111vw;
+    display: inline-flex;
+    justify-self: flex-start;
+    position: relative;
+    margin: 0 auto;
+    color: #0d0e13;
+    cursor: pointer;
+}
+
+.circle {
+    position: absolute;
+    top: -0.69444vw;
+    left: -2.22222vw;
+    width: 2.70833vw;
+    height: 2.70833vw;
+    display: flex;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
+}
+
+.circle_fill {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 100%;
+    background: #0d0e13;
+    will-change: transform;
+    transform: scale(0);
+    transition: all .5s cubic-bezier(.84,.4,.07,.7);
+    z-index: 1;
+}
+
+.circle_outline {
+    position: absolute;
+    width: 0.41667vw;
+    height: 0.41667vw;
+    overflow: visible;
+    fill: none;
+    stroke: #0d0e13;
+}
+
+.circle_outline .circle {
+    stroke-width: 1;
+    stroke: #0d0e13;
+}
+
+.circle_icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0d0e13;
+    color: white;
+    transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
+    transform: translate(-100%, 0%);
+    opacity: 0;
+    z-index: 2;
+}
+
+.icon_arrow {
+    // transform: rotate(90deg);
+    width: 0.76389vw;
+    height: 0.69444vw;
+}
+
+.btn_label {
+    padding-bottom: 0.13889vw;
+    transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
+    will-change: transform;
+}
+
+.border {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
+    transform-origin: right;
+    will-change: transform;
+    background: rgba(13,14,19,.4);
+}
+
+.link:hover {
+    .circle_fill {
+        transform: scale(1);
+    }
+
+    .circle_icon {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+
+    .btn_label {
+        transform: translate(12.8px, 0);
+    }
+    
+    .border {
+        transform: scale(0, 1);
+    }
 }
