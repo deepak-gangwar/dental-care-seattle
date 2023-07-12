@@ -40,6 +40,7 @@
 @media screen and (max-width: 480px) {
     .heading {
         font-size: 3rem;
+        font-size: 10vw;
         grid-column: 1/span 11;
     }
 }
@@ -94,7 +95,7 @@
 
 @media screen and (max-width: 480px) {
     .paragraph {
-        grid-column: 4/span 8;
+        grid-column: 3/span 9;
         height: fit-content;
     }
 }
