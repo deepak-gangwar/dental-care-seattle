@@ -1,0 +1,144 @@
+.carousel {
+    display: grid;
+    padding: 8.3333vw;
+    padding-bottom: 0;
+    // grid-column-gap: 2.22222vw;
+    // grid-row-gap: 2.22222vw;
+    grid-gap: 2.22222vw;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+
+.numbersWrapper {
+    // overflow: hidden;
+    // position: -webkit-sticky;
+    // position: sticky;
+    // top: 0;
+    height: 100vh;
+    // display: none;
+}
+
+.numbersWrapper{
+    position: relative;
+    // grid-row: 2/span 1;
+    // grid-column: 1/span 3;
+    grid-column: 4/8;
+    grid-row: 1/span 3;
+    grid-row: 1;
+}
+
+.numbers {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // padding-left: 3vw;
+}
+
+.number {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.number svg {
+    width: 100%;
+    align-self: center;
+}
+
+.headings {
+    grid-column: 1/5;
+}
+
+.heading__lg {
+    grid-column: 1/5;
+    font-weight: normal;
+    font-size: 5rem;
+    letter-spacing: -0.02em;
+    // letter-spacing: 0.01em;
+    line-height: 1.2;
+    height: fit-content;
+}
+
+.heading__lg:nth-child(1) {
+    grid-row: 1;
+}
+
+.heading__lg:nth-child(2) {
+    grid-row: 2;
+}
+
+.heading__lg:nth-child(3) {
+    grid-row: 3;
+}
+
+.indicator__wrap {
+    grid-column: 1/3;
+    grid-row: 1;
+    height: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.indicator__bar {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.indicator {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.indicator__progress {
+    width: 33%;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+}
+
+.indicator__num {
+    opacity: 1;
+    color: #999;
+}
+
+.num__current {
+    opacity: 1;
+}
+
+.num__total {
+    opacity: 1;
+}
+
+.num__separator {
+    opacity: 1;
+}
+
+
+.questions__wrap {
+    grid-column: 8/13;
+    height: fit-content;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.questions__wrap:nth-child(1) {
+    grid-row: 1;
+}
+
+.questions__wrap:nth-child(2) {
+    grid-row: 2;
+}
+
+.questions__wrap:nth-child(3) {
+    grid-row: 3;
+}
