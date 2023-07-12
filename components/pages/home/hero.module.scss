@@ -63,8 +63,16 @@
     .line:nth-of-type(2),
     .line:nth-of-type(3) {
         height: 3px;
-        width: 10%;
+        width: 8%;
         margin-bottom: 11px;
+    }
+
+    .line:nth-of-type(2) {
+        margin-left: 8px;
+    }
+
+    .line:nth-of-type(3) {
+        margin-right: 8px;
     }
 }
 

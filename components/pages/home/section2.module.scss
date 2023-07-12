@@ -61,6 +61,13 @@
     grid-column: 1/span 3;
 }
 
+@media screen and (max-width: 480px) {
+    .numbersWrapper {
+        position: absolute;
+        transform: translate(54vw, -8%);
+    }
+}
+
 .numbers {
     position: relative;
     width: 100%;
@@ -93,6 +100,12 @@
     position: relative;
     grid-column: 5/span 1;
     padding: 7.5rem 0;
+}
+
+@media screen and (max-width: 480px) {
+    .indicator {
+        display: none;
+    }
 }
 
 .container {
@@ -138,6 +151,12 @@
     grid-column: 7/span 3;
 }
 
+@media screen and (max-width: 480px) {
+    .content {
+        grid-column: 1/span 10;
+    }
+}
+
 .list {
     list-style: none;
     width: 100%;
@@ -147,6 +166,12 @@
     grid-column: 7/span 3;
     min-height: 100vh;
     padding: 3.75rem 0 0;
+}
+
+@media screen and (max-width: 480px) {
+    .item {
+        padding: 10rem 0 0;
+    }
 }
 
 .heading {
@@ -164,8 +189,20 @@
     margin: 3.125rem 0 6.25rem;
 }
 
+@media screen and (max-width: 480px) {
+    .icon {
+        margin: 0;
+    }
+}
+
 .paragraph {
     font-weight: normal;
     font-size: 1.5rem;
     line-height: 1.4;
+}
+
+@media screen and (max-width: 480px) {
+    .paragraph {
+        margin-top: 6rem;
+    }
 }
