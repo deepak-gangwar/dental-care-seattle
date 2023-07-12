@@ -32,6 +32,12 @@
   grid-column: 3/span 5;
 }
 
+@media screen and (max-width: 480px) {
+  .list {
+    display: none;
+  }
+}
+
 .item {
   display: inline-block;
   // width: calc(((100vw - 6.25rem)/10 - 1.125rem)*1 + 0rem);
@@ -62,4 +68,12 @@
   grid-column-start: 10;
   grid-column-end: 11;
   transform: translateY(-25%);
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    transform: translateY(-28%) scale(0.8);
+    grid-column: 7;
+    margin-left: 20px;
+  }
 }
