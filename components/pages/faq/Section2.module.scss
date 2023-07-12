@@ -2,50 +2,38 @@
     display: grid;
     padding: 8.3333vw;
     padding-bottom: 0;
-    // grid-column-gap: 2.22222vw;
-    // grid-row-gap: 2.22222vw;
-    grid-gap: 2.22222vw;
+    grid-column-gap: 2.22222vw;
+    grid-row-gap: 10vw;
     grid-template-columns: repeat(12,1fr);
     grid-template-rows: repeat(3,1fr);
 }
 
-.numbersWrapper {
-    // overflow: hidden;
-    // position: -webkit-sticky;
-    // position: sticky;
-    // top: 0;
+.number {
+    display: flex;
+    position: relative;
+    grid-column: 4/8;
     height: 100vh;
-    // display: none;
+    width: 100%;
+    height: 100%;
 }
 
-.numbersWrapper{
-    position: relative;
-    // grid-row: 2/span 1;
-    // grid-column: 1/span 3;
-    grid-column: 4/8;
-    grid-row: 1/span 3;
+.number:nth-of-type(1) {
     grid-row: 1;
 }
 
-.numbers {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    // padding-left: 3vw;
+.number:nth-of-type(2) {
+    grid-row: 2;
 }
 
-.number {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    display: flex;
-    width: 100%;
-    height: 100%;
+.number:nth-of-type(3) {
+    grid-row: 3;
 }
 
 .number svg {
     width: 100%;
-    align-self: center;
+    margin-top: -20vh;
+    // padding-bottom: 30vh;
+    align-self: top;
 }
 
 .headings {
@@ -107,21 +95,19 @@
 
 .indicator__num {
     opacity: 1;
+    font-size: 1vw;
     color: #999;
 }
 
 .num__current {
-    opacity: 1;
 }
 
 .num__total {
-    opacity: 1;
 }
 
 .num__separator {
-    opacity: 1;
+    padding: 0 1px;
 }
-
 
 .questions__wrap {
     grid-column: 8/13;

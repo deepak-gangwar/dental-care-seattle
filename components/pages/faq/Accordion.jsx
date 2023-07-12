@@ -66,6 +66,38 @@ const accordionData = {
             answer: `We'll first start off with a consultation to ensure you're a candidate for Invisalign. This generally takes 30 minutes. If time permits and you are a candidate, we can proceed with the treatment by scanning and taking photos which will take an additional 30 minutes—or you can come back in to begin whenever works for you.`,
         }
     ],
+    insurance: [
+        {
+            id: 1,
+            question: `Do you take dental insurance?`,
+            answer: `Absolutely. We partner with major insurers to get you great care at amazing prices. We accept all insurances, however we’re contracted with Delta Dental PPO and Premier, Regence, and some of our providers are in-network with Cigna.`,
+        },
+        {
+            id: 2,
+            question: `What if I don’t have dental insurance?`,
+            answer: `If you’re a new patient and don’t have dental insurance, your first visit costs $429. That includes a comfortable cleaning, x-rays, and a personalized exam. Any other questions? Give us a call at (206) 325-0166.`,
+        },
+        {
+            id: 3,
+            question: `Does dental insurance cover fillings, crowns, implants, and other procedures?`,
+            answer: `It depends on your insurer! If you and your dentist decide to move forward with one of these procedures, we’ll check with your insurance and give you our best possible estimate of what you’ll pay before you come in. To ensure coverage, we can also send out a pre-authorization to the insurance company, that way we’ll know your exact out-of-pocket cost. Have questions about a specific procedure? Call us at (206) 325-0166.`,
+        },
+        {
+            id: 4,
+            question: `How do I know if you’re in network or out of network?`,
+            answer: `We partner with major insurers to get you great care at the best prices, whether we’re in network or out of network. To check your benefits, give us a call at (206) 325-0166 or check on your insurance provider’s website.`,
+        },
+        {
+            id: 5,
+            question: `How do I pay my bill?`,
+            answer: `You can pay online, or we also accept payments by phone, mail, or in the office at the time of service.`,
+        },
+        {
+            id: 6,
+            question: `What if I have more questions about insurance?`,
+            answer: `We know insurance can be tricky, and we’re here to help. If you have any questions about your coverage or available benefits, give us a call at (206) 325-0166 and we’ll talk you through it.`,
+        },
+    ],
     visit: [
         {
             id: 1,
@@ -127,7 +159,7 @@ export default function Accordion({ section }) {
                 {section === "booking" && accordionData.booking.map(({ id, question, answer }) => (
                     <AccordionItem key={id} question={question} answer={answer} />
                 ))}
-                {section === "invisalign" && accordionData.invisalign.map(({ id, question, answer }) => (
+                {section === "insurance" && accordionData.insurance.map(({ id, question, answer }) => (
                     <AccordionItem key={id} question={question} answer={answer} />
                 ))}
                 {section === "visit" && accordionData.visit.map(({ id, question, answer }) => (
