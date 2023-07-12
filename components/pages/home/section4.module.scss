@@ -29,6 +29,13 @@
     grid-column-start: 2;
 }
 
+
+@media screen and (max-width: 480px) {
+    .content {
+        margin-top: 1rem;
+    }
+}
+
 .subheading {
     font-weight: normal;
 }
@@ -42,11 +49,27 @@
     transform: translate(-0.2vw, 1vw);
 }
 
+@media screen and (max-width: 480px) {
+    .icon {
+        width: 2.5vw;
+        height: 2.5vw;
+        transform: translate(0, 0.8rem);
+    }
+}
+
 .label {
     // font-size: 0.9227vw;
     font-size: 1.1vw;
     line-height: 2.56944vw;
     padding-left: 1.52778vw
+}
+
+@media screen and (max-width: 480px) {
+    .label {
+        font-size: 0.8rem;
+        padding-left: 5vw;
+        letter-spacing: 0.02em;
+    }
 }
 
 .paragraph {
@@ -60,6 +83,16 @@
     // grid-column: span 5/span 5;
 }
 
+@media screen and (max-width: 480px) {
+    .paragraph {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        max-width: 100%;
+        letter-spacing: 0.02em;
+        margin-top: 3rem;
+    }
+}
+
 .description {
     // font-size: 2rem;
     font-size: 1.1vw;
@@ -69,6 +102,16 @@
     max-width: 40ch;
     margin-top: 4rem;
     // grid-column: span 5/span 5;
+}
+
+@media screen and (max-width: 480px) {
+    .description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        letter-spacing: 0.03em;
+        opacity: 0.7;
+        margin-top: 2rem;
+    }
 }
 
 .large__heading {
@@ -81,6 +124,14 @@
     margin-left: -1rem;
 }
 
+@media screen and (max-width: 480px) {
+    .large__heading {
+        font-size: 12vw;
+        letter-spacing: 0.01em;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
 
 .strip {
     margin: 10rem 0 5rem;
@@ -94,9 +145,23 @@
     // background-color: #ead8d5;
 }
 
+@media screen and (max-width: 480px) {
+    .strip {
+        height: 69px;
+    }
+}
+
 .logo {
     margin: 25px 15px;
     // height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        margin: 10px 5px;
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .brush_face {
@@ -104,4 +169,12 @@
     position: absolute;
     top: 29%;
     right: -7%;
+}
+
+@media screen and (max-width: 480px) {
+    .brush_face {
+        transform: scale(0.6);
+        top: 30%;
+        right: -20%;
+    }
 }

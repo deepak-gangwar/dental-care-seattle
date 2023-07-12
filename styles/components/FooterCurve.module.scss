@@ -16,6 +16,12 @@
 	// fill: #16151c;
 }
 
+@media screen and (max-width: 480px) {
+    .separator {
+        display: none;
+    }
+}
+
 // The shadow overlay on the curved slide-out footer
 
 .overlay {
