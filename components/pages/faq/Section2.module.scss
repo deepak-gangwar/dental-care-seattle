@@ -128,3 +128,11 @@
 .questions__wrap:nth-child(3) {
     grid-row: 3;
 }
+
+.btn__side {
+    grid-column: 1/4;
+    grid-row: 1;
+    margin-top: 12rem;
+    margin-left: -0.5rem;
+    height: fit-content;
+}

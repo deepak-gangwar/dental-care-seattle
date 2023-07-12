@@ -1,6 +1,7 @@
 import Footer from "@/component/footer"
 import Hero from "@/component/pages/faq/Hero"
 import Section2 from "@/component/pages/faq/Section2"
+import SectionNews from "@/component/pages/faq/sectionNews"
 import Head from "next/head"
 import Link from "next/link"
 
@@ -15,6 +16,7 @@ export default function FAQ() {
         {/* <Dots /> */}
         <Hero />
         <Section2 />
+        <SectionNews />
         <Footer />
       </div>
     </>

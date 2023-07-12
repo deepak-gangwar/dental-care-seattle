@@ -1,3 +1,4 @@
+import ButtonPrimary from '@/component/buttonPrimary'
 import Accordion from './Accordion'
 import styles from './Section2.module.scss'
 
@@ -33,6 +34,7 @@ export default function Section2() {
                 </span>
 
 
+
                 {/* ================ NUMBERS ================ */}
 
                 <div className={styles.number}>
@@ -56,6 +58,9 @@ export default function Section2() {
                     <Accordion section={"visit"} />
                 </div>
 
+                <div className={styles.btn__side}>
+                    <ButtonPrimary pt={true} path={"/contact"} label={"Still have questions"} theme={"light"} />
+                </div>
             </section>
         </>
     )
