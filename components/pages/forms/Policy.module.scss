@@ -12,10 +12,24 @@
     gap: 0px 2em;
 }
 
+@media screen and (max-width: 480px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem
+    }
+}
+
 .policy {
     border-radius: 4px;
     background: #ffffff;
     padding: 3rem 2.9rem;
+}
+
+@media screen and (max-width: 480px) {
+    .policy {
+        text-align: justify;
+    }
 }
 
 .title {

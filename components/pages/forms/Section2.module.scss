@@ -10,6 +10,12 @@
     margin-top: 22.66667vw;
 }
 
+@media (max-width: 480px) {
+    .text {
+        position: relative;
+    }
+}
+
 @media (min-width: 601px) {
     .text {
         display: grid;
@@ -38,6 +44,13 @@
     margin-bottom: 5rem;
 }
 
+@media screen and (max-width: 480px) {
+    .label {
+        transform: translateX(-8px);
+        margin-bottom: 3rem;
+    }
+}
+
 @media (min-width: 601px) {
     .label {
         height: 2.36111vw;
@@ -62,6 +75,12 @@
     z-index: 1;
 }
 
+@media screen and (max-width: 480px) {
+    .icon {
+        transform: translate(-156%, 10%);
+    }
+}
+
 @media (min-width: 601px) {
     .icon {
         width: 0.83333vw;
@@ -78,6 +97,13 @@
     z-index: 1;
 }
 
+@media screen and (max-width: 480px) {
+    .subheading {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+}
+
 @media (min-width: 601px) {
     .text {
         will-change: transform;
@@ -89,6 +115,13 @@
     font-size: 3.61111vw;
     line-height: 4.44444vw;
     letter-spacing: -0.10417vw;
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
 }
 
 @media (min-width: 601px) {
@@ -113,6 +146,14 @@
     line-height: 2.22222vw;
 }
 
+@media (max-width: 480px) {
+    .paragraph {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 2rem 0 5rem;
+    }
+}
+
 .accent {
     width: 58%;
     height: 1px;
@@ -122,6 +163,14 @@
     position: absolute;
     right: 0;
     transform: translateY(-12px);
+}
+
+@media (max-width: 480px) {
+    .accent {
+        width: 53%;
+        transform: translateY(0);
+        opacity: 0;
+    }
 }
 
 
@@ -147,6 +196,13 @@
     color: #0d0e13;
 }
 
+@media screen and (max-width: 480px) {
+    .link {
+        font-size: 1rem;
+        line-height: 1.1;
+    }
+}
+
 .circle {
     position: absolute;
     top: -0.69444vw;
@@ -159,6 +215,15 @@
     justify-content: center;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
+}
+
+@media screen and (max-width: 480px) {
+    .circle {
+        width: 20px;
+        height: 20px;
+        left: -20px;
+        top: -1px;
+    }
 }
 
 .circle_fill {
@@ -182,6 +247,13 @@
     overflow: visible;
     fill: none;
     stroke: #0d0e13;
+}
+
+@media screen and (max-width: 480px) {
+    .circle_outline {
+        width: 6px;
+        height: 6px;
+    }
 }
 
 .circle_outline .circle {
@@ -210,6 +282,13 @@
 .icon_arrow {
     width: 0.76389vw;
     height: 0.69444vw;
+}
+
+@media screen and (max-width: 480px) {
+    .icon_arrow {
+        width: 7px;
+        height: 5px;
+    }
 }
 
 .btn_label {
