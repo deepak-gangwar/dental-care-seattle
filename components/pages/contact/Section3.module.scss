@@ -3,6 +3,12 @@
     // border-bottom: 1px solid #1c1c1c50;
 }
 
+@media screen and (max-width: 480px) {
+    .container {
+        margin-bottom: 4rem;
+    }
+}
+
 .text {
     margin-top: 22.66667vw;
 }
@@ -34,10 +40,23 @@
     grid-row: 1;
 }
 
+@media screen and (max-width: 480px) {
+    .accent {
+        margin: 3rem 0;
+    }
+}
+
 .arrow {
     grid-column: 1;
     grid-row: 1;
     transform: translateY(-50%);
+}
+
+@media screen and (max-width: 480px) {
+    .arrow {
+        transform: translateX(-4px) scale(0.7);
+        display: inline-block;
+    }
 }
 
 .left__content {
@@ -62,6 +81,19 @@
     letter-spacing: 0vw;
     color: #0d0e13;
     opacity: 0.7;
+}
+
+@media screen and (max-width: 480px) {
+    .label {
+        grid-column: 1/6;
+        line-height: 1.2;
+        font-size: 0.9rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .label:not(:first-child) {
+        margin-top: 2.4rem;
+    }
 }
 
 @media (min-width: 601px) {
@@ -103,6 +135,19 @@
     // letter-spacing: -0.10417vw;
 }
 
+@media screen and (max-width: 480px) {
+    .right__title {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        grid-column: 1/6;
+    }
+
+    .right__title:first-child {
+        // background: red;
+        margin-top: 5rem;
+    }
+}
+
 @media (min-width: 601px) {
     .body, .title1 {
         grid-column: 1/6;
@@ -113,6 +158,12 @@
         // padding-right: 8rem;
         grid-column: 1/6;
         // grid-row: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .body {
+        grid-column: 1/6;
     }
 }
 
@@ -131,9 +182,23 @@
     line-height: 2.22222vw;
 }
 
+@media (max-width: 480px) {
+    .paragraph {
+        font-size: 1rem;
+        line-height: 1.6;
+        // padding: 2rem 0 5rem;
+    }
+}
+
 .right__body {
     grid-column: 1/6;
     padding-right: 45px;
+}
+
+@media screen and (max-width: 480px) {
+    .right__body {
+        padding-right: 0;
+    }
 }
 
 .days1 {
@@ -147,6 +212,12 @@
 }
 
 
+@media screen and (max-width: 480px) {
+    .days1, .days2 {
+        grid-column: 1/6;
+    }
+}
+
 
 
 
@@ -156,12 +227,26 @@
     margin-bottom: 10px;
 }
 
+@media screen and (max-width: 480px) {
+    .left__btn {
+        grid-column: 1/6;
+        margin-bottom: 15px;
+        // padding-left: 0;
+    }
+}
+
 .btn {
     grid-column: 7/11;
     grid-row: 3;
     margin-top: 3rem;
 }
 
+@media screen and (max-width: 480px) {
+    .btn {
+        grid-column: 1/6;
+        padding-left: 0;
+    }
+}
 
 // Button styles from exo ape
 
@@ -173,6 +258,13 @@
     position: relative;
     margin: 0 auto;
     color: #0d0e13;
+}
+
+@media screen and (max-width: 480px) {
+    .link {
+        font-size: 1rem;
+        line-height: 1.1;
+    }
 }
 
 .circle {
@@ -187,6 +279,15 @@
     justify-content: center;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
+}
+
+@media screen and (max-width: 480px) {
+    .circle {
+        width: 20px;
+        height: 20px;
+        left: -20px;
+        top: -1px;
+    }
 }
 
 .circle_fill {
@@ -210,6 +311,13 @@
     overflow: visible;
     fill: none;
     stroke: #0d0e13;
+}
+
+@media screen and (max-width: 480px) {
+    .circle_outline {
+        width: 6px;
+        height: 6px;
+    }
 }
 
 .circle_outline .circle {
@@ -238,6 +346,13 @@
 .icon_arrow {
     width: 0.76389vw;
     height: 0.69444vw;
+}
+
+@media screen and (max-width: 480px) {
+    .icon_arrow {
+        width: 7px;
+        height: 5px;
+    }
 }
 
 .btn_label {

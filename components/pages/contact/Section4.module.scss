@@ -6,6 +6,14 @@
     margin: 0 8.33333vw;
 }
 
+
+@media (max-width: 480px) {
+    .container {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
 .text {
     // margin-top: 22.66667vw;
 }
@@ -39,6 +47,14 @@
     margin-bottom: 5rem;
 }
 
+@media screen and (max-width: 480px) {
+    .label {
+        margin-bottom: 3rem;
+        line-height: 1.2;
+        transform: translateX(-8px);
+    }
+}
+
 @media (min-width: 601px) {
     .label {
         height: 2.36111vw;
@@ -63,6 +79,12 @@
     z-index: 1;
 }
 
+@media (max-width: 480px) {
+    .icon {
+        transform: translate(-156%, 10%);
+    }
+}
+
 @media (min-width: 601px) {
     .icon {
         width: 0.83333vw;
@@ -79,6 +101,12 @@
     z-index: 1;
 }
 
+@media (max-width: 480px) {
+    .subheading {
+        font-size: 0.9rem;
+    }
+}
+
 @media (min-width: 601px) {
     .text {
         will-change: transform;
@@ -91,6 +119,13 @@
     line-height: 4.44444vw;
     letter-spacing: -0.10417vw;
     margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
 }
 
 @media (min-width: 601px) {
@@ -299,6 +334,12 @@
     outline: none
 }
 
+@media (max-width: 480px) {
+    .input__select {
+        font-size: 1rem;
+    }
+}
+
 
 .hiring__wrap {
     position: relative;
@@ -308,6 +349,15 @@
     border-radius: 20px;
     margin: 3rem 0 1rem;
     // grid-row: 4;
+}
+
+@media (max-width: 480px) {
+    .hiring__wrap {
+        display: inline-block;
+        padding: 1.6rem 2rem;
+        width: 100%;
+        border-radius: 16px;
+    }
 }
 
 .hiring__heading {
@@ -324,9 +374,23 @@
     margin:  1rem 0 0.6rem;
 }
 
+@media (max-width: 480px) {
+    .hiring__para {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}
+
 .arrow {
     position: absolute;
     right: 4.125rem;
     top: 50%;
     transform: translateY(-60%) rotate(-90deg);
+}
+
+@media (max-width: 480px) {
+    .arrow {
+        right: 2rem;
+        transform: translateY(-60%) rotate(-90deg) scale(0.7);
+    }
 }

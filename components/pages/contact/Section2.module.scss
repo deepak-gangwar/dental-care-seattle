@@ -38,6 +38,12 @@
     margin-bottom: 5rem;
 }
 
+@media screen and (max-width: 480px) {
+    .label {
+        margin-bottom: 3rem;
+    }
+}
+
 @media (min-width: 601px) {
     .label {
         height: 2.36111vw;
@@ -62,6 +68,12 @@
     z-index: 1;
 }
 
+@media (max-width: 480px) {
+    .icon {
+        transform: translate(-156%, -33%);
+    }
+}
+
 @media (min-width: 601px) {
     .icon {
         width: 0.83333vw;
@@ -78,6 +90,12 @@
     z-index: 1;
 }
 
+@media (max-width: 480px) {
+    .subheading {
+        font-size: 0.9rem;
+    }
+}
+
 @media (min-width: 601px) {
     .text {
         will-change: transform;
@@ -90,6 +108,13 @@
     font-size: 3.61111vw;
     line-height: 4.44444vw;
     letter-spacing: -0.10417vw;
+}
+
+@media (max-width: 480px) {
+    .title1, .title2 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
 }
 
 @media (min-width: 601px) {
@@ -120,6 +145,14 @@
     line-height: 2.22222vw;
 }
 
+@media (max-width: 480px) {
+    .paragraph {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 2rem 0 5rem;
+    }
+}
+
 .accent {
     width: 100%;
     height: 1px;
@@ -143,6 +176,12 @@
     margin-top: 3rem;
 }
 
+@media screen and (max-width: 480px) {
+    .btn {
+        grid-column: 1/6;
+        padding-left: 0;
+    }
+}
 
 // Button styles from exo ape
 
@@ -154,6 +193,13 @@
     position: relative;
     margin: 0 auto;
     color: #0d0e13;
+}
+
+@media screen and (max-width: 480px) {
+    .link {
+        font-size: 1rem;
+        line-height: 1.1;
+    }
 }
 
 .circle {
@@ -168,6 +214,15 @@
     justify-content: center;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
+}
+
+@media screen and (max-width: 480px) {
+    .circle {
+        width: 20px;
+        height: 20px;
+        left: -20px;
+        top: -1px;
+    }
 }
 
 .circle_fill {
@@ -191,6 +246,13 @@
     overflow: visible;
     fill: none;
     stroke: #0d0e13;
+}
+
+@media screen and (max-width: 480px) {
+    .circle_outline {
+        width: 6px;
+        height: 6px;
+    }
 }
 
 .circle_outline .circle {
@@ -219,6 +281,13 @@
 .icon_arrow {
     width: 0.76389vw;
     height: 0.69444vw;
+}
+
+@media screen and (max-width: 480px) {
+    .icon_arrow {
+        width: 7px;
+        height: 5px;
+    }
 }
 
 .btn_label {
