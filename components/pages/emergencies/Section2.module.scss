@@ -38,6 +38,13 @@
     margin-bottom: 5rem;
 }
 
+@media screen and (max-width: 480px)  {
+    .label {
+        transform: translateX(-8px);
+        margin-bottom: 3rem;
+    }
+}
+
 @media (min-width: 601px) {
     .label {
         height: 2.36111vw;
@@ -62,6 +69,12 @@
     z-index: 1;
 }
 
+@media screen and (max-width: 480px)  {
+    .icon {
+        transform: translate(-156%, 10%);
+    }
+}
+
 @media (min-width: 601px) {
     .icon {
         width: 0.83333vw;
@@ -78,6 +91,13 @@
     z-index: 1;
 }
 
+@media screen and (max-width: 480px)  {
+    .subheading {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+}
+
 @media (min-width: 601px) {
     .text {
         will-change: transform;
@@ -91,6 +111,14 @@
     line-height: 2.7778vw;
     line-height: 3vw;
     letter-spacing: -0.00694vw;
+}
+
+@media screen and (max-width: 480px)  {
+    .title {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 5rem;
+    }
 }
 
 @media (min-width: 601px) {
@@ -123,6 +151,18 @@
     opacity: 0.24;
 }
 
+@media screen and (max-width: 480px)  {
+    .accent {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 45%;
+    }
+}
+
+.info {
+    position: relative;
+}
 
 @media (min-width: 601px) {
     .info {
@@ -146,11 +186,29 @@
     margin-bottom: auto;
 }
 
+
+@media screen and (max-width: 480px)  {
+    .heading {
+        margin-bottom: 1.5rem;
+    }
+}
+
 .info ul {
     color: rgba(13,14,19,.6);
     grid-row: 2;
     list-style-type: none;
     margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 480px) {
+    .info ul {
+        margin-top: 0;
+    }
+
+    .info li {
+        padding: 5px 0;
+    }
 }
 
 .list1 {
