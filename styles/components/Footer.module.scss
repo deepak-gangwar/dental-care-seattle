@@ -224,6 +224,12 @@
     }
 }
 
+@media (max-width: 480px) {
+    .footer_t>div:nth-child(1) {
+        width: max-content;
+    }
+}
+
 @media (max-width: 760px) {
     .footer_t>div:nth-child(1) {
         z-index: 2;

@@ -47,11 +47,27 @@
     transform: scale(0.27);
 }
 
+@media screen and (max-width: 480px)  {
+    .payment__methods {
+        bottom: 0;
+        left: 38px;
+        transform-origin: left;
+        transform: scale(0.2);
+    }
+}
+
 .cta {
     width: 330px;
     font-size: 0.9rem;
     line-height: 1.4;
     opacity: 0.7;
+}
+
+@media screen and (max-width: 480px) {
+    .cta {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 .separator {
