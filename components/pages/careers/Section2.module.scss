@@ -13,6 +13,14 @@
     }
 }
 
+@media (max-width: 480px) {
+    .flush_image {
+        height: 40vh;
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+    }
+}
+
 .separator {
     width: 85%;
     height: 1px;

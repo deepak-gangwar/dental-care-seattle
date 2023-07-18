@@ -50,6 +50,12 @@
     line-height: 1.2;
 }
 
+@media (max-width: 480px) {
+    .job__title {
+        font-size: 3rem;
+    }
+}
+
 .job__team {
     font-weight: normal;
     font-size: 0.9rem;
@@ -74,6 +80,12 @@
     // width: 42ch;
     width: 44ch;
     margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+    .left__content {
+        width: 100%;
+    }
 }
 
 .left__content p {
@@ -121,6 +133,14 @@
     transition-timing-function: cubic-bezier(0.47, 1.87, 0.68, 0.99);
 }
 
+@media (max-width: 480px) {
+    .cross {
+        width: 20px;
+        height: 20px;
+        top: 1.3rem;
+    }
+}
+
 .cross::after {
     pointer-events: none;
 }
@@ -139,6 +159,13 @@
     border-radius: 999px;
 }
 
+@media (max-width: 480px) {
+    .cross::after {
+        width: 20px;
+        top: 8px;
+    }
+}
+
 .cross::before {
     content: "";
     position: absolute;
@@ -155,7 +182,12 @@
     border-radius: 999px;
 }
 
-
+@media (max-width: 480px) {
+    .cross::before {
+        width: 20px;
+        top: 8px;
+    }
+}
 
 .job__subtitle {
     width: 29ch;
@@ -164,12 +196,25 @@
     margin: 2rem 0;
 }
 
+@media (max-width: 480px) {
+    .job__subtitle {
+        font-size: 1.2rem;
+    }
+}
+
 .job__intro {
     width: 44ch;
     text-align: justify;
     line-height: 1.8;
     opacity: 0.75;
     // margin-bottom: 3rem;
+}
+
+@media (max-width: 480px) {
+    p.job__intro {
+        width: 100%;
+        line-height: 1.8;
+    }
 }
 
 .job__headings {
@@ -209,6 +254,12 @@
     padding: 33px 33px;
 }
 
+@media (max-width: 480px) {
+    .right__content {
+        position: relative;
+    }
+}
+
 .right__email {
     padding-top: 50px;
 }
@@ -227,6 +278,12 @@
     color: #999;
     border-top: 1px solid #999;
     padding-top: 1.2rem;
+}
+
+@media (max-width: 480px) {
+    .right__equal {
+        font-size: 0.9rem;
+    }
 }
 
 .equal__span {
