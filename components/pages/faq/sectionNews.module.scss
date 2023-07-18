@@ -36,6 +36,14 @@
     transform: translate(-1.8vw, 0.4vw);
 }
 
+@media (max-width: 480px) {
+    .subheadingIcon {
+        width: 2.5vw;
+        height: 2.5vw;
+        transform: translate(-1rem, 0.3rem);
+    }
+}
+
 .heading h3 {
     line-height: 1.1;
     // letter-spacing: -0.01em;
@@ -48,9 +56,22 @@
     margin-top: 4rem;
 }
 
+@media (max-width: 480px) {
+    .heading h3 {
+        font-size: 4rem;
+    }
+}
+
 .description {
     margin-top: 3rem;
     margin-bottom: 3rem;
     font-size: 1.9vw;
     max-width: 30ch;
+}
+
+@media (max-width: 480px) {
+    .description {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
 }

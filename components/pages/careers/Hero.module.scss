@@ -52,7 +52,6 @@
     margin-bottom: 25px;
     margin-right: 25px;
     background: #060508;
-    display: none;
 }
 
 .line:nth-of-type(2) {
@@ -66,6 +65,7 @@
         height: 3px;
         width: 8%;
         margin-bottom: 11px;
+        display: none;
     }
 
     .line:nth-of-type(2) {
