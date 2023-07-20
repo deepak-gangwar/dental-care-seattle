@@ -33,6 +33,9 @@
     letter-spacing: -0.01em;
     font-weight: normal;
     font-size: 8rem;
+    font-size: clamp(1rem, 10vw, 10rem);
+    position: relative;
+    transform: translateY(-110%);
 }
 
 @media screen and (max-width: 480px) {
@@ -62,6 +65,7 @@
     margin-top: 4.6875rem;
     padding: 0;
     grid-column: 2/span 1;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 480px) {
