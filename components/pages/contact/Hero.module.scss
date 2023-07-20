@@ -53,8 +53,10 @@
 
 .line {
     display: inline-block;
-    width: 100px;
-    height: 8px;
+    // width: 100px;
+    // height: 8px;
+    width: 8vw;
+    height: calc(1.5px + 0.56vw);
     margin-bottom: 25px;
     margin-right: 25px;
     background: #060508;
