@@ -23,14 +23,14 @@ export default function Navbar() {
 
         {/* Links to other pages */}
         <ul className={styles.list}>
-          <li className={styles.item}>
+          <li className={`js-nav-item ${styles.item}`}>
             <Link type="page" href="/services" className={`js-pt underline ${styles.link} header__link${router.pathname == "/services" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the services page">Services</Link>
             {/* <Link type="page" href="/services" className={`underline__link ${styles.link} ${router.pathname == "/services" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the services page"><span className="underline__span">Services</span></Link> */}
           </li>
-          <li className={styles.item}>
+          <li className={`js-nav-item ${styles.item}`}>
             <Link type="page" href="/team" className={`js-pt underline ${styles.link} header__link${router.pathname == "/team" ? ' header__link--active' : ''}`} role="link" aria-label="Go to our team page">Our Team</Link>
           </li>
-          <li className={styles.item}>
+          <li className={`js-nav-item ${styles.item}`}>
             <Link type="page" href="/about" className={`js-pt underline ${styles.link} header__link${router.pathname == "/about" ? ' header__link--active' : ''}`} role="link" aria-label="Go to the about page">About Us</Link>
           </li>
           {/* <li className={styles.item}>

@@ -30,6 +30,9 @@
   list-style: none;
   display: block;
   grid-column: 3/span 5;
+  height: fit-content;
+  overflow: hidden;
+  padding-bottom: 3px;
 }
 
 @media screen and (max-width: 480px) {
@@ -45,6 +48,9 @@
   margin: 0 3.75rem 0 0;
   vertical-align: middle;
   white-space: nowrap;
+  // added later for animation
+  // overflow: hidden;
+  // height: 52%;
 }
 
 .item:last-child {

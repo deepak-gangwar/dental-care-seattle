@@ -160,8 +160,9 @@ export default function App({ Component, pageProps }) {
       // Dont' run the transition animation if we are on the same page
       if (router.pathname !== href) {
         const page = document.querySelector('.page')
-        tl.to(sail, { duration: 1.5, transform: "translate3d(0px, 0px, 0px)", ease: "circ.inOut" }, 0)
-        tl.to(page, { duration: 1.5, transform: "translateY(-70px)", ease: "power2.inOut" }, 0)
+        tl.to(sail, { duration: 1.2, transform: "translate3d(0px, 0px, 0px)", ease: "power3.inOut" }, 0)
+        tl.to(page, { duration: 1.2, transform: "translateY(-70px)", ease: "power2.inOut" }, 0)
+        tl.to('.js-nav-item', { duration: 1, transform: "translateY(-150%)", ease: "power2.inOut" }, 0)
         tl.call(() => router.push(href))
       }
     };
@@ -170,9 +171,69 @@ export default function App({ Component, pageProps }) {
     const pageIn = () => {
       const page = document.querySelector('.page')
       tl.add("mutA")
-      tl.to(sail, { duration: 1.5, transform: "translate3d(0px, -100%, 0px)", ease: "circ.inOut" }, "mutA")
-      tl.from(page, { duration: 1.5, transform: "translateY(70px)", ease: "power2.inOut" }, "mutA")
+      tl.to(sail, { duration: 1.2, transform: "translate3d(0px, -100%, 0px)", ease: "power3.inOut" }, "mutA")
+      tl.from(page, { duration: 1.2, transform: "translateY(70px)", ease: "power2.inOut" }, "mutA")
       tl.to(sail, { duration: 0, transform: "translate3d(0px, 101%, 0px)" });
+      tl.fromTo('.js-nav-item', { transform: "translateY(130%)" }, { duration: 1.2, transform: "translateY(0%)", ease: "power2.inOut", stagger: 0.1, delay: 0.5 }, "mutA")
+
+      const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
+      const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
+      const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
+
+
+      // MAIN TIMELINE
+      // =============
+
+      const tl2 = new gsap.timeline({
+        paused: true,
+        force3D: true,
+      })
+
+
+      // NOTE: THIS TITLEWORDS IS NOT ITERABLE
+      let heroSplit = document.querySelectorAll('.js-hero-split')
+      const titleWords = heroSplit[0].children
+      for (let i = 0; i < titleWords.length; i++) {
+        tl2.from(titleWords[i], {
+          yPercent: 100,
+          rotateX: 110,
+          duration: 1.5 + i / 15,
+          // duration: 1.5 + i / 10 + i * 0.02,
+          ease: 'power3.inOut',
+          // delay: n
+        }, 0)
+      }
+
+      // If more than 1 line in hero title
+      if (heroSplit.length > 1) {
+        const secondWords = heroSplit[1].children
+        for (let i = 0; i < secondWords.length; i++) {
+          tl2.from(secondWords[i], {
+            yPercent: 100,
+            rotateX: 130,
+            duration: 1.5 + i / 15,
+            ease: 'power3.inOut',
+          }, 0)
+        }
+      }
+
+      tl2.from('.arrow-icon', {
+        y: "-100%",
+        x: "-100%",
+        // scale: 0,
+        duration: 1.5,
+        ease: 'power3.inOut',
+        delay: 0.3,
+      }, 0)
+
+      tl2.from('.js-hero-line', {
+        scaleX: 0,
+        duration: 1.5,
+        ease: 'expo.inOut',
+        // delay: 1,
+      }, 1.2)
+
+      tl2.play()
     };
     router.events.on('routeChangeComplete', pageIn);
 
@@ -189,6 +250,10 @@ export default function App({ Component, pageProps }) {
     }
   }, [router])
 
+
+  // GSAP ANIMATIONS
+  // ===============
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       // all your GSAP animation code here
@@ -197,6 +262,8 @@ export default function App({ Component, pageProps }) {
       // =================
 
       const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
+      const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
+      const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
 
 
       // MAIN TIMELINE
@@ -234,6 +301,40 @@ export default function App({ Component, pageProps }) {
           }, 0)
         }
       }
+
+      tl.from('.arrow-icon', {
+        y: "-100%",
+        x: "-100%",
+        // scale: 0,
+        duration: 1.5,
+        ease: 'power3.inOut',
+        delay: 0.3,
+      }, 0)
+
+      tl.from('.js-hero-line', {
+        scaleX: 0,
+        duration: 1.5,
+        ease: 'expo.inOut',
+        // delay: 1,
+      }, 1.2)
+
+      // const heroSubtitle = splits.lines.forEach((line, i) => {
+      //   tl.from(line, {
+      //     yPercent: 200,
+      //     autoAlpha: 0,
+      //     duration: 1.2,
+      //     ease: 'power3',
+      //     delay: 0.8 + i / 8,
+      //   }, 0)
+      // })
+
+      // tl.from('.s_word', {
+      //   yPercent: 110,
+      //   // autoAlpha: 0,
+      //   duration: 1.2,
+      //   ease: 'power3.out',
+      //   delay: 1,
+      // }, 0)
 
       tl.play()
     });

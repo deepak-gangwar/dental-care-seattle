@@ -178,3 +178,12 @@ main {
     line-height: 1.1;
     text-wrap: nowrap;
 }
+
+.s_line {
+  position: relative;
+  overflow: hidden;
+}
+
+.s_word {
+  position: absolute;
+}

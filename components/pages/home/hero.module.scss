@@ -63,6 +63,7 @@
     margin-right: 25px;
     background: #060508;
     position: absolute;
+    transform-origin: center;
 }
 
 .line:nth-of-type(2) {
@@ -99,6 +100,7 @@
     margin-top: 4.6875rem;
     padding: 0;
     grid-column: 2/span 1;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 480px) {
