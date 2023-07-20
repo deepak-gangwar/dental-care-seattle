@@ -176,64 +176,66 @@ export default function App({ Component, pageProps }) {
       tl.to(sail, { duration: 0, transform: "translate3d(0px, 101%, 0px)" });
       tl.fromTo('.js-nav-item', { transform: "translateY(130%)" }, { duration: 1.2, transform: "translateY(0%)", ease: "power2.inOut", stagger: 0.1, delay: 0.5 }, "mutA")
 
-      const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
-      const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
-      const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
+      if (document.getElementById('services') !== document.querySelector('.page')) {
+        const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
+        const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
+        const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
 
 
-      // MAIN TIMELINE
-      // =============
+        // MAIN TIMELINE
+        // =============
 
-      const tl2 = new gsap.timeline({
-        paused: true,
-        force3D: true,
-      })
+        const tl2 = new gsap.timeline({
+          paused: true,
+          force3D: true,
+        })
 
 
-      // NOTE: THIS TITLEWORDS IS NOT ITERABLE
-      let heroSplit = document.querySelectorAll('.js-hero-split')
-      const titleWords = heroSplit[0].children
-      for (let i = 0; i < titleWords.length; i++) {
-        tl2.from(titleWords[i], {
-          yPercent: 100,
-          rotateX: 110,
-          duration: 1.5 + i / 15,
-          // duration: 1.5 + i / 10 + i * 0.02,
-          ease: 'power3.inOut',
-          // delay: n
-        }, 0)
-      }
-
-      // If more than 1 line in hero title
-      if (heroSplit.length > 1) {
-        const secondWords = heroSplit[1].children
-        for (let i = 0; i < secondWords.length; i++) {
-          tl2.from(secondWords[i], {
+        // NOTE: THIS TITLEWORDS IS NOT ITERABLE
+        let heroSplit = document.querySelectorAll('.js-hero-split')
+        const titleWords = heroSplit[0].children
+        for (let i = 0; i < titleWords.length; i++) {
+          tl2.from(titleWords[i], {
             yPercent: 100,
-            rotateX: 130,
+            rotateX: 110,
             duration: 1.5 + i / 15,
+            // duration: 1.5 + i / 10 + i * 0.02,
             ease: 'power3.inOut',
+            // delay: n
           }, 0)
         }
+
+        // If more than 1 line in hero title
+        if (heroSplit.length > 1) {
+          const secondWords = heroSplit[1].children
+          for (let i = 0; i < secondWords.length; i++) {
+            tl2.from(secondWords[i], {
+              yPercent: 100,
+              rotateX: 130,
+              duration: 1.5 + i / 15,
+              ease: 'power3.inOut',
+            }, 0)
+          }
+        }
+
+        tl2.from('.arrow-icon', {
+          y: "-100%",
+          x: "-100%",
+          // scale: 0,
+          duration: 1.5,
+          ease: 'power3.inOut',
+          delay: 0.3,
+        }, 0)
+
+        tl2.from('.js-hero-line', {
+          scaleX: 0,
+          duration: 1.5,
+          ease: 'expo.inOut',
+          // delay: 1,
+        }, 1.2)
+
+        tl2.play()
       }
-
-      tl2.from('.arrow-icon', {
-        y: "-100%",
-        x: "-100%",
-        // scale: 0,
-        duration: 1.5,
-        ease: 'power3.inOut',
-        delay: 0.3,
-      }, 0)
-
-      tl2.from('.js-hero-line', {
-        scaleX: 0,
-        duration: 1.5,
-        ease: 'expo.inOut',
-        // delay: 1,
-      }, 1.2)
-
-      tl2.play()
     };
     router.events.on('routeChangeComplete', pageIn);
 
@@ -258,85 +260,89 @@ export default function App({ Component, pageProps }) {
     let ctx = gsap.context(() => {
       // all your GSAP animation code here
 
-      // SPLIT THE LETTERS
-      // =================
-
-      const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
-      const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
-      const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
+      if (document.getElementById('services') !== document.querySelector('.page')) {
 
 
-      // MAIN TIMELINE
-      // =============
+        // SPLIT THE LETTERS
+        // =================
 
-      const tl = new gsap.timeline({
-        paused: true,
-        force3D: true,
-      })
+        const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
+        const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
+        const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
 
 
-      // NOTE: THIS TITLEWORDS IS NOT ITERABLE
-      let heroSplit = document.querySelectorAll('.js-hero-split')
-      const titleWords = heroSplit[0].children
-      for (let i = 0; i < titleWords.length; i++) {
-        tl.from(titleWords[i], {
-          yPercent: 100,
-          rotateX: 110,
-          duration: 1.5 + i / 15,
-          // duration: 1.5 + i / 10 + i * 0.02,
-          ease: 'power3.inOut',
-          // delay: n
-        }, 0)
-      }
+        // MAIN TIMELINE
+        // =============
 
-      // If more than 1 line in hero title
-      if (heroSplit.length > 1) {
-        const secondWords = heroSplit[1].children
-        for (let i = 0; i < secondWords.length; i++) {
-          tl.from(secondWords[i], {
+        const tl = new gsap.timeline({
+          paused: true,
+          force3D: true,
+        })
+
+
+        // NOTE: THIS TITLEWORDS IS NOT ITERABLE
+        let heroSplit = document.querySelectorAll('.js-hero-split')
+        const titleWords = heroSplit[0].children
+        for (let i = 0; i < titleWords.length; i++) {
+          tl.from(titleWords[i], {
             yPercent: 100,
-            rotateX: 130,
+            rotateX: 110,
             duration: 1.5 + i / 15,
+            // duration: 1.5 + i / 10 + i * 0.02,
             ease: 'power3.inOut',
+            // delay: n
           }, 0)
         }
+
+        // If more than 1 line in hero title
+        if (heroSplit.length > 1) {
+          const secondWords = heroSplit[1].children
+          for (let i = 0; i < secondWords.length; i++) {
+            tl.from(secondWords[i], {
+              yPercent: 100,
+              rotateX: 130,
+              duration: 1.5 + i / 15,
+              ease: 'power3.inOut',
+            }, 0)
+          }
+        }
+
+        tl.from('.arrow-icon', {
+          y: "-100%",
+          x: "-100%",
+          // scale: 0,
+          duration: 1.5,
+          ease: 'power3.inOut',
+          delay: 0.3,
+        }, 0)
+
+        tl.from('.js-hero-line', {
+          scaleX: 0,
+          duration: 1.5,
+          ease: 'expo.inOut',
+          // delay: 1,
+        }, 1.2)
+
+        // const heroSubtitle = splits.lines.forEach((line, i) => {
+        //   tl.from(line, {
+        //     yPercent: 200,
+        //     autoAlpha: 0,
+        //     duration: 1.2,
+        //     ease: 'power3',
+        //     delay: 0.8 + i / 8,
+        //   }, 0)
+        // })
+
+        // tl.from('.s_word', {
+        //   yPercent: 110,
+        //   // autoAlpha: 0,
+        //   duration: 1.2,
+        //   ease: 'power3.out',
+        //   delay: 1,
+        // }, 0)
+
+        tl.play()
       }
-
-      tl.from('.arrow-icon', {
-        y: "-100%",
-        x: "-100%",
-        // scale: 0,
-        duration: 1.5,
-        ease: 'power3.inOut',
-        delay: 0.3,
-      }, 0)
-
-      tl.from('.js-hero-line', {
-        scaleX: 0,
-        duration: 1.5,
-        ease: 'expo.inOut',
-        // delay: 1,
-      }, 1.2)
-
-      // const heroSubtitle = splits.lines.forEach((line, i) => {
-      //   tl.from(line, {
-      //     yPercent: 200,
-      //     autoAlpha: 0,
-      //     duration: 1.2,
-      //     ease: 'power3',
-      //     delay: 0.8 + i / 8,
-      //   }, 0)
-      // })
-
-      // tl.from('.s_word', {
-      //   yPercent: 110,
-      //   // autoAlpha: 0,
-      //   duration: 1.2,
-      //   ease: 'power3.out',
-      //   delay: 1,
-      // }, 0)
-
-      tl.play()
     });
 
     return () => ctx.revert(); // <- cleanup!
