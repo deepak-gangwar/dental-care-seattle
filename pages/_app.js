@@ -3,12 +3,15 @@ import { useEffect, useLayoutEffect } from 'react'
 import { useRouter } from 'next/router'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import { SplitText } from "@/component/splitText"
+import { SplitText } from "@/component/split-text"
 import Navbar from '@/component/Navbar'
 import Loader from '@/component/Loader'
 import SVGSpritesheet from '@/component/svgSpritesheet'
 import Lenis from '@studio-freight/lenis'
 import Footer from '@/component/footer'
-gsap.registerPlugin(ScrollTrigger)
+
+gsap.registerPlugin(ScrollTrigger, SplitText)
 
 
 export default function App({ Component, pageProps }) {
@@ -185,6 +188,58 @@ export default function App({ Component, pageProps }) {
       })
     }
   }, [router])
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      // all your GSAP animation code here
+
+      // SPLIT THE LETTERS
+      // =================
+
+      const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
+
+
+      // MAIN TIMELINE
+      // =============
+
+      const tl = new gsap.timeline({
+        paused: true,
+        force3D: true,
+      })
+
+
+      // NOTE: THIS TITLEWORDS IS NOT ITERABLE
+      let heroSplit = document.querySelectorAll('.js-hero-split')
+      const titleWords = heroSplit[0].children
+      for (let i = 0; i < titleWords.length; i++) {
+        tl.from(titleWords[i], {
+          yPercent: 100,
+          rotateX: 110,
+          duration: 1.5 + i / 15,
+          // duration: 1.5 + i / 10 + i * 0.02,
+          ease: 'power3.inOut',
+          // delay: n
+        }, 0)
+      }
+
+      // If more than 1 line in hero title
+      if (heroSplit.length > 1) {
+        const secondWords = heroSplit[1].children
+        for (let i = 0; i < secondWords.length; i++) {
+          tl.from(secondWords[i], {
+            yPercent: 100,
+            rotateX: 130,
+            duration: 1.5 + i / 15,
+            ease: 'power3.inOut',
+          }, 0)
+        }
+      }
+
+      tl.play()
+    });
+
+    return () => ctx.revert(); // <- cleanup!
+  }, [])
 
 
   // RENDERING

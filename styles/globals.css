@@ -170,3 +170,11 @@ main {
     transform-origin: left center;
   }
 }
+
+.js-hero-split {
+    perspective: 1000px;
+    position: absolute;
+    overflow: hidden;
+    line-height: 1.1;
+    text-wrap: nowrap;
+}

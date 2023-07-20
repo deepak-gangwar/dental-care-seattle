@@ -37,7 +37,7 @@ const accordionData = [
     {
         title: 'Patient Care Coordinator',
         team: 'Front Office Team',
-        subtitle: `Job DescriptionDesk team!`,
+        subtitle: `Job Description`,
         // subtitle: `We're looking for our next Patient Care Coordinator to join our friendly Front Desk team!`,
         content: `Welcome to Dental Care Seattle—a well-established Seattle dental office in the First Hill neighborhood! We're a multiple-doctor, modern practice with an energetic staff looking for a responsible, outgoing team player seeking a long term stable position with room for growth and advancement. We take pride in offering state-of-the-art technology, a beautiful light-filled and modern office, and the best possible care to our patients. Not only is our staff welcoming and supportive, we feel more like family than co-workers! `,
         currentOpening: ' 3-4 days per week! ',
