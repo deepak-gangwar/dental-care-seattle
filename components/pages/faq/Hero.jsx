@@ -7,16 +7,16 @@ export default function Hero() {
       <section className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            <span>FAQ</span>
-            <span className={styles.line}></span>
+            <span className="js-hero-split">FAQ</span>
+            <span className={`js-hero-line ${styles.line}`}></span>
             {/* <br /> */}
             {/* <span>325-0166</span> */}
             {/* <span className={styles.line}></span> */}
           </h1>
           <span className={styles.arrow}>
-            <Image src="icons/icon-arrow-diagonal.svg" width={21} height={20} alt=''></Image>
+            <Image className="arrow-icon" src="icons/icon-arrow-diagonal.svg" width={21} height={20} alt=''></Image>
           </span>
-          <p className={styles.paragraph}>
+          <p className={`js-split ${styles.paragraph}`}>
             Questions and Answers.
           </p>
         </div>
