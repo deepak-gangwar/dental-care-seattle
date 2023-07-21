@@ -3,16 +3,14 @@ import { useEffect, useLayoutEffect } from 'react'
 import { useRouter } from 'next/router'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-// import { SplitText } from "@/component/splitText"
 import { SplitText } from "@/component/split-text"
 import Navbar from '@/component/Navbar'
 import Loader from '@/component/Loader'
 import SVGSpritesheet from '@/component/svgSpritesheet'
 import Lenis from '@studio-freight/lenis'
-import Footer from '@/component/footer'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
-
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
@@ -143,21 +141,16 @@ export default function App({ Component, pageProps }) {
   // PAGE TRANTISIONS
   // ================
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const sail = document.getElementById('sail')
     const tl = new gsap.timeline()
-
-    // play page exit and mutation animaitons
-    // lock scrolling as well as click events while isMutating = true
-    // change routes
-    // play mutation and page entry animaitons
 
     // mutA for when link is clicked, also add pageA for items like nav links
     const pageOut = (event) => {
       event.preventDefault()
 
-      const href = event.currentTarget.getAttribute('href')
       // Dont' run the transition animation if we are on the same page
+      const href = event.currentTarget.getAttribute('href')
       if (router.pathname !== href) {
         const page = document.querySelector('.page')
         tl.to(sail, { duration: 1.2, transform: "translate3d(0px, 0px, 0px)", ease: "power3.inOut" }, 0)
@@ -169,6 +162,12 @@ export default function App({ Component, pageProps }) {
 
     // Callback for when navigating to different route is done
     const pageIn = () => {
+      // stop further clicking until animation is complete
+      const links = document.querySelectorAll('.js-pt')
+      links.forEach((link) => {
+        link.style.pointerEvents = 'none'
+      });
+
       const page = document.querySelector('.page')
       tl.add("mutA")
       tl.to(sail, { duration: 1.2, transform: "translate3d(0px, -100%, 0px)", ease: "power3.inOut" }, "mutA")
@@ -178,16 +177,23 @@ export default function App({ Component, pageProps }) {
 
       if (document.getElementById('services') !== document.querySelector('.page')) {
         const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
-        const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
-        const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
 
+        if (document.documentElement.clientWidth > 480) {
+          const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
+          const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
+        }
 
         // MAIN TIMELINE
         // =============
 
-        const tl2 = new gsap.timeline({
+        const heroTl = new gsap.timeline({
           paused: true,
           force3D: true,
+          onComplete: () => {
+            links.forEach((link) => {
+              link.style.pointerEvents = 'all'
+            });
+          }
         })
 
 
@@ -195,7 +201,7 @@ export default function App({ Component, pageProps }) {
         let heroSplit = document.querySelectorAll('.js-hero-split')
         const titleWords = heroSplit[0].children
         for (let i = 0; i < titleWords.length; i++) {
-          tl2.from(titleWords[i], {
+          heroTl.from(titleWords[i], {
             yPercent: 100,
             rotateX: 110,
             duration: 1.5 + i / 15,
@@ -209,7 +215,7 @@ export default function App({ Component, pageProps }) {
         if (heroSplit.length > 1) {
           const secondWords = heroSplit[1].children
           for (let i = 0; i < secondWords.length; i++) {
-            tl2.from(secondWords[i], {
+            heroTl.from(secondWords[i], {
               yPercent: 100,
               rotateX: 130,
               duration: 1.5 + i / 15,
@@ -218,25 +224,26 @@ export default function App({ Component, pageProps }) {
           }
         }
 
-        tl2.from('.arrow-icon', {
+        heroTl.from('.arrow-icon', {
           y: "-100%",
           x: "-100%",
-          // scale: 0,
           duration: 1.5,
           ease: 'power3.inOut',
           delay: 0.3,
         }, 0)
 
-        tl2.from('.js-hero-line', {
+        heroTl.from('.js-hero-line', {
           scaleX: 0,
           duration: 1.5,
           ease: 'expo.inOut',
-          // delay: 1,
         }, 1.2)
 
-        tl2.play()
+        heroTl.play()
+
+
       }
     };
+
     router.events.on('routeChangeComplete', pageIn);
 
     const links = document.querySelectorAll('.js-pt')
@@ -256,19 +263,19 @@ export default function App({ Component, pageProps }) {
   // GSAP ANIMATIONS
   // ===============
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // all your GSAP animation code here
-
-      if (document.getElementById('services') !== document.querySelector('.page')) {
-
+      const isServicesPage = document.getElementById('services') !== document.querySelector('.page')
+      if (isServicesPage) {
 
         // SPLIT THE LETTERS
         // =================
 
         const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
-        const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
-        const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
+        if (document.documentElement.clientWidth > 480) {
+          const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
+          const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
+        }
 
 
         // MAIN TIMELINE
@@ -310,7 +317,6 @@ export default function App({ Component, pageProps }) {
         tl.from('.arrow-icon', {
           y: "-100%",
           x: "-100%",
-          // scale: 0,
           duration: 1.5,
           ease: 'power3.inOut',
           delay: 0.3,
@@ -322,24 +328,6 @@ export default function App({ Component, pageProps }) {
           ease: 'expo.inOut',
           // delay: 1,
         }, 1.2)
-
-        // const heroSubtitle = splits.lines.forEach((line, i) => {
-        //   tl.from(line, {
-        //     yPercent: 200,
-        //     autoAlpha: 0,
-        //     duration: 1.2,
-        //     ease: 'power3',
-        //     delay: 0.8 + i / 8,
-        //   }, 0)
-        // })
-
-        // tl.from('.s_word', {
-        //   yPercent: 110,
-        //   // autoAlpha: 0,
-        //   duration: 1.2,
-        //   ease: 'power3.out',
-        //   delay: 1,
-        // }, 0)
 
         tl.play()
       }
