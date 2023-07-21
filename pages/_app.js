@@ -141,7 +141,7 @@ export default function App({ Component, pageProps }) {
   // PAGE TRANTISIONS
   // ================
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const sail = document.getElementById('sail')
     const tl = new gsap.timeline()
 
@@ -192,6 +192,7 @@ export default function App({ Component, pageProps }) {
           onComplete: () => {
             links.forEach((link) => {
               link.style.pointerEvents = 'all'
+              link.addEventListener('click', pageOut)
             });
           }
         })
@@ -263,7 +264,7 @@ export default function App({ Component, pageProps }) {
   // GSAP ANIMATIONS
   // ===============
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
       const isServicesPage = document.getElementById('services') !== document.querySelector('.page')
       if (isServicesPage) {
