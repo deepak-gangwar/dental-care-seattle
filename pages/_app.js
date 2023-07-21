@@ -243,6 +243,14 @@ export default function App({ Component, pageProps }) {
 
 
       }
+      else {
+        tl.add(() => {
+          links.forEach((link) => {
+            link.style.pointerEvents = 'all'
+            link.addEventListener('click', pageOut)
+          });
+        })
+      }
     };
 
     router.events.on('routeChangeComplete', pageIn);
