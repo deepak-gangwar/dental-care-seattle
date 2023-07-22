@@ -23,6 +23,13 @@
     // z-index: 3;
 }
 
+@media (max-width: 480px) {
+    .item {
+        justify-content: center;
+        margin-top: 3rem;
+    }
+}
+
 .current {
     color: #0d0e13;
 }
@@ -85,11 +92,24 @@
     letter-spacing: 0.00694vw;
 }
 
+@media (max-width: 480px) {
+    .author_line {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+}
+
 .post {
     position: relative;
     margin: 0 8.26667vw 21.33333vw;
     pointer-events: all;
     // z-index: 1;
+}
+
+@media (max-width: 480px) {
+    .post {
+        margin-bottom: 0;
+    }
 }
 
 @media (min-width: 601px) {
@@ -107,6 +127,15 @@
     line-height: 2.7778vw;
     letter-spacing: -0.000694vw;
     margin-bottom: 1.73611vw;
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+    }
 }
 
 .text_mask, .title_mask {
@@ -203,6 +232,13 @@
     color: #0d0e13;
 }
 
+@media screen and (max-width: 480px) {
+    .link {
+        font-size: 1rem;
+        line-height: 1.1;
+    }
+}
+
 .item:not(.current) .link {
     opacity: 0;
     visibility: hidden;
@@ -226,6 +262,15 @@
     transition: all 0.5s cubic-bezier(.84,.4,.07,.7);
 }
 
+@media screen and (max-width: 480px) {
+    .circle {
+        width: 20px;
+        height: 20px;
+        left: -20px;
+        top: -1px;
+    }
+}
+
 .circle_fill {
     position: absolute;
     top: 0;
@@ -247,6 +292,13 @@
     overflow: visible;
     fill: none;
     stroke: #0d0e13;
+}
+
+@media screen and (max-width: 480px) {
+    .circle_outline {
+        width: 6px;
+        height: 6px;
+    }
 }
 
 .circle_outline .circle {
@@ -278,6 +330,13 @@
 
     path {
         fill: #fff;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon_arrow {
+        width: 7px;
+        height: 5px;
     }
 }
 
