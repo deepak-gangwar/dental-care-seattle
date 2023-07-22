@@ -71,7 +71,7 @@ export default function Footer() {
 
                     <div className={styles.footer_t_contact}>
                         <div className={`${styles.circle} ${styles.circle_s}`}>1</div>
-                        <a className={styles._tb} href='https://google.com' target="_blank">
+                        <a className={styles._tb} href='https://www.google.com/maps/place/Dental+Care+Seattle/@47.6077534,-122.3231615,17z/data=!3m2!4b1!5s0x54906ac86f5205ed:0xd47b80724592e9!4m6!3m5!1s0x54906ac86925ad69:0xd5e746e2dc27103f!8m2!3d47.6077498!4d-122.3205866!16s%2Fg%2F1tg39tf7?entry=ttu' target="_blank">
                             <span>Dental Care Seattle</span>
                             <br />
                             <span>600 Broadway, Suite 330</span>
@@ -87,7 +87,7 @@ export default function Footer() {
                     <div className={styles.footer_t_contact}>
                         {/* add class circle-s to it */}
                         <div className={`${styles.circle} ${styles.circle_s}`}>2</div>
-                        <a className={styles._tb} href='https://google.com' target="_blank">
+                        <a className={styles._tb} href='tel:2063250166' target="_blank">
                             <span>Call or Text: (206) 325-0166</span>
                             <br />
                             <span>Fax: (206) 322-9345</span>

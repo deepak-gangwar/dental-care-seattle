@@ -124,7 +124,7 @@ export default function Section4() {
               </label>
             </form>
 
-            <Link className={styles.hiring__wrap} href='/contact'>
+            <Link className={`js-pt ${styles.hiring__wrap}`} href='/careers'>
               <h2 className={styles.hiring__heading}>We&apos;re hiring!</h2>
               <p className={styles.hiring__para}>Visit our Careers page to explore opportunities to join our team.</p>
               <span className={styles.arrow}>
