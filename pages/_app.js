@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }) {
   // SMOOTH SCROLL
   // =============
   // Issues
-  // - Sometimes the scroll is automatically jumping
+  // - Sometimes the scroll is automatically jumping (I think this is solved)
   // - Lenis is not allowing to grab scroll thumb while scrolling
   // - No keyboard or drag controls
 
@@ -26,10 +26,12 @@ export default function App({ Component, pageProps }) {
     const lenis = new Lenis({
       // wrapper: document.getElementById('main-w'),
       // content: document.getElementById('main'),
-      lerp: 0.09,
       // duration: 1.5,
-      wheelMultiplier: 0.6
+      lerp: 0.09,
+      wheelMultiplier: 0.6,
+      smoothWheel: true,
     })
+
     // lenis.on('scroll', (e) => {
     //   console.log(e)
     // })
@@ -46,9 +48,26 @@ export default function App({ Component, pageProps }) {
       requestAnimationFrame(raf)
     }
 
-    // lenis.on('scroll', ScrollTrigger.update)
     requestAnimationFrame(raf)
-  }, [])
+
+    // This is to fix the problem that lenis does not start from top of the page on route change
+    // I don't know why this useEffect is not createing a new instance of lenis on every page.
+    // Instead this useEffect is running only on first load of the page. 
+    // When I added router as a dependency, now we are creating a new instance of lenis on every page
+    // Earlier I had an empty dependency array, (which should also have worked, but didn't).
+
+    router.events.on('routeChangeStart', () => {
+      lenis.scrollTo(0, { immediate: true })
+    })
+
+    return () => {
+      lenis.destroy()
+
+      router.events.off('routeChangeStart', () => {
+        lenis.scrollTo(0, { immediate: true })
+      })
+    }
+  }, [router])
 
 
   // SCROLL TRIGGER FOR FOOTER CURVE
