@@ -207,56 +207,62 @@ export default function App({ Component, pageProps }) {
 
   // This one runs on first load and every subsequent page transition
   useEffect(() => {
+    let pageOut, pageIn
     const links = document.querySelectorAll('.js-pt')
     const tl = gsap.timeline({ defaults: { duration: 1.2, ease: "power2.inOut" } })
 
-    // PAGE TRANSITION EXIT ANIMATION ✨
-    // ================================
+    let context = gsap.context(() => {
 
-    const pageOut = (event) => {
-      event.preventDefault()
+      // PAGE TRANSITION EXIT ANIMATION ✨
+      // ================================
 
-      // Dont' run the transition animation if we are on the same page
-      let href = event.currentTarget.getAttribute('href')
-      if (router.pathname !== href) {
-        tl.to('#sail', { transform: "translate3d(0px, 0px, 0px)", ease: "power3.inOut" }, 0)
-          .to('.page', { transform: "translateY(-70px)" }, 0)
-          .to('.js-nav-item', { duration: 1, transform: "translateY(-150%)" }, 0)
-          .call(() => router.push(href))
+      pageOut = (event) => {
+        event.preventDefault()
+
+        // Dont' run the transition animation if we are on the same page
+        let href = event.currentTarget.getAttribute('href')
+        if (router.pathname !== href) {
+          tl.to('#sail', { transform: "translate3d(0px, 0px, 0px)", ease: "power3.inOut" }, 0)
+            .to('.page', { transform: "translateY(-70px)" }, 0)
+            .to('.js-nav-item', { duration: 1, transform: "translateY(-150%)" }, 0)
+            .call(() => router.push(href))
+        }
       }
-    }
 
-    // PAGE TRANSITION ENTRY ANIMATION ✨
-    // ==================================
-    // Callback for when navigating to different route is done
+      // PAGE TRANSITION ENTRY ANIMATION ✨
+      // ==================================
+      // Callback for when navigating to different route is done
 
-    const pageIn = () => {
-      // Prevent clicking until animation is complete
-      links.forEach(link => { link.style.pointerEvents = 'none' })
+      pageIn = () => {
+        // Prevent clicking until animation is complete
+        links.forEach(link => { link.style.pointerEvents = 'none' })
 
-      tl.add("mutA")
-        .to('#sail', { transform: "translate3d(0px, -100%, 0px)", ease: "power3.inOut" }, "mutA")
-        .from('.page', { transform: "translateY(70px)" }, "mutA")
-        .to('#sail', { duration: 0, transform: "translate3d(0px, 101%, 0px)" })
-        .fromTo('.js-nav-item', { transform: "translateY(130%)" }, { transform: "translateY(0%)", stagger: 0.1, delay: 0.5 }, "mutA")
-        .add(() => {
-          links.forEach(link => {
-            link.style.pointerEvents = 'all'
-            link.addEventListener('click', pageOut)
-          })
-        }, 2.8) // <- max time to complete hero animations
+        tl.add("mutA")
+          .to('#sail', { transform: "translate3d(0px, -100%, 0px)", ease: "power3.inOut" }, "mutA")
+          .from('.page', { transform: "translateY(70px)" }, "mutA")
+          .to('#sail', { duration: 0, transform: "translate3d(0px, 101%, 0px)" })
+          .fromTo('.js-nav-item', { transform: "translateY(130%)" }, { transform: "translateY(0%)", stagger: 0.1, delay: 0.5 }, "mutA")
+          .add(() => {
+            links.forEach(link => {
+              link.style.pointerEvents = 'all'
+              link.addEventListener('click', pageOut)
+            })
+          }, 2.8) // <- max time to complete hero animations
 
-      if (!document.querySelector('#services.page')) {
-        createSplits()
-        createHeroAnim()
+        if (!document.querySelector('#services.page')) {
+          console.log('yup running')
+          createSplits()
+          createHeroAnim()
+        }
       }
-    }
+    })
 
     // Add listeners to links on first load
     links.forEach(link => link.addEventListener('click', pageOut))
     router.events.on('routeChangeComplete', pageIn)
 
     return () => {
+      context.revert()
       links.forEach(link => link.removeEventListener('click', pageOut))
       router.events.off('routeChangeComplete', pageIn)
     }
