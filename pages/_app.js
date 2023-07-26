@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { useEffect, useLayoutEffect } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -20,9 +20,6 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     const lenis = new Lenis({
-      // wrapper: document.getElementById('main-w'),
-      // content: document.getElementById('main'),
-      // duration: 1.5,
       lerp: 0.09,
       wheelMultiplier: 0.6,
       smoothWheel: true,
@@ -153,213 +150,131 @@ export default function App({ Component, pageProps }) {
   // })
 
 
-  // PAGE TRANTISIONS
-  // ================
+  // PAGE TRANTISION LOGIC
+  // =====================
 
+  function createSplits() {
+    new SplitText('[data-split="hero-title"]', { type: "chars" })
+    if (document.documentElement.clientWidth > 480) {
+      new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
+      new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
+    }
+  }
+
+  function createHeroAnim(onComplete = null) {
+
+    // the problem here is that every time on page navigation, I am
+    // creating a new timeline. That is why we use refs I guess.
+
+    const tl = gsap.timeline({
+      force3D: true,
+      defaults: {
+        duration: 1.5,
+        ease: 'power3.inOut',
+      },
+      onComplete: onComplete
+    })
+
+    // ------------------------------------------------------------------
+    // Anything in the defaults object of a timeline gets inherited by 
+    // its child animations when they get created, so if you find yourself 
+    // setting the same ease or duration(or any value) over and over again, 
+    // this can help make your code more concise.
+    // ------------------------------------------------------------------
+
+    // NOTE: heroLine.children returns a nodelist and not an array
+    // A nodelist is not iterable. To make it so, we use Array.from()
+
+    const heroLines = document.querySelectorAll('[data-split="hero-title"]')
+
+    heroLines.forEach(heroLine => {
+      let letters = Array.from(heroLine.children) // <- letters of each line
+      letters.forEach((letter, i) => {
+        tl.from(letter, {
+          yPercent: 100,
+          rotateX: 110,
+          duration: 1.5 + i / 15,
+          // duration: 1.5 + i / 10 + i * 0.02,
+          // delay: n
+        }, 0)
+      })
+    })
+
+    tl.from('.arrow-icon', { y: "-100%", x: "-100%" }, 0.3)
+    tl.from('.js-hero-line', { scaleX: 0 }, 1.2)
+    return tl
+  }
+
+  // This one runs on first load and every subsequent page transition
   useEffect(() => {
-    const sail = document.getElementById('sail')
-    const tl = new gsap.timeline()
+    const links = document.querySelectorAll('.js-pt')
+    const tl = gsap.timeline({ defaults: { duration: 1.2, ease: "power2.inOut" } })
 
-    // mutA for when link is clicked, also add pageA for items like nav links
+    // PAGE TRANSITION EXIT ANIMATION ✨
+    // ================================
+
     const pageOut = (event) => {
       event.preventDefault()
 
       // Dont' run the transition animation if we are on the same page
-      const href = event.currentTarget.getAttribute('href')
+      let href = event.currentTarget.getAttribute('href')
       if (router.pathname !== href) {
-        const page = document.querySelector('.page')
-        tl.to(sail, { duration: 1.2, transform: "translate3d(0px, 0px, 0px)", ease: "power3.inOut" }, 0)
-        tl.to(page, { duration: 1.2, transform: "translateY(-70px)", ease: "power2.inOut" }, 0)
-        tl.to('.js-nav-item', { duration: 1, transform: "translateY(-150%)", ease: "power2.inOut" }, 0)
-        tl.call(() => router.push(href))
+        tl.to('#sail', { transform: "translate3d(0px, 0px, 0px)", ease: "power3.inOut" }, 0)
+          .to('.page', { transform: "translateY(-70px)" }, 0)
+          .to('.js-nav-item', { duration: 1, transform: "translateY(-150%)" }, 0)
+          .call(() => router.push(href))
       }
-    };
+    }
 
+    // PAGE TRANSITION ENTRY ANIMATION ✨
+    // ==================================
     // Callback for when navigating to different route is done
+
     const pageIn = () => {
-      // stop further clicking until animation is complete
-      const links = document.querySelectorAll('.js-pt')
-      links.forEach((link) => {
-        link.style.pointerEvents = 'none'
-      });
+      // Prevent clicking until animation is complete
+      links.forEach(link => { link.style.pointerEvents = 'none' })
 
-      const page = document.querySelector('.page')
       tl.add("mutA")
-      tl.to(sail, { duration: 1.2, transform: "translate3d(0px, -100%, 0px)", ease: "power3.inOut" }, "mutA")
-      tl.from(page, { duration: 1.2, transform: "translateY(70px)", ease: "power2.inOut" }, "mutA")
-      tl.to(sail, { duration: 0, transform: "translate3d(0px, 101%, 0px)" });
-      tl.fromTo('.js-nav-item', { transform: "translateY(130%)" }, { duration: 1.2, transform: "translateY(0%)", ease: "power2.inOut", stagger: 0.1, delay: 0.5 }, "mutA")
-
-      if (document.getElementById('services') !== document.querySelector('.page')) {
-        new SplitText('[data-split="hero-title"]', { type: "chars" })
-
-        if (document.documentElement.clientWidth > 480) {
-          const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
-          const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
-        }
-
-        // MAIN TIMELINE
-        // =============
-
-        const heroTl = new gsap.timeline({
-          paused: true,
-          force3D: true,
-          onComplete: () => {
-            links.forEach((link) => {
-              link.style.pointerEvents = 'all'
-              link.addEventListener('click', pageOut)
-            });
-          }
-        })
-
-
-        // NOTE: THIS TITLEWORDS IS NOT ITERABLE
-        let heroSplit = document.querySelectorAll('[data-split="hero-title"]')
-        const titleWords = heroSplit[0].children
-        for (let i = 0; i < titleWords.length; i++) {
-          heroTl.from(titleWords[i], {
-            yPercent: 100,
-            rotateX: 110,
-            duration: 1.5 + i / 15,
-            // duration: 1.5 + i / 10 + i * 0.02,
-            ease: 'power3.inOut',
-            // delay: n
-          }, 0)
-        }
-
-        // If more than 1 line in hero title
-        if (heroSplit.length > 1) {
-          const secondWords = heroSplit[1].children
-          for (let i = 0; i < secondWords.length; i++) {
-            heroTl.from(secondWords[i], {
-              yPercent: 100,
-              rotateX: 130,
-              duration: 1.5 + i / 15,
-              ease: 'power3.inOut',
-            }, 0)
-          }
-        }
-
-        heroTl.from('.arrow-icon', {
-          y: "-100%",
-          x: "-100%",
-          duration: 1.5,
-          ease: 'power3.inOut',
-          delay: 0.3,
-        }, 0)
-
-        heroTl.from('.js-hero-line', {
-          scaleX: 0,
-          duration: 1.5,
-          ease: 'expo.inOut',
-        }, 1.2)
-
-        heroTl.play()
-
-
-      }
-      else {
-        tl.add(() => {
-          links.forEach((link) => {
+        .to('#sail', { transform: "translate3d(0px, -100%, 0px)", ease: "power3.inOut" }, "mutA")
+        .from('.page', { transform: "translateY(70px)" }, "mutA")
+        .to('#sail', { duration: 0, transform: "translate3d(0px, 101%, 0px)" })
+        .fromTo('.js-nav-item', { transform: "translateY(130%)" }, { transform: "translateY(0%)", stagger: 0.1, delay: 0.5 }, "mutA")
+        .add(() => {
+          links.forEach(link => {
             link.style.pointerEvents = 'all'
             link.addEventListener('click', pageOut)
-          });
-        })
+          })
+        }, 2.8) // <- max time to complete hero animations
+
+      if (!document.querySelector('#services.page')) {
+        createSplits()
+        createHeroAnim()
       }
-    };
+    }
 
-    router.events.on('routeChangeComplete', pageIn);
-
-    const links = document.querySelectorAll('.js-pt')
-    links.forEach((link) => {
-      link.addEventListener('click', pageOut)
-    });
+    // Add listeners to links on first load
+    links.forEach(link => link.addEventListener('click', pageOut))
+    router.events.on('routeChangeComplete', pageIn)
 
     return () => {
+      links.forEach(link => link.removeEventListener('click', pageOut))
       router.events.off('routeChangeComplete', pageIn)
-      links.forEach((link) => {
-        link.removeEventListener('click', pageOut)
-      })
     }
   }, [router])
 
 
-  // GSAP ANIMATIONS
-  // ===============
+  // GSAP ANIMATIONS ON FIRST LOAD
+  // =============================
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // const isServicesPage = document.getElementById('services') !== document.querySelector('.page')
-      const isServicesPage = document.querySelector('#services.page')
-      if (!isServicesPage) {
-
-        // SPLIT THE LETTERS
-        // =================
-
-        new SplitText('[data-split="hero-title"]', { type: "chars" })
-
-        if (document.documentElement.clientWidth > 480) {
-          const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
-          const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
-        }
-
-
-        // MAIN TIMELINE
-        // =============
-
-        const tl = new gsap.timeline({
-          paused: true,
-          force3D: true,
-        })
-
-
-        // NOTE: THIS TITLEWORDS IS NOT ITERABLE
-        let heroSplit = document.querySelectorAll('[data-split="hero-title"]')
-        const titleWords = heroSplit[0].children
-        for (let i = 0; i < titleWords.length; i++) {
-          tl.from(titleWords[i], {
-            yPercent: 100,
-            rotateX: 110,
-            duration: 1.5 + i / 15,
-            // duration: 1.5 + i / 10 + i * 0.02,
-            ease: 'power3.inOut',
-            // delay: n
-          }, 0)
-        }
-
-        // If more than 1 line in hero title
-        if (heroSplit.length > 1) {
-          const secondWords = heroSplit[1].children
-          for (let i = 0; i < secondWords.length; i++) {
-            tl.from(secondWords[i], {
-              yPercent: 100,
-              rotateX: 130,
-              duration: 1.5 + i / 15,
-              ease: 'power3.inOut',
-            }, 0)
-          }
-        }
-
-        tl.from('.arrow-icon', {
-          y: "-100%",
-          x: "-100%",
-          duration: 1.5,
-          ease: 'power3.inOut',
-          delay: 0.3,
-        }, 0)
-
-        tl.from('.js-hero-line', {
-          scaleX: 0,
-          duration: 1.5,
-          ease: 'expo.inOut',
-          // delay: 1,
-        }, 1.2)
-
-        tl.play()
+      if (!document.querySelector('#services.page')) {
+        createSplits()
+        createHeroAnim()
       }
-    });
+    })
 
-    return () => ctx.revert(); // <- cleanup!
+    return () => ctx.revert() // <- animation cleanup!
   }, [])
 
 
