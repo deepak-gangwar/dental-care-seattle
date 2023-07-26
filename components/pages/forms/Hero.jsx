@@ -10,7 +10,7 @@ export default function Hero() {
             {/* <span>Discover</span> */}
             {/* <span className={styles.line}></span> */}
             {/* <br /> */}
-            <span className="js-hero-split">Start forms</span>
+            <span data-split="hero-title">Start forms</span>
             <span className={`js-hero-line ${styles.line}`}></span>
           </h1>
           <span className={styles.arrow}>

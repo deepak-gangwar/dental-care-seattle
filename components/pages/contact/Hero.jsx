@@ -7,7 +7,7 @@ export default function Hero() {
       <section className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            <span className="js-hero-split">Contact</span>
+            <span data-split="hero-title">Contact</span>
             <span className={`js-hero-line ${styles.line}`}></span>
             {/* <br /> */}
             {/* <span>325-0166</span> */}

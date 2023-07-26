@@ -17,10 +17,6 @@ export default function App({ Component, pageProps }) {
 
   // SMOOTH SCROLL
   // =============
-  // Issues
-  // - Sometimes the scroll is automatically jumping (I think this is solved)
-  // - Lenis is not allowing to grab scroll thumb while scrolling
-  // - No keyboard or drag controls
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -71,7 +67,7 @@ export default function App({ Component, pageProps }) {
 
 
   // SCROLL TRIGGER FOR FOOTER CURVE
-  // ================  
+  // ===============================
 
   // useLayoutEffect(() => {
   //   const paths = [...document.querySelectorAll('path.path-anim')];
@@ -132,29 +128,29 @@ export default function App({ Component, pageProps }) {
   // FOOTER SCRUB SLIDE-OUT ANIMATION
   // ================================
 
-  useEffect(() => {
-    let triggerElement = document.querySelector('footer');
-    let targetElementRound = document.querySelector('footer')
+  // useEffect(() => {
+  //   let triggerElement = document.querySelector('footer');
+  //   let targetElementRound = document.querySelector('footer')
 
-    // if (router.pathname === "/") {
-    // }
+  // if (router.pathname === "/") {
+  // }
 
-    // `if` to remove GSAP console issues when footer is not found
-    // if (targetElementRound) {
-    //   let tl = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: triggerElement,
-    //       start: "0% 100%",
-    //       end: "100% 100%",
-    //       scrub: 0
-    //     }
-    //   });
-    //   tl.from(targetElementRound, {
-    //     transform: `translate3d(0, -30%, 0)`,
-    //     ease: "none"
-    //   }, 0)
-    // }
-  })
+  // `if` to remove GSAP console issues when footer is not found
+  // if (targetElementRound) {
+  //   let tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: triggerElement,
+  //       start: "0% 100%",
+  //       end: "100% 100%",
+  //       scrub: 0
+  //     }
+  //   });
+  //   tl.from(targetElementRound, {
+  //     transform: `translate3d(0, -30%, 0)`,
+  //     ease: "none"
+  //   }, 0)
+  // }
+  // })
 
 
   // PAGE TRANTISIONS
@@ -195,7 +191,7 @@ export default function App({ Component, pageProps }) {
       tl.fromTo('.js-nav-item', { transform: "translateY(130%)" }, { duration: 1.2, transform: "translateY(0%)", ease: "power2.inOut", stagger: 0.1, delay: 0.5 }, "mutA")
 
       if (document.getElementById('services') !== document.querySelector('.page')) {
-        const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
+        new SplitText('[data-split="hero-title"]', { type: "chars" })
 
         if (document.documentElement.clientWidth > 480) {
           const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
@@ -218,7 +214,7 @@ export default function App({ Component, pageProps }) {
 
 
         // NOTE: THIS TITLEWORDS IS NOT ITERABLE
-        let heroSplit = document.querySelectorAll('.js-hero-split')
+        let heroSplit = document.querySelectorAll('[data-split="hero-title"]')
         const titleWords = heroSplit[0].children
         for (let i = 0; i < titleWords.length; i++) {
           heroTl.from(titleWords[i], {
@@ -293,13 +289,15 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      const isServicesPage = document.getElementById('services') !== document.querySelector('.page')
-      if (isServicesPage) {
+      // const isServicesPage = document.getElementById('services') !== document.querySelector('.page')
+      const isServicesPage = document.querySelector('#services.page')
+      if (!isServicesPage) {
 
         // SPLIT THE LETTERS
         // =================
 
-        const heroTitle = new SplitText('.js-hero-split', { type: "chars" })
+        new SplitText('[data-split="hero-title"]', { type: "chars" })
+
         if (document.documentElement.clientWidth > 480) {
           const splits = new SplitText('.js-split', { type: "lines", linesClass: "s_line" })
           const splits2 = new SplitText('.s_line', { type: "char", wordsClass: "s_word" })
@@ -316,7 +314,7 @@ export default function App({ Component, pageProps }) {
 
 
         // NOTE: THIS TITLEWORDS IS NOT ITERABLE
-        let heroSplit = document.querySelectorAll('.js-hero-split')
+        let heroSplit = document.querySelectorAll('[data-split="hero-title"]')
         const titleWords = heroSplit[0].children
         for (let i = 0; i < titleWords.length; i++) {
           tl.from(titleWords[i], {

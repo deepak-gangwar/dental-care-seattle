@@ -191,7 +191,7 @@ main {
   }
 }
 
-.js-hero-split {
+[data-split="hero-title"] {
     perspective: 1000px;
     position: absolute;
     overflow: hidden;

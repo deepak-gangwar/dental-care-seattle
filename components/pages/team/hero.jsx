@@ -7,11 +7,11 @@ export default function Hero() {
       <section className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            <span className="js-hero-split">Meet your</span>
+            <span data-split="hero-title">Meet your</span>
             <span className={`js-hero-line ${styles.line}`}></span>
             <br />
             {/* <span className={styles.line}></span> */}
-            <span className="js-hero-split">Dentists. Say Hi!</span>
+            <span data-split="hero-title">Dentists. Say Hi!</span>
           </h1>
           <span className={styles.arrow}>
             <Image className="arrow-icon" src="icons/icon-arrow-diagonal.svg" width={21} height={20} alt=''></Image>
