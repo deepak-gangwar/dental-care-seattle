@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import { useEffect, useLayoutEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from "@/component/split-text"
@@ -8,12 +9,33 @@ import Navbar from '@/component/Navbar'
 import Loader from '@/component/Loader'
 import SVGSpritesheet from '@/component/svgSpritesheet'
 import Lenis from '@studio-freight/lenis'
+import * as gtag from "@/component/gtag"
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
+
+  // GOOGLE ANALYTICS
+  // ================
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on("routeChangeComplete", handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange)
+    }
+  }, [router.events])
+
 
   // SMOOTH SCROLL
   // =============
@@ -294,19 +316,45 @@ export default function App({ Component, pageProps }) {
   // =========
 
   return (
-    <div id='app'>
-      {/* See if there is any way to load this spritesheet at the bottom */}
-      <SVGSpritesheet />
-      <Loader />
-      <Navbar />
+    <>
+      {/* --------------- Global Site Tag (gtag.js) - Google Analytics  ---------------*/}
 
-      <div id='main-w'>
-        <main id='main'>
-          <Component {...pageProps} />
-        </main>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+
+
+      {/* --------------------------- MAIN APP --------------------------- */}
+
+      <div id='app'>
+        {/* See if there is any way to load this spritesheet at the bottom */}
+        <SVGSpritesheet />
+        <Loader />
+        <Navbar />
+
+        <div id='main-w'>
+          <main id='main'>
+            <Component {...pageProps} />
+          </main>
+        </div>
+        {/* <Footer /> */}
+        <div id='sail'></div>
       </div>
-      {/* <Footer /> */}
-      <div id='sail'></div>
-    </div>
+    </>
   )
 }
