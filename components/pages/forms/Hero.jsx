@@ -20,6 +20,7 @@ export default function Hero() {
             Let&apos;s get ready for your first appointment.
           </p>
         </div>
+        <div className="fouc-overlay"></div>
       </section>
       <div className={styles.separator}></div>
     </>

@@ -20,6 +20,7 @@ export default function Hero() {
             Learn more about us.
           </p>
         </div>
+        <div className="fouc-overlay"></div>
       </section>
       <div className={styles.separator}></div>
     </>

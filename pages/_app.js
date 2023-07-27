@@ -200,6 +200,8 @@ export default function App({ Component, pageProps }) {
       })
     })
 
+    tl.to('.fouc-overlay', { opacity: 0, display: 'none', duration: 0 }, 0) // <- to avoid FOUC
+    tl.call(() => { document.querySelector('.fouc-overlay').remove() })
     tl.from('.arrow-icon', { y: "-100%", x: "-100%" }, 0.3)
     tl.from('.js-hero-line', { scaleX: 0 }, 1.2)
     return tl
@@ -209,9 +211,14 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     let pageOut, pageIn
     const links = document.querySelectorAll('.js-pt')
-    const tl = gsap.timeline({ defaults: { duration: 1.2, ease: "power2.inOut" } })
 
     let context = gsap.context(() => {
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 1.2,
+          ease: "power2.inOut"
+        }
+      })
 
       // PAGE TRANSITION EXIT ANIMATION ✨
       // ================================
@@ -250,7 +257,6 @@ export default function App({ Component, pageProps }) {
           }, 2.8) // <- max time to complete hero animations
 
         if (!document.querySelector('#services.page')) {
-          console.log('yup running')
           createSplits()
           createHeroAnim()
         }

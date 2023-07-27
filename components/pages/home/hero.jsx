@@ -19,6 +19,7 @@ export default function Hero() {
           Gentle and friendly treatment from our locally owned practice in Washington.
         </p>
       </div>
+      <div className="fouc-overlay"></div>
     </section>
   )
 }
