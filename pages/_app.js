@@ -212,20 +212,40 @@ export default function App({ Component, pageProps }) {
     heroLines.forEach(heroLine => {
       let letters = Array.from(heroLine.children) // <- letters of each line
       letters.forEach((letter, i) => {
-        tl.from(letter, {
+        tl.fromTo(letter, {
           yPercent: 100,
           rotateX: 110,
+        }, {
+          yPercent: 0,
+          rotateX: 0,
           duration: 1.5 + i / 15,
           // duration: 1.5 + i / 10 + i * 0.02,
           // delay: n
         }, 0)
+
+        // tl.from(letter, {
+        //   yPercent: 100,
+        //   rotateX: 110,
+        //   duration: 1.5 + i / 15,
+        //   // duration: 1.5 + i / 10 + i * 0.02,
+        //   // delay: n
+        // }, 0)
       })
     })
 
+    // ---------------------------------------------------------------------------------------
+    // NOTE: TWEENS IN THIS FUNCTION WERE CONVERTED TO FROMTO   ------------------------------
+    // EVEN WHEN THEY DON'T NEED TO BE, IN AN ATTEMPT TO SOLVE  ------------------------------
+    // THE ISSUE THAT THEY STOPPED AT 99.4% IN REACT 18 ISSUE   ------------------------------
+    // ---------------------------------------------------------------------------------------
+
     tl.to('.fouc-overlay', { opacity: 0, display: 'none', duration: 0 }, 0) // <- to avoid FOUC
-    tl.call(() => { document.querySelector('.fouc-overlay').remove() })
-    tl.from('.arrow-icon', { y: "-100%", x: "-100%" }, 0.3)
-    tl.from('.js-hero-line', { scaleX: 0 }, 1.2)
+    // tl.call(() => { document.querySelector('.fouc-overlay').remove() })
+    // tl.from('.arrow-icon', { y: "-100%", x: "-100%" }, 0.3)
+    // tl.from('.js-hero-line', { scaleX: 0 }, 1.2)
+
+    tl.fromTo('.arrow-icon', { y: "-100%", x: "-100%" }, { y: 0, x: 0 }, 0.3)
+    tl.fromTo('.js-hero-line', { scaleX: 0 }, { scaleX: 1 }, 1.2)
     return tl
   }
 
