@@ -5,7 +5,6 @@ import Dots from "@/component/Dots"
 import Section2 from "@/component/pages/about/Section2"
 import Section3 from "@/component/pages/about/Section3"
 import Footer from "@/component/footer"
-// import Section4 from "@/component/pages/about/section4"
 
 export default function About() {
   return (
@@ -21,7 +20,6 @@ export default function About() {
         <Section1 />
         <Section2 />
         <Section3 />
-        {/* <Section4 /> */}
         <Footer />
       </div>
     </>
