@@ -33,7 +33,7 @@ export default function Join() {
               <Image className={styles.profile} src="/people2.jpg" fill={true} alt='photo of a person' />
             </div> */}
 
-            <ButtonPrimary path={"/careers"} label={"See open roles"} theme={"light"} />
+            <ButtonPrimary pt={true} path={"/careers"} label={"See open roles"} theme={"light"} />
           </div>
         </div>
       </div>
