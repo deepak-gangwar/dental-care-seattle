@@ -19,7 +19,7 @@ export default function Item({ result }) {
 
           <div className={styles.btn}>
             {/* <Link href={`/team/${result.slug.current}`}><button>Learn more</button></Link> */}
-            <Link className={styles.link} href={`/team/${result.slug.current}`}>
+            <Link className={`js-pt ${styles.link}`} href={`/team/${result.slug.current}`}>
               <div className={styles.wrap}>
                 <div className={styles.circle}>
                   <div className={styles.circle_fill}></div>
